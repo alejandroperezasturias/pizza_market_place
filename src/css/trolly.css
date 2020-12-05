@@ -16,7 +16,7 @@
 .trolly-header {
 	justify-content: space-between;
 	align-items: center;
-	height: 8%;
+	height: 3%;
 }
 
 .trolly-list {
@@ -103,10 +103,11 @@
 
 @media (min-width: 58em) {
 	.trolly-side-bar {
-		width: 40%;
+		width: 35%;
 	}
 
 	.trolly-item {
 		flex-direction: row;
+		padding: 1rem 1rem;
 	}
 }

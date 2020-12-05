@@ -54,9 +54,6 @@ export default function Trolly() {
 						: 'order-now flow-content'
 				}
 			>
-				<div className="trolly-main-buttom-wrapper">
-					<button className="btn btn-red">ORDER NOW</button>
-				</div>
 				<div className="order-total-info">
 					<p className="text-300">
 						{totalOrderSize}
@@ -67,6 +64,10 @@ export default function Trolly() {
 						{totalOrderPrice}
 					</p>
 				</div>
+				<div className="trolly-main-buttom-wrapper">
+					<button className="btn btn-red">ORDER NOW</button>
+				</div>
+				
 			</div>
 		</motion.div>
 	);
