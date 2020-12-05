@@ -42,9 +42,9 @@
 	background: var(--clr-neutral-100);
 	width: 77%;
 	margin: 2rem auto 0rem auto;
-	padding: 0.6rem 1.6rem;
+	padding: 1.5rem 1rem;
 	border-radius: 2rem;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	text-transform: uppercase;
 }
@@ -70,6 +70,11 @@
 
 .trolly-item-control > p {
 	outline: none;
+}
+
+.trolly-item-control {
+	/* display: flex; */
+	margin-top: 0;
 }
 
 .order-now {
