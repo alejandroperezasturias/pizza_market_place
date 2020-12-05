@@ -73,7 +73,7 @@
 
 .quote > p::after {
 	position: absolute;
-	content: url('/Users/alejandro.perez/Desktop/the_fifth_hut/the_fifth_hut/src/Images/figma-exclamation-red.svg');
+	/* content: url('/Users/alejandro.perez/Desktop/the_fifth_hut/the_fifth_hut/src/Images/figma-exclamation-red.svg'); */
 	top: 0;
 	left: 0;
 	display: none;
