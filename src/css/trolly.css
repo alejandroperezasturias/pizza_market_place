@@ -40,13 +40,17 @@
 	--flow-spacer: 0.5em;
 	display: flex;
 	background: var(--clr-neutral-100);
-	width: 77%;
+	width: 90%;
 	margin: 2rem auto 0rem auto;
-	padding: 1.5rem 1rem;
+	padding: 2rem 1rem;
 	border-radius: 2rem;
 	justify-content: space-between;
 	align-items: center;
 	text-transform: uppercase;
+}
+
+.trolly-item > img {
+	max-width: 50%;
 }
 
 .trolly-item > * + * {
@@ -70,11 +74,6 @@
 
 .trolly-item-control > p {
 	outline: none;
-}
-
-.trolly-item-control {
-	/* display: flex; */
-	margin-top: 0;
 }
 
 .order-now {
