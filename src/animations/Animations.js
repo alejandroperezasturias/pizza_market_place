@@ -3,7 +3,7 @@ export const burgerAnimation = {
 		opacity: 0,
 		x: '-100%',
 		transition: {
-			duration: 0.1,
+			duration: 0.2,
 			when: 'afterChildren',
 			staggerChildren: 0.09,
 			staggerDirection: -1,
