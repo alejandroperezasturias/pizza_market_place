@@ -69,12 +69,12 @@
 
 .nav-order-size {
 	position: absolute;
-	top: -0em;
-	right: -6.5em;
-	font-size: 0.17em;
+	top: -1em;
+	right: -1.5em;
+	font-size: 0.8em;
 	background-color: var(--clr-neutral-100);
 	color: var(--clr-neutral-300);
-	padding: 1em 1.7em;
+	padding: 0.2em 0.5em;
 	border-radius: 100vw;
 }
 
