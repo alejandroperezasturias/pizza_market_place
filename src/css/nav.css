@@ -169,6 +169,7 @@
 		line-height: 0;
 		width: 1.3rem;
 		text-align: center;
+		font-size: 0.2em;
 		background-color: var(--clr-neutral-300);
 		color: var(--clr-neutral-100);
 	}
