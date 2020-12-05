@@ -26,21 +26,21 @@
 	height: 60%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	border-radius: 2rem;
 	overflow-y: scroll;
 	margin-top: var(--br);
+	padding: 1rem;
 }
 
-.trolly-list > * + * {
+/* .trolly-list > * + * {
 	margin: var(--br) 0rem 0rem 0rem;
-}
+} */
 
 .trolly-item {
 	--flow-spacer: 0.5em;
 	display: flex;
 	background: var(--clr-neutral-100);
-	width: 80%;
+	width: 77%;
 	margin: 2rem auto 0rem auto;
 	padding: 0.6rem 1.6rem;
 	border-radius: 2rem;
