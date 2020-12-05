@@ -3,6 +3,7 @@
 	display: grid;
 	gap: 2rem 0em;
 	grid-template-columns: repeat(1, 1fr);
+	color: var(--clr-neutral-300);
 	grid-template-areas:
 		'name'
 		'quote'
@@ -38,6 +39,22 @@
 	align-self: center;
 }
 
+.pizza-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.characteristic {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.characteristic > * + * {
+	margin: 0 0 0 0.4em;
+}
+
 .quote,
 .title,
 .name {
@@ -51,10 +68,7 @@
 
 .quote {
 	border-radius: 1rem;
-}
-
-.quote > p {
-	position: relative;
+	background-color: var(--clr-accent-300);
 }
 
 .quote > p::after {
@@ -62,6 +76,10 @@
 	content: url('/Users/alejandro.perez/Desktop/the_fifth_hut/the_fifth_hut/src/Images/figma-exclamation-red.svg');
 	top: 0;
 	left: 0;
+	display: none;
+}
+
+.arrow {
 	display: none;
 }
 
@@ -83,6 +101,22 @@
 	grid-area: name;
 }
 
+/* Pizza */
+
+.pizza-ingredients-wrapper {
+	display: flex;
+}
+.pizza-ingredients-wrapper > * + * {
+	margin: 0 0 0 calc(var(--br) / 2);
+}
+
+.pizza-ingredients-wrapper > p:not(:last-child)::after {
+	content: '|';
+	padding-left: 1rem;
+	color: var(--clr-neutral-300);
+	font-weight: var(--fw-400);
+}
+
 @media (min-width: 58em) {
 	.pizza-section {
 		--flow-spacer: 5rem;
@@ -100,17 +134,16 @@
 	.pizzas {
 		display: flex;
 		flex-direction: column;
-		margin-top: 2rem;
+		margin-top: 1.5rem;
 	}
 
-	.pizzas > * + * {
-		margin: 5rem 0 2rem 0;
+	.arrow {
+		display: block;
 	}
 
 	.quote,
 	.title,
 	.name {
-		color: var(--clr-neutral-100);
 		background: var(--clr-accent-300);
 	}
 	.quote {
@@ -142,6 +175,7 @@
 
 	.image {
 		display: flex;
+		flex-direction: column;
 	}
 	.quote > p::after {
 		display: block;
@@ -149,5 +183,6 @@
 
 	.quote > p {
 		padding: 1.4rem;
+		position: relative;
 	}
 }

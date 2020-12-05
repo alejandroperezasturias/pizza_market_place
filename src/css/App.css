@@ -5,9 +5,9 @@
 	/* small screen font-sizes */
 
 	--fs-300: 0.625rem;
-	--fs-400: 1rem;
-	--fs-500: 1.125rem;
-	--fs-600: 1rem;
+	--fs-400: 0.9rem;
+	--fs-500: 1rem;
+	--fs-600: 1.2rem;
 	--fs-900: 2rem;
 
 	--fw-200: 200;
@@ -17,7 +17,8 @@
 	--fw-700: 700;
 
 	--clr-neutral-100: #fff;
-	--clr-neutral-200: #4e4a4a;
+	--clr-neutral-150: #f7f7f7;
+	--clr-neutral-200: #e3e3e3;
 	--clr-neutral-300: #242222;
 
 	--clr-accent-300: #76d8f4;
@@ -29,6 +30,7 @@
 @media (min-width: 60em) {
 	/* Big Screen Font-Sizes */
 	:root {
+		--fs-500: 1.125rem;
 		--fs-600: 2.18rem;
 		--fs-900: 3rem;
 	}
@@ -41,10 +43,22 @@
 @import 'nav.css';
 @import 'pizzas_classics.css';
 @import 'pizzas_veggie.css';
+@import 'trolly.css';
 
 /* ///////////////
   Reset
   ////////////// */
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	overflow-x: hidden;
+}
+.App {
+	overflow-x: hidden;
+}
 
 *,
 *::before,
@@ -119,7 +133,7 @@ h1 {
 h2 {
 	font-size: var(--fs-500);
 	font-family: var(--ff-sans);
-	font-weight: var(--fw-400);
+	font-weight: var(--fw-700);
 	text-decoration: none;
 }
 
@@ -140,6 +154,17 @@ h2 {
 
 .text-900 {
 	font-size: var(--fs-900);
+	font-weight: var(--fw-700);
+}
+
+.text-600 {
+	font-size: var(--fs-600);
+	font-weight: var(--fw-700);
+}
+
+.text-300 {
+	font-size: var(--fs-300);
+	font-weight: var(--fw-400);
 }
 
 .text-center {
@@ -161,6 +186,7 @@ h2 {
 	transition: all 200ms ease-in-out;
 	padding: 5px 10px;
 	border-radius: 100vw;
+	outline: none;
 }
 
 .btn-red {
@@ -168,22 +194,24 @@ h2 {
 	color: var(--clr-neutral-100);
 }
 
+.btn-plus {
+	background-color: var(--clr-accent-300);
+}
+
 .btn-blue {
 	background-color: transparent;
 	border: 1px solid var(--clr-accent-300);
-	color: var(--clr-neutral-200);
+	color: var(--clr-neutral-300);
 }
 
+.icon {
+	cursor: pointer;
+}
 /* .btn::after {
 	content: '\203A';
 	margin-left: 1em;
 	font-weight: var(--fw-300);
 } */
-
-.btn:hover,
-.bth:focus {
-	color: var(--clr-primary-400);
-}
 
 /* ///////////////
 General Layout
@@ -227,18 +255,16 @@ footer {
 	}
 
 	.split > * + * {
-		margin: 0 0 0 1rem;
+		margin: 0 0 0 1.6rem;
 	}
 	.container {
 		width: 84%;
 		margin: auto;
 	}
 	.App {
-		padding: 1rem 5rem;
+		padding: 1rem 5rem 0rem 5rem;
 	}
 }
-
-/* Helper Classes */
 
 /* ///////////////
   Helper Classes
@@ -254,4 +280,43 @@ footer {
 .bg-primary-400 {
 	background-color: var(--clr-accent-400);
 	color: var(--clr-neutral-100);
+}
+
+.bg-primary-dark {
+	background-color: var(--clr-neutral-300);
+	color: var(--clr-neutral-100);
+}
+
+.darken-background {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #d8d8d8a1;
+	pointer-events: none;
+	cursor: pointer;
+	opacity: 0;
+	transition: linear 800ms all;
+	z-index: 0;
+}
+
+.toggle-opacity {
+	opacity: 1;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.trolly-width-padding {
+	width: 80%;
+	padding: 0rem 2rem;
+	display: flex;
+	align-items: center;
+	margin: auto;
+}
+
+.display-none {
+	display: none;
 }

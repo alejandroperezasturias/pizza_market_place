@@ -1,75 +1,30 @@
-import React from 'react';
-import pizza_diavola from '../Images/pizza-diabola.svg';
+import { useState, useContext } from 'react';
 import arrow_white from '../Images/Arrow-white.svg';
+import Pizza from './Pizza.js';
+import { PizzaContext } from '../App.js';
 
 export default function Pizzas_Veggie() {
+	const { pizzas, toogleSideBar } = useContext(PizzaContext);
 	return (
-		<div className={'pizza-section pizza-section-veggie xl-space'}>
-			<div className="title flow-content">
-				<p className={'text-900'}>100%</p>
-				<p className={'text-900'}>Veggie</p>
-				<img src={arrow_white} alt="arrow pointing right"></img>
-			</div>
-			<div className="pizzas">
-				<div className={'flow-content split pizza'}>
-					<div className="image">
-						<img src={pizza_diavola} alt="pizza-diavola"></img>
-					</div>
-					<div className="pizza-info flow-content">
-						<h2>Diavola</h2>
-						<p>Lorem ipsum dolor sit amet.</p>
-						<p className="text-400">CZK 250</p>
-						<div className="split pizza-buttons-container">
-							<button className="btn btn-red ">I WANT</button>
-							<button className="btn  btn-blue">MAKE IT YOUR OWN</button>
-						</div>
-					</div>
+		<>
+			<div
+				className={
+					toogleSideBar
+						? 'pizza-section pizza-section-veggie xl-space display-none'
+						: 'pizza-section pizza-section-veggie xl-space '
+				}
+			>
+				<div className="title flow-content">
+					<p className={'text-900'}>100%</p>
+					<p className={'text-900'}>Veggie</p>
+					<img src={arrow_white} className="arrow"></img>
 				</div>
-				<div className={'flow-content split pizza'}>
-					<div className="image">
-						<img src={pizza_diavola} alt="pizza-diavola"></img>
-					</div>
-					<div className="pizza-info flow-content">
-						<h2>Diavola</h2>
-						<p>Lorem ipsum dolor sit amet.</p>
-						<p className="text-400">CZK 250</p>
-						<div className="split pizza-buttons-container">
-							<button className="btn btn-red ">I WANT</button>
-							<button className="btn btn-blue" btn-blue>
-								MAKE IT YOUR OWN
-							</button>
-						</div>
-					</div>
-				</div>
-				<div className={'flow-content split pizza'}>
-					<div className="image">
-						<img src={pizza_diavola} alt="pizza-diavola"></img>
-					</div>
-					<div className="pizza-info flow-content">
-						<h2>Diavola</h2>
-						<p>Lorem ipsum dolor sit amet.</p>
-						<p className="text-400">CZK 250</p>
-						<div className="split pizza-buttons-container">
-							<button className="btn btn-red">I WANT</button>
-							<button className="btn btn-blue">MAKE IT YOUR OWN</button>
-						</div>
-					</div>
-				</div>
-				<div className={'flow-content split pizza'}>
-					<div className="image">
-						<img src={pizza_diavola} alt="pizza-diavola"></img>
-					</div>
-					<div className="pizza-info flow-content">
-						<h2>Diavola</h2>
-						<p>Lorem ipsum dolor sit amet.</p>
-						<p className="text-400">CZK 250</p>
-						<div className="split pizza-buttons-container">
-							<button className="btn btn-red">I WANT</button>
-							<button className="btn btn-blue">MAKE IT YOUR OWN</button>
-						</div>
-					</div>
+				<div className="pizzas">
+					{pizzas.map((pizza) => {
+						if (pizza.vegetarian) return <Pizza pizza={pizza} key={pizza.id} />;
+					})}
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }

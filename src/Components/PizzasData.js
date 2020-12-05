@@ -1,0 +1,86 @@
+import pizza_diavola from '../Images/pizza-diabola.svg';
+
+export const PizzasData = () => {
+	return [
+		{
+			name: 'Pizza Margarita',
+			ingredients: [
+				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Tomato Sauce', basic: true },
+				{ ingredient: 'Oviles', basic: false },
+			],
+			image: pizza_diavola,
+			price: 230,
+			id: 'margarita1',
+			vegetarian: true,
+			vegan: false,
+			spicy: true,
+			all_time_favourite: true,
+			amount: 1,
+		},
+		{
+			name: 'Pizza Primavera',
+			ingredients: [
+				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Tomato Sauce', basic: true },
+				{ ingredient: 'Oviles', basic: false },
+			],
+			image: pizza_diavola,
+			id: 'primavera1',
+			price: 200,
+			vegetarian: true,
+			vegan: false,
+			spicy: false,
+			all_time_favourite: false,
+			amount: 1,
+		},
+		{
+			name: 'Pizza Bufffalina',
+			ingredients: [
+				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Tomato Sauce', basic: true },
+				{ ingredient: 'Oviles', basic: false },
+			],
+			image: pizza_diavola,
+			id: 'bufffalina1',
+			vegetarian: true,
+			vegan: false,
+			price: 240,
+			spicy: false,
+			all_time_favourite: false,
+			amount: 1,
+		},
+		{
+			name: 'Pizza Diavola',
+			ingredients: [
+				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Tomato Sauce', basic: true },
+				{ ingredient: 'Oviles', basic: false },
+			],
+			image: pizza_diavola,
+			id: 'diavola1',
+			vegetarian: false,
+			spicy: true,
+			price: 240,
+			vegan: false,
+			all_time_favourite: true,
+			amount: 1,
+		},
+		{
+			name: 'Pizza BBQ',
+			ingredients: [
+				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Tomato Sauce', basic: true },
+				{ ingredient: 'Oviles', basic: false },
+			],
+			image: pizza_diavola,
+			id: 'bbq1',
+			vegetarian: false,
+			price: 210,
+			spicy: false,
+			vegan: false,
+			all_time_favourite: true,
+			amount: 1,
+		},
+	];
+};

@@ -1,5 +1,10 @@
+.pizza-section-veggie {
+	border-top: 1px solid var(--clr-accent-400);
+}
+
 @media (min-width: 58em) {
 	.pizza-section-veggie {
+		border-top: none;
 		--flow-spacer: 5rem;
 		gap: 0em 1em;
 		grid-template-columns: repeat(4, minmax(60px, 60px)) repeat(12, 1fr);
@@ -13,6 +18,7 @@
 
 	.pizza-section-veggie .title {
 		background-color: var(--clr-accent-400);
+		color: var(--clr-neutral-100);
 		padding-top: 15rem;
 		border-radius: 1rem;
 	}

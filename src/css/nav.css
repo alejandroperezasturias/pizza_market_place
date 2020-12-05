@@ -1,50 +1,128 @@
 .nav {
 	text-align: center;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
 }
+
 .logo {
 	text-align: center;
 	width: 100%;
-	padding: 2rem 5rem;
+	padding: 1rem 5rem;
 }
 
 .logo img {
-	object-fit: cover;
 	margin: auto;
 }
 
+/* Putting all the links at the bottom without issue as the contact and about are hidden */
 .nav-links {
-	position: fixed;
-	border-radius: 100vw;
-	font-family: var(--ff-sans);
 	color: var(--clr-neutral-100);
+	padding: 0.2rem;
 }
 
-.nav-links {
-	bottom: 0.5em;
-	left: 0.5em;
-	right: 0.5em;
-	background: var(--clr-neutral-300);
-	padding: 0.5rem;
+/* Hide the nav links without animation */
+.about-contact-wrapper-visible {
+	display: none;
 }
 
-/* .trolly {
-	bottom: 1em;
-	left: 0.5em;
-	right: 0.5em;
-	text-align: center;
-	width: 40%;
-	margin: auto;
-	background: var(--clr-accent-300);
-	padding: 0.5rem;
-} */
-
-.nav-links ul {
+/* Pizzas drinks & trolly at the bottom position fixed */
+.pizza-drinks-wrapper,
+.trolly {
+	position: fixed;
+	border-radius: 1.8rem 1.8rem 0 0rem;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-family: var(--ff-sans);
+	padding: 1.3rem 3rem;
 	list-style: none;
+}
+
+.pizza-drinks-wrapper {
+	background-color: var(--clr-neutral-300);
+}
+/*  Trolly to the bottom */
+.trolly {
+	color: var(--clr-neutral-100);
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-end;
 	align-items: center;
-	margin: 0;
-	padding: 0.3em 0;
+}
+
+.trolly > * + * {
+	margin: 0 0 0 2em;
+}
+
+.trolly > span {
+	font-size: var(--fs-300);
+	line-height: 0;
+	color: rgb(215, 215, 215);
+}
+
+.trolly > div {
+	position: relative;
+}
+
+.nav-order-size {
+	position: absolute;
+	top: -6em;
+	right: -6.5em;
+	font-size: 0.17em;
+	background-color: var(--clr-neutral-100);
+	color: var(--clr-neutral-300);
+	padding: 1em 1.7em;
+	border-radius: 100vw;
+}
+
+.about-contact-wrapper,
+.pizza-drinks-wrapper {
+	display: flex;
+	list-style: none;
+}
+
+/* Flex row Gap */
+.pizza-drinks-wrapper > * + * {
+	margin: 0 0 0 3rem;
+}
+/* Flex Columns Gap */
+.about-contact-wrapper > * + * {
+	margin: 1rem 0 0 0;
+}
+
+.about-contact-wrapper {
+	position: fixed;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+	/* Matching the App padding */
+	padding-right: 1rem;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: red;
+	width: 100%;
+	font-size: var(--fs-600);
+	pointer-events: none;
+	z-index: 1;
+}
+/* Position the Burger Menu where it belongs */
+.burger {
+	position: relative;
+	z-index: 2;
+	padding: 0.5rem 0rem;
+	align-self: flex-end;
+}
+/* Styling the burger menu lines */
+.burger > div {
+	--flow-spacer: 0.31em;
+	width: 2rem;
+	height: 0.25rem;
+	border-radius: 10px;
+	transition: all 0.3s linear;
+	position: relative;
+	transform-origin: 1px;
 }
 
 @media (min-width: 58em) {
@@ -68,37 +146,81 @@
 
 	.trolly {
 		grid-area: trolly;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background-color: yellow;
 	}
 
+	.trolly > span {
+		margin-top: 1rem;
+		margin: 1rem auto;
+		font-size: var(--fs-300);
+		color: var(--clr-neutral-300);
+	}
+
+	.nav-order-size {
+		top: -6.5em;
+		right: -6.5em;
+		padding: 3em 1.8em;
+		line-height: 0;
+		width: 1.3rem;
+		text-align: center;
+		background-color: var(--clr-neutral-300);
+		color: var(--clr-neutral-100);
+	}
+
+	/* Resetting values for desktop version */
 	.nav-links,
-	.trolly {
+	.trolly,
+	.pizza-drinks-wrapper {
 		background: none;
 		position: static;
-		bottom: 0em;
-		left: 0em;
-		right: 0em;
-		border-radius: 0rem;
+		bottom: initial;
+		left: initial;
+		right: initial;
+		border-radius: initial;
 		color: var(--clr-neutral-300);
 		padding: 0 0;
 		text-align: initial;
 		width: auto;
 	}
-
+	/* Functionality to allow the split of the Nav links into the Burger and the Bottom */
 	.nav-links {
 		margin-bottom: 0;
 	}
 
 	.nav-links ul {
 		padding: 0 0;
+		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 	}
 
 	.nav-links ul > * + * {
 		margin: 0 0 0 3rem;
+		list-style: none;
 	}
 
 	.nav-links ul a {
 		color: inherit;
+	}
+
+	.about-contact-wrapper-visible {
+		display: flex;
+	}
+
+	.about-contact-wrapper-visible > * + * {
+		margin: 0 0 0 3rem;
+	}
+
+	.burger {
+		display: none;
+	}
+	/* Special Links with animations for the Mobile Version */
+	.about-contact-wrapper {
+		display: none;
 	}
 }
