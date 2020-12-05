@@ -41,10 +41,12 @@
 }
 
 .pizza-drinks-wrapper {
-	background-color: var(--clr-neutral-300);
+	z-index: 1;
+	right: 50%;
 }
 /*  Trolly to the bottom */
 .trolly {
+	background-color: var(--clr-neutral-300);
 	color: var(--clr-neutral-100);
 	display: flex;
 	justify-content: flex-end;
@@ -67,7 +69,7 @@
 
 .nav-order-size {
 	position: absolute;
-	top: -6em;
+	top: -0em;
 	right: -6.5em;
 	font-size: 0.17em;
 	background-color: var(--clr-neutral-100);
