@@ -108,7 +108,7 @@ export default function Nav() {
 							size={'lg'}
 							icon={faShoppingCart}
 							className={'icon'}
-							color="#242222" 
+							
 						/>
 						<motion.span
 							initial="close"

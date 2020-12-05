@@ -28,14 +28,14 @@ export default function Trolly() {
 		>
 			<div className={'trolly-header trolly-width-padding'}>
 				<FontAwesomeIcon
-					size={'1x'}
+					size={'lg'}
 					icon={faArrowAltCircleLeft}
 					className={'icon'}
 					onClick={() => setToogleSideBar(!toogleSideBar)}
 				/>
-				<h2 className={'text-500'}>My Cart</h2>
+				<h2 className={'text-600'}>My Cart</h2>
 				<FontAwesomeIcon
-					size={'1x'}
+					size={'lg'}
 					icon={faTrash}
 					className={'icon bin'}
 					onClick={handleEmptyTrolly}
@@ -54,7 +54,10 @@ export default function Trolly() {
 						: 'order-now flow-content'
 				}
 			>
-				<div className="order-total-info trolly-width-padding">
+				<div className="trolly-main-buttom-wrapper">
+					<button className="btn btn-red">ORDER NOW</button>
+				</div>
+				<div className="order-total-info">
 					<p className="text-300">
 						{totalOrderSize}
 						<span> Items</span>
@@ -63,9 +66,6 @@ export default function Trolly() {
 						<span>CZK </span>
 						{totalOrderPrice}
 					</p>
-				</div>
-				<div className="trolly-main-buttom-wrapper">
-					<button className="btn btn-red">ORDER NOW</button>
 				</div>
 			</div>
 		</motion.div>
