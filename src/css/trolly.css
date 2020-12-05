@@ -10,22 +10,23 @@
 	transition: 200ms all ease-in-out;
 	background-color: var(--clr-accent-300);
 	color: var(--clr-neutral-300);
-	z-index: 1;
+	z-index: 10;
 }
 
 .trolly-header {
 	justify-content: space-between;
 	align-items: center;
-	max-height: 10%;
+	height: 8%;
 }
 
 .trolly-list {
 	background-color: var(--clr-neutral-150);
 	width: 100%;
 	margin: auto;
-	height: 73%;
+	height: 60%;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	border-radius: 2rem;
 	overflow-y: scroll;
 	margin-top: var(--br);
@@ -37,12 +38,13 @@
 
 .trolly-item {
 	--flow-spacer: 0.5em;
+	display: flex;
 	background: var(--clr-neutral-100);
 	width: 80%;
 	margin: 2rem auto 0rem auto;
 	padding: 0.6rem 1.6rem;
 	border-radius: 2rem;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 	text-transform: uppercase;
 }
@@ -73,9 +75,9 @@
 .order-now {
 	--flow-spacer: 1em;
 	flex-direction: column;
-	margin: var(--br) auto auto auto;
+	margin: calc(var(--br) * 1.5) auto auto auto;
 	opacity: 0;
-	height: 15%;
+	/* padding-top: 2rem; */
 }
 
 .order-total-info {
@@ -86,6 +88,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: var(--bre);
 }
 .order-now .btn {
 	padding: 0.5rem 1.8rem;
@@ -95,5 +98,9 @@
 @media (min-width: 58em) {
 	.trolly-side-bar {
 		width: 40%;
+	}
+
+	.trolly-item {
+		flex-direction: row;
 	}
 }

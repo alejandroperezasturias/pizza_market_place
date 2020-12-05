@@ -37,7 +37,7 @@ export default function TrollyItem({ item }) {
 	return (
 		<motion.div
 			variants={trollyItemAnim}
-			className={'flow-content split trolly-item'}
+			className={'flow-content trolly-item'}
 		>
 			<div className="image">
 				<img src={image} alt="pizza-image"></img>
