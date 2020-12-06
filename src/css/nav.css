@@ -9,17 +9,19 @@
 .logo {
 	text-align: center;
 	width: 100%;
-	padding: 1rem 5rem;
 }
 
 .logo img {
 	margin: auto;
+	transform: scale(0.7);
 }
 
 /* Putting all the links at the bottom without issue as the contact and about are hidden */
 .nav-links {
 	color: var(--clr-neutral-100);
 	padding: 0.2rem;
+	/* display: none; */
+	height: 0;
 }
 
 /* Hide the nav links without animation */
@@ -144,6 +146,7 @@
 
 	.nav-links {
 		grid-area: nav-links;
+		height: initial;
 	}
 
 	.trolly {

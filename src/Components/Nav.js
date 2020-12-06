@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import logo from '../Images/logo.svg';
+import logo from '../Images/logox2.svg';
 import '../css/nav.css';
 import { PizzaContext } from '../App.js';
 import { motion } from 'framer-motion';
