@@ -13,7 +13,7 @@
 
 .logo img {
 	margin: auto;
-	transform: scale(0.7);
+	transform: scale(0.5);
 }
 
 /* Putting all the links at the bottom without issue as the contact and about are hidden */

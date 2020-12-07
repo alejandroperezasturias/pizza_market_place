@@ -108,10 +108,11 @@
 
 	.trolly-item {
 		flex-direction: row;
-		padding: 1rem 1rem;
+		padding: 0.3rem 1rem;
 	}
 
 	.trolly-list {
-		height: 57%;
+		margin-top: 4rem;
+		height: 65%;
 	}
 }

@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../Images/logox2.svg';
 import '../css/nav.css';
 import { PizzaContext } from '../App.js';
@@ -69,12 +70,16 @@ export default function Nav() {
 				>
 					<ul>
 						<div className={'pizza-drinks-wrapper'}>
-							<li>
-								<a>Pizza</a>
-							</li>
-							<li>
-								<a>Drinks</a>
-							</li>
+							<Link to={'/'} style={{ textDecoration: 'none' }}>
+								<li>
+									<a>Pizza</a>
+								</li>
+							</Link>
+							<Link to={'/drinks'} style={{ textDecoration: 'none' }}>
+								<li>
+									<a>Drinks</a>
+								</li>
+							</Link>
 						</div>
 						<div className={'about-contact-wrapper-visible'}>
 							<li>
@@ -108,7 +113,6 @@ export default function Nav() {
 							size={'lg'}
 							icon={faShoppingCart}
 							className={'icon'}
-							
 						/>
 						<motion.span
 							initial="close"
