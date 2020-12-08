@@ -2,18 +2,11 @@ import React, { useContext } from 'react';
 import chili from '../Images/chili_svg.svg';
 import leaf from '../Images/vegetarian_svg.svg';
 import { PizzaContext } from '../App.js';
+import { Link } from 'react-router-dom';
 
 export default function Pizza({ pizza }) {
-	const {
-		image,
-		ingredients,
-		name,
-		vegetarian,
-		spicy,
-		id,
-		price,
-	} = pizza;
-	const { handleAddToTrolly } = useContext(PizzaContext);
+	const { image, ingredients, name, vegetarian, spicy, id, price } = pizza;
+	const { handleAddToTrolly, setSelectedItemID } = useContext(PizzaContext);
 	return (
 		<div className={'flow-content split pizza'}>
 			<div className="image flow-content ">
@@ -45,15 +38,17 @@ export default function Pizza({ pizza }) {
 					{price}
 				</p>
 				<div className="split pizza-buttons-container">
-					<button
-						onClick={() => {
-							handleAddToTrolly(id);
-							
-						}}
-						className="btn btn-red "
-					>
-						I WANT
-					</button>
+					<Link to={`/pizza/:${id}`}>
+						<button
+							onClick={() => {
+								handleAddToTrolly(id);
+								setSelectedItemID(id);
+							}}
+							className="btn btn-red "
+						>
+							I WANT
+						</button>
+					</Link>
 				</div>
 			</div>
 		</div>

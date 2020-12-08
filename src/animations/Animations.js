@@ -13,7 +13,9 @@ export const burgerAnimation = {
 		opacity: 1,
 		x: '0%',
 		transition: {
+			type: 'spring',
 			duration: 0.2,
+			bounce: 0.5,
 			when: 'beforeChildren',
 			staggerChildren: 0.09,
 		},
@@ -90,5 +92,24 @@ export const spanQuantityAnimation = {
 	open: { scale: [1, 1.3, 1], transition: { duration: 0.2 } },
 	close: {
 		scale: 1,
+	},
+};
+
+// Modal Backdrop Opacity
+
+export const backDrop = {
+	open: { opacity: 1 },
+	close: { opacity: 0 },
+};
+
+export const modal = {
+	open: {
+		opacity: 1,
+		y: '0%',
+		transition: { delay: 0.1, type: 'spring', duration: 0.2, bounce: 0.3 },
+	},
+	close: {
+		opacity: 0,
+		y: '-300%',
 	},
 };

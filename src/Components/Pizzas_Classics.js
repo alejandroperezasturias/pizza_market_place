@@ -30,7 +30,6 @@ export default function Pizzas() {
 			</div>
 			<div className="pizzas">
 				{pizzas.map((pizza) => {
-					console.log(pizza)
 					if (pizza.all_time_favourite)
 						return <Pizza pizza={pizza} key={pizza.id} />;
 				})}

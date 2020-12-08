@@ -5,9 +5,9 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza Margarita',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Burrata', basic: false, amount: 1 },
 				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false },
+				{ ingredient: 'Oviles', basic: false, amount: 1 },
 			],
 			image: pizza_diavola,
 			price: 230,
@@ -21,9 +21,9 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza Primavera',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Burrata', basic: false, amount: 1 },
 				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false },
+				{ ingredient: 'Oviles', basic: false, amount: 1 },
 			],
 			image: pizza_diavola,
 			id: 'primavera1',
@@ -37,9 +37,9 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza Bufffalina',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Burrata', basic: false, amount: 1 },
 				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false },
+				{ ingredient: 'Oviles', basic: false, amount: 1 },
 			],
 			image: pizza_diavola,
 			id: 'bufffalina1',
@@ -53,9 +53,9 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza Diavola',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Burrata', basic: false, amount: 1 },
 				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false },
+				{ ingredient: 'Oviles', basic: false, amount: 1 },
 			],
 			image: pizza_diavola,
 			id: 'diavola1',
@@ -69,9 +69,9 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza BBQ',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false },
+				{ ingredient: 'Burrata', basic: false, amount: 1 },
 				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false },
+				{ ingredient: 'Oviles', basic: false, amount: 1 },
 			],
 			image: pizza_diavola,
 			id: 'bbq1',

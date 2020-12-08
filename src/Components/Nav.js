@@ -82,12 +82,16 @@ export default function Nav() {
 							</Link>
 						</div>
 						<div className={'about-contact-wrapper-visible'}>
-							<li>
-								<a className="overflow-hidden">About</a>
-							</li>
-							<li>
-								<a>Contact</a>
-							</li>
+							<Link to={'/about'} style={{ textDecoration: 'none' }}>
+								<li>
+									<a className="overflow-hidden">About</a>
+								</li>
+							</Link>
+							<Link to={'/contact'} style={{ textDecoration: 'none' }}>
+								<li>
+									<a>Contact</a>
+								</li>
+							</Link>
 						</div>
 						<motion.div
 							className={'about-contact-wrapper overflow-hidden'}

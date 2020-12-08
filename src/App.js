@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import './css/App.css';
 import Nav from './Components/Nav';
-import Pizza from './pages/Pizza';
+import Pizzas from './pages/Pizzas';
 import { PizzasData } from './Components/PizzasData';
 import Trolly from './Components/Trolly';
 import Drinks from './pages/Drinks';
+import About from './pages/About';
+import Contact from './pages/Contact';
 export const PizzaContext = React.createContext({});
 const LOCAL_STORAGE_KEY = 'the_5ht_hut_trolly';
 
@@ -16,6 +19,10 @@ function App() {
 	const [totalOrderPrice, setTotalOrderPrice] = useState(0);
 	const [totalOrderSize, setTotalOrderSize] = useState(0);
 	const [toogleSideBar, setToogleSideBar] = useState(false);
+	const [pizzaBuilderOn, setPizzaBuilderOn] = useState();
+	const [selectedItemID, setSelectedItemID] = useState();
+
+	const selectedItem = pizzas.find((pizza) => pizza.id === selectedItemID);
 
 	useEffect(() => {
 		const itemsJson = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -43,7 +50,6 @@ function App() {
 		const itemSelected = pizzas.find((pizza) => pizza.id === id);
 		// Check if the recipe is already added
 		if (trollyItems.find((item) => item.id === id)) {
-			console.log('we have it');
 			return;
 		}
 		// If it is not added to trolly
@@ -74,28 +80,35 @@ function App() {
 		totalOrderPrice,
 		totalOrderSize,
 		handleModifyPizza,
+		pizzaBuilderOn,
+		setPizzaBuilderOn,
+		setSelectedItemID,
+		selectedItem,
 	};
+
 	return (
 		<>
-			<Router>
-				<PizzaContext.Provider value={pizzaContextValue}>
-					<div className="App">
-						<Nav />
-						<switch>
-							<Route path="/" exact component={Pizza} />
-							<Route path="/drinks" strict component={Drinks} />
-						</switch>
-						<Trolly />
-						<div
-							className={
-								toogleSideBar
-									? 'darken-background toggle-opacity'
-									: 'darken-background'
-							}
-						></div>
-					</div>
-				</PizzaContext.Provider>
-			</Router>
+			<PizzaContext.Provider value={pizzaContextValue}>
+				<div className="App">
+					<Nav />
+
+					<Switch>
+						<Route path={['/pizza/:id', '/']} exact component={Pizzas} />
+						<Route path="/drinks" strict component={Drinks} />
+						<Route path="/about" strict component={About} />
+						<Route path="/contact" strict component={Contact} />
+					</Switch>
+
+					<Trolly />
+					<div
+						className={
+							toogleSideBar
+								? 'darken-background toggle-opacity'
+								: 'darken-background'
+						}
+					></div>
+				</div>
+			</PizzaContext.Provider>
 		</>
 	);
 }
