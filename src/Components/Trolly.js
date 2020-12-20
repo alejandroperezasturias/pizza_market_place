@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faArrowAltCircleLeft,
@@ -19,12 +19,22 @@ export default function Trolly() {
 		totalOrderPrice,
 		totalOrderSize,
 	} = useContext(PizzaContext);
+
+	// Prevent Scrolling
+	let targetElement = document.querySelector('html');
+	useEffect(() => {
+		toogleSideBar
+			? targetElement.classList.add('no-scroll-two')
+			: targetElement.classList.remove('no-scroll-two');
+	});
+	//
+
 	return (
 		<motion.div
 			initial="close"
 			animate={toogleSideBar ? 'open' : 'close'}
 			variants={burgerAnimation}
-			className=" trolly-side-bar"
+			className="trolly-side-bar"
 		>
 			<div className={'trolly-header trolly-width-padding'}>
 				<FontAwesomeIcon
@@ -67,7 +77,6 @@ export default function Trolly() {
 				<div className="trolly-main-buttom-wrapper">
 					<button className="btn btn-red">ORDER NOW</button>
 				</div>
-				
 			</div>
 		</motion.div>
 	);

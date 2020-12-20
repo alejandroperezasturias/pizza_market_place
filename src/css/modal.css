@@ -11,11 +11,136 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 }
-.modal {
+
+.modal,
+.modal-image {
 	width: 50%;
 	padding: var(--br);
-	margin: auto;
-	text-align: center;
-	border-radius: 3rem;
+	/* margin: auto; */
+	text-align: left;
+	border-radius: 0rem;
+	height: 100%;
+	opacity: 1;
+}
+
+.modal {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: var(--br) 10rem;
+}
+
+.modal-wrapper {
+	--flow-spacer: 2em;
+}
+
+.modal-image {
+	background: white;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.modal-image > img {
+	width: 100%;
+}
+
+.pizzaDetail-name-wrapper {
+	--xl-space: 3.5rem;
+}
+
+.pizzaDetail-name {
+	font-family: var(--ff-accent);
+	font-size: var(--fs-600);
+}
+
+.pizzaDetail-ingredients > p:not(:last-child)::after {
+	content: '|';
+	padding-left: 25.6px;
+	color: var(--clr-neutral-100);
+	font-weight: var(--fw-400);
+}
+
+.pizzaDetail-characteristic {
+	padding: 0.3em 0.5em;
+	border-radius: 100vw;
+	background-color: #f58062;
+}
+
+.pizzaDetail-Extra-Ingredients {
+	--flow-spacer: 1.2em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.test-pizza-detail {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pizzaDetail-quantity {
+	--xl-space: 3.5rem;
+	--spacer-horizontal: 2rem;
+	display: flex;
+	align-items: center;
+}
+
+.pizzaDetail-quantity > * {
+	color: whitesmoke;
+}
+
+.btn.pizzaDetail-button-back {
+	padding: 0;
+	color: var(--clr-neutral-100);
+	font-size: var(--fs-400);
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+}
+
+.pizzaDetail-buttom-price-wrapper {
+	--xl-space: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.btn.pizzaDetail-button-add {
+	padding: 1em 2em;
+	font-size: var(--fs-4§00);
+	color: var(--clr-neutral-300);
+	transition: all 200ms ease;
+}
+
+.switch {
+	width: 30px;
+	height: 7px;
+	background-color: rgba(255, 255, 255, 0.742);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border-radius: 50px;
+	padding: 7px 2px;
+	cursor: pointer;
+}
+
+.switch[data-ison='true'] {
+	justify-content: flex-end;
+	background-color: #4bd763;
+}
+
+.handle {
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	border-radius: 40px;
+}
+
+@media (min-width: 58em) {
+	.backdrop {
+		flex-direction: row;
+		justify-content: center;
+	}
 }

@@ -21,9 +21,20 @@ export default function Nav() {
 		toogleSideBar,
 		totalOrderPrice,
 		totalOrderSize,
+		pathname,
 	} = useContext(PizzaContext);
 	const [isOpen, setIsOpen] = useState(false);
 	const [animateSpanAmount, setAnimateSpanAmount] = useState(false);
+
+	// Prevent Scrolling
+	let targetElement = document.querySelector('html');
+	useEffect(() => {
+		toogleSideBar
+			? targetElement.classList.add('no-scroll-two')
+			: targetElement.classList.remove('no-scroll-two');
+	});
+
+	//
 
 	useEffect(() => {
 		setAnimateSpanAmount(!animateSpanAmount);
@@ -70,26 +81,80 @@ export default function Nav() {
 				>
 					<ul>
 						<div className={'pizza-drinks-wrapper'}>
-							<Link to={'/'} style={{ textDecoration: 'none' }}>
-								<li>
-									<a>Pizza</a>
+							<Link
+								to={'/'}
+								style={
+									pathname === '/'
+										? { textDecoration: 'none', fontWeight: '900' }
+										: { textDecoration: 'none', fontWeight: 'initial' }
+								}
+								className={'navigation-link'}
+							>
+								<li
+									className={
+										pathname === '/' ? 'navigation-link-underline-active' : ''
+									}
+								>
+									Pizza
 								</li>
 							</Link>
-							<Link to={'/drinks'} style={{ textDecoration: 'none' }}>
-								<li>
-									<a>Drinks</a>
+							<Link
+								to={'/drinks'}
+								style={
+									pathname === '/drinks'
+										? { textDecoration: 'none', fontWeight: '900' }
+										: { textDecoration: 'none', fontWeight: 'initial' }
+								}
+								className={'navigation-link'}
+							>
+								<li
+									className={
+										pathname === '/drinks'
+											? 'navigation-link-underline-active'
+											: ''
+									}
+								>
+									Drinks
 								</li>
 							</Link>
 						</div>
 						<div className={'about-contact-wrapper-visible'}>
-							<Link to={'/about'} style={{ textDecoration: 'none' }}>
-								<li>
-									<a className="overflow-hidden">About</a>
+							<Link
+								to={'/about'}
+								style={
+									pathname === '/about'
+										? { textDecoration: 'none', fontWeight: '900' }
+										: { textDecoration: 'none', fontWeight: 'initial' }
+								}
+								className={'navigation-link'}
+							>
+								<li
+									className={
+										pathname === '/about'
+											? 'navigation-link-underline-active'
+											: ''
+									}
+								>
+									About
 								</li>
 							</Link>
-							<Link to={'/contact'} style={{ textDecoration: 'none' }}>
-								<li>
-									<a>Contact</a>
+							<Link
+								to={'/contact'}
+								style={
+									pathname === '/contact'
+										? { textDecoration: 'none', fontWeight: '900' }
+										: { textDecoration: 'none', fontWeight: 'initial' }
+								}
+								className={'navigation-link'}
+							>
+								<li
+									className={
+										pathname === '/contact'
+											? 'navigation-link-underline-active'
+											: ''
+									}
+								>
+									Contact
 								</li>
 							</Link>
 						</div>

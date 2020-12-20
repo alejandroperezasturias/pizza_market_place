@@ -5,7 +5,7 @@ import Pizza from './Pizza.js';
 import { PizzaContext } from '../App.js';
 
 export default function Pizzas() {
-	const { pizzas, toogleSideBar, setToogleSideBar } = useContext(PizzaContext);
+	const { pizzas, toogleSideBar, setToogleSideBar,  itemModifier} = useContext(PizzaContext);
 
 	return (
 		<motion.div
@@ -31,7 +31,7 @@ export default function Pizzas() {
 			<div className="pizzas">
 				{pizzas.map((pizza) => {
 					if (pizza.all_time_favourite)
-						return <Pizza pizza={pizza} key={pizza.id} />;
+						return <Pizza pizza={pizza} key={pizza.id}/>;
 				})}
 			</div>
 		</motion.div>

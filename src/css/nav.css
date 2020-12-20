@@ -1,6 +1,5 @@
 .nav {
 	text-align: center;
-	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	text-transform: uppercase;
@@ -9,6 +8,7 @@
 .logo {
 	text-align: center;
 	width: 100%;
+	cursor: pointer;
 }
 
 .logo img {
@@ -19,6 +19,7 @@
 /* Putting all the links at the bottom without issue as the contact and about are hidden */
 .nav-links {
 	color: var(--clr-neutral-100);
+	cursor: pointer;
 	padding: 0.2rem;
 	/* display: none; */
 	height: 0;
@@ -53,6 +54,7 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	cursor: pointer;
 }
 
 .trolly > * + * {
@@ -127,6 +129,32 @@
 	transition: all 0.3s linear;
 	position: relative;
 	transform-origin: 1px;
+}
+
+.navigation-link li {
+	position: relative;
+	transition: all 200ms ease-out;
+}
+
+.navigation-link li::after {
+	content: '';
+	position: relative;
+	display: block;
+	bottom: -4px;
+	height: 0.15rem;
+	width: 100%;
+	transform: scale(0, 1);
+	background: black;
+	border-radius: 100vw;
+	transition: all 250ms ease-in-out;
+}
+
+.navigation-link li:hover::after {
+	transform: scale(1, 1);
+}
+
+.navigation-link-underline-active::after {
+	transform: initial !important;
 }
 
 @media (min-width: 58em) {
