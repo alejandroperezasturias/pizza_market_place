@@ -97,14 +97,14 @@ export default function TrollyItem({ item }) {
 					</div>
 					<div className="trolly-item-control flow-content">
 						<FontAwesomeIcon
-							size={'lg'}
+							size={'2x'}
 							icon={faPlusCircle}
 							className={'icon plus'}
 							onClick={handleSetQuantityUp}
 						/>
 						<p className="text-400 text-center no-select">{quantity}</p>
 						<FontAwesomeIcon
-							size={'lg'}
+							size={'2x'}
 							icon={faMinusCircle}
 							className={'icon minus'}
 							onClick={handleSetQuantityDown}

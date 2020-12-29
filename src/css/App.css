@@ -210,7 +210,8 @@ h2 {
 .btn-red {
 	background-color: var(--clr-accent-400);
 	color: var(--clr-neutral-100);
-	font-size: var(--fs-200);
+	padding: 0.6rem 1.5rem;
+	font-size: var(--fs-300);
 }
 
 .btn-plus {

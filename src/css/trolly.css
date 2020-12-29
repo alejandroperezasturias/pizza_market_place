@@ -20,7 +20,7 @@
 }
 
 .trolly-side-bar {
-	padding: 4rem 0rem 0rem 0rem;
+	padding: 3.5rem 0rem 0rem 0rem;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -63,7 +63,7 @@
 	background: var(--clr-neutral-100);
 	width: 90%;
 	margin: 2rem auto 0rem auto;
-	padding: 3rem 1rem;
+	padding: 2rem 2rem;
 	border-radius: 2rem;
 	justify-content: space-between;
 	align-items: center;
@@ -142,16 +142,22 @@
 @media (min-width: 58em) {
 	.trolly-side-bar {
 		width: 35%;
+		padding: 5rem 0rem 0rem 0rem;
 	}
 
 	.trolly-item {
 		flex-direction: row;
 		width: 80%;
-		padding: 0.3rem 1rem;
+		padding: 1rem 1rem;
 	}
 
 	.trolly-list {
 		margin-top: 4rem;
 		height: 65%;
+	}
+
+	.plus,
+	.minus {
+		font-size: 1rem;
 	}
 }

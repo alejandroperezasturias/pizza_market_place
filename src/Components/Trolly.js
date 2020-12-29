@@ -108,14 +108,25 @@ export default function Trolly() {
 			>
 				<div className={'trolly-header trolly-width-padding'}>
 					<FontAwesomeIcon
-						size={'lg'}
+						size={'2x'}
 						icon={faArrowAltCircleLeft}
 						className={'icon'}
 						onClick={() => setToogleSideBar(!toogleSideBar)}
 					/>
-					<h2 className={'text-600'}>My Cart</h2>
+					<div className="trolly-main-buttom-wrapper">
+						<button
+							role="link"
+							onClick={() => {
+								setToogleSideBar(!toogleSideBar);
+								handleClick();
+							}}
+							className="btn btn-red text-400"
+						>
+							ORDER NOW
+						</button>
+					</div>
 					<FontAwesomeIcon
-						size={'lg'}
+						size={'2x'}
 						icon={faTrash}
 						className={'icon bin'}
 						onClick={handleEmptyTrolly}
@@ -143,18 +154,6 @@ export default function Trolly() {
 							<span>CZK </span>
 							{totalOrderPrice}
 						</p>
-					</div>
-					<div className="trolly-main-buttom-wrapper">
-						<button
-							role="link"
-							onClick={() => {
-								setToogleSideBar(!toogleSideBar);
-								handleClick();
-							}}
-							className="btn btn-red"
-						>
-							ORDER NOW
-						</button>
 					</div>
 				</div>
 			</motion.div>
