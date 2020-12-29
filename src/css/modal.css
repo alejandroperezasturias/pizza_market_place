@@ -1,118 +1,99 @@
-.backdrop {
+.modal-backdrop {
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	width: 100%;
-	height: 100%;
-	background: #76d9f474;
-	z-index: 1;
+	background: white;
+	z-index: 2;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
 
-.modal,
-.modal-image {
-	width: 50%;
-	padding: var(--br);
-	/* margin: auto; */
-	text-align: left;
-	border-radius: 0rem;
-	height: 100%;
-	opacity: 1;
-}
-
-.modal {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: var(--br) 10rem;
-}
-
 .modal-wrapper {
-	--flow-spacer: 2em;
-}
-
-.modal-image {
-	background: white;
-	display: flex;
-	justify-content: center;
-	overflow: hidden;
-}
-
-.modal-image > img {
+	--flow-spacer: 2rem;
 	width: 100%;
 }
 
-.pizzaDetail-name-wrapper {
-	--xl-space: 3.5rem;
+.modal,
+.modal-image {
+	/* padding: 1em; */
+	text-align: left;
+	border-radius: 0rem;
+	width: 100%;
+	opacity: 1;
 }
 
-.pizzaDetail-name {
+.modal-image {
+	height: 25%;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.modal {
+	height: 75%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 2rem;
+}
+
+.btn.modal-button-back {
+	padding: 0;
+	color: var(--clr-neutral-100);
+	font-size: var(--fs-300);
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+}
+
+.modal-name-wrapper {
+	--xl-space: 2.2rem;
+}
+
+.modal-name {
 	font-family: var(--ff-accent);
 	font-size: var(--fs-600);
+	opacity: 1 !important;
 }
 
-.pizzaDetail-ingredients > p:not(:last-child)::after {
+.modal-ingredients {
+	display: flex;
+}
+
+.modal-ingredients > p:not(:last-child)::after {
 	content: '|';
-	padding-left: 25.6px;
+	padding: 0px 10px;
 	color: var(--clr-neutral-100);
 	font-weight: var(--fw-400);
 }
 
-.pizzaDetail-characteristic {
+.modal-characteristic {
 	padding: 0.3em 0.5em;
 	border-radius: 100vw;
 	background-color: #f58062;
 }
 
-.pizzaDetail-Extra-Ingredients {
-	--flow-spacer: 1.2em;
+.modal-Switch-container,
+.modal-Extra-Ingredients {
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
-}
-
-.test-pizza-detail {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.pizzaDetail-quantity {
-	--xl-space: 3.5rem;
-	--spacer-horizontal: 2rem;
-	display: flex;
 	align-items: center;
 }
 
-.pizzaDetail-quantity > * {
-	color: whitesmoke;
+.modal-Extra-Ingredients > * + * {
+	margin: 0rem 0rem 0rem var(--spacer-horizontal, 1rem);
 }
 
-.btn.pizzaDetail-button-back {
-	padding: 0;
-	color: var(--clr-neutral-100);
-	font-size: var(--fs-400);
-	text-decoration: underline;
-	text-underline-offset: 0.3em;
+.modal-Switch-container > * + * {
+	margin: 0rem 0rem 0rem var(--spacer-horizontal, 1rem);
 }
 
-.pizzaDetail-buttom-price-wrapper {
-	--xl-space: 2rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-.btn.pizzaDetail-button-add {
-	padding: 1em 2em;
-	font-size: var(--fs-4§00);
-	color: var(--clr-neutral-300);
-	transition: all 200ms ease;
-}
+/* Switch */
 
 .switch {
 	width: 30px;
@@ -138,9 +119,103 @@
 	border-radius: 40px;
 }
 
+/* //////// */
+
+.modal-quantity {
+	--xl-space: 2.2rem;
+	--spacer-horizontal: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+.modal-quantity > * {
+	color: whitesmoke;
+}
+
+.modal-buttom-price-wrapper {
+	--xl-space: 1.3rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.btn.modal-button-add {
+	padding: 1em 2em;
+	font-size: var(--fs-300);
+	color: var(--clr-neutral-300);
+	transition: all 200ms ease;
+}
+
+.plus_modal {
+	font-size: 1.8em;
+}
+
+.minus_modal {
+	font-size: 1.5em;
+}
+.modal-Extra-Ingredients {
+	--flow-spacer: 1.2em;
+}
+
+.modal-intro-wrapper {
+	--flow-spacer: 1.2em;
+}
+
 @media (min-width: 58em) {
-	.backdrop {
+	.modal-backdrop {
 		flex-direction: row;
-		justify-content: center;
+	}
+
+	.modal {
+		flex-direction: column;
+		padding: var(--br) 11rem;
+	}
+
+	.modal-wrapper {
+		--flow-spacer: 3.9em;
+	}
+
+	.modal,
+	.modal-image {
+		width: 50%;
+		height: 100%;
+		opacity: 1;
+	}
+
+	.modal-image {
+		height: 100%;
+	}
+
+	.modal-intro-wrapper {
+		--flow-spacer: 1.2em;
+	}
+
+	.modal-name-wrapper {
+		--xl-space: 3.5rem;
+	}
+
+	.modal-ingredients > p:not(:last-child)::after {
+		padding: 25.6px;
+	}
+
+	.modal-Extra-Ingredients {
+		--flow-spacer: 1.2em;
+	}
+
+	.modal-quantity {
+		--xl-space: 3.5rem;
+		--spacer-horizontal: 1.5rem;
+	}
+
+	.modal-quantity > * {
+		color: whitesmoke;
+	}
+
+	.modal-buttom-price-wrapper {
+		--xl-space: 2em;
+	}
+
+	.btn.modal-button-add {
+		padding: 0.7em 2em;
+		font-size: var(--fs-300);
 	}
 }

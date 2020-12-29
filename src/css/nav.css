@@ -73,12 +73,12 @@
 
 .nav-order-size {
 	position: absolute;
-	top: -1.4em;
-	right: -1.6em;
-	font-size: 0.7em;
+	top: -9.4em;
+	right: -7.9em;
+	font-size: 0.1rem;
 	background-color: var(--clr-neutral-100);
 	color: var(--clr-neutral-300);
-	padding: 0.2em 0.5em;
+	padding: 0.9em 2em;
 	border-radius: 100vw;
 }
 
@@ -194,13 +194,13 @@
 	}
 
 	.nav-order-size {
-		top: -6.5em;
+		top: -7.8em;
 		right: -6.5em;
-		padding: 3em 1.8em;
+		padding: 3.8em 1.8em;
 		line-height: 0;
 		width: 1.3rem;
 		text-align: center;
-		font-size: 0.2em;
+		font-size: var(--fs-200);
 		background-color: var(--clr-neutral-300);
 		color: var(--clr-neutral-100);
 	}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Pizza from './Pizza.js';
 import { PizzaContext } from '../App.js';
 
-export default function Pizzas() {
+export default function PizzasClassic() {
 	const { pizzas, toogleSideBar, setToogleSideBar,  itemModifier} = useContext(PizzaContext);
 
 	return (

@@ -31,11 +31,17 @@
 	--flow-spacer: 1rem;
 }
 
+.pizza-info-name {
+	opacity: 1 !important;
+}
+
 .pizza > .image {
 	margin: auto;
 }
 
 .pizza-buttons-container > .btn {
+	padding: 1em 2em;
+	font-size: var(--fs-300);
 	align-self: center;
 }
 
@@ -134,7 +140,7 @@
 	.pizzas {
 		display: flex;
 		flex-direction: column;
-		margin-top: 1.5rem;
+		margin-top: 1rem;
 	}
 
 	.arrow {
@@ -148,41 +154,28 @@
 	}
 	.quote {
 		border-radius: 0 0 0 0;
-		padding: 0rem 2rem;
+		padding: 0rem 3rem;
 	}
 
 	.title {
-		padding: 0rem 3rem;
+		padding: 2rem 3rem;
 		border-radius: 0 0 1rem 1rem;
 	}
 
 	.name {
 		position: relative;
 		text-align: center;
-	}
-
-	.name::after {
-		position: absolute;
-		display: block;
-		content: '';
-		top: -50%;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: var(--clr-accent-300);
-		z-index: -1;
+		opacity: 1;
 	}
 
 	.image {
 		display: flex;
 		flex-direction: column;
 	}
-	.quote > p::after {
-		display: block;
-	}
 
-	.quote > p {
-		padding: 1.4rem;
-		position: relative;
+	.pizza-buttons-container .btn {
+		padding: 0.5em 2em;
+		text-transform: capitalize;
+		font-size: var(--fs-300);
 	}
 }

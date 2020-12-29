@@ -29,11 +29,10 @@ export default function Nav() {
 	// Prevent Scrolling
 	let targetElement = document.querySelector('html');
 	useEffect(() => {
-		toogleSideBar
+		isOpen
 			? targetElement.classList.add('no-scroll-two')
 			: targetElement.classList.remove('no-scroll-two');
 	});
-
 	//
 
 	useEffect(() => {
@@ -193,7 +192,7 @@ export default function Nav() {
 						</motion.span>
 					</div>
 
-					<span>CZK{totalOrderPrice}</span>
+					<span className="text-200">CZK {totalOrderPrice}</span>
 				</div>
 			</nav>
 		</header>

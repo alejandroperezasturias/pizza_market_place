@@ -58,9 +58,10 @@ export const trollyItemAnim = {
 // First line
 
 export const lineOneBurger = {
-	open: { rotate: 45, background: 'white' },
+	open: { rotate: 45, translateY: -3, background: 'white' },
 	close: {
 		rotate: 0,
+		translateY: 0,
 		background: 'var(--clr-neutral-300)',
 		transition: { duration: 0.1 },
 	},
@@ -149,5 +150,37 @@ export const trollyItem = {
 	close: {
 		opacity: 0,
 		x: '-300%',
+	},
+};
+
+// Checkout
+
+export const holdUp = {
+	close: {
+		y: 0,
+	},
+	open: {
+		y: 0,
+		transition: {
+			delayChildren: 0.1,
+			staggerChildren: 0.1,
+			staggerDirection: 1,
+		},
+	},
+};
+
+export const letter = {
+	close: {
+		y: -400,
+	},
+	open: {
+		y: 0,
+		transition: {
+			duration: 0.4,
+			ease: 'easeOut',
+			yoyo: Infinity,
+
+			repeatDelay: 0.8,
+		},
 	},
 };

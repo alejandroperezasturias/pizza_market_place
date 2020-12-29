@@ -8,6 +8,7 @@ import Trolly from './Components/Trolly';
 import Drinks from './pages/Drinks';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Checkout from './pages/Checkout';
 import { uid } from 'uid';
 export const PizzaContext = React.createContext({});
 const LOCAL_STORAGE_KEY = 'the_5ht_hut_trolly';
@@ -20,44 +21,32 @@ function App() {
 	const [totalOrderSize, setTotalOrderSize] = useState(0);
 	const [toogleSideBar, setToogleSideBar] = useState(false);
 	const [togglePizzaModifier, seTogglePizzaModifier] = useState(false);
-	const [pizzaBuilderOn, setPizzaBuilderOn] = useState();
+	// const [pizzaBuilderOn, setPizzaBuilderOn] = useState();
 	const [itemModifier, setItemModifer] = useState();
-	const [pizzaSelectedID, setPizzaSelectedID] = useState();
 	const [alreadyInTrolly, setAlreadyInTrolly] = useState(false);
 
-	const handleAddToItemModifier = (id) => {
-		seTogglePizzaModifier(true);
-		const itemSelected = pizzas.find((pizza) => pizza.id === id);
-		setItemModifer({ ...itemSelected, price: itemSelected.price + 30 });
-	};
-
+	// Handle openning and clossing the modal. As soon as we have the right id in the path, we instantiate the item modifier with the item.
+	// Check Pizzas.js to see the conditional that prevents the app from crassing with the annoying undefiened error.
 	const { pathname } = useLocation();
-
 	useEffect(() => {
 		if (pathname.split('/')[2]) {
 			seTogglePizzaModifier(true);
 			const itemSelected = pizzas.find(
-				(pizza) => pizza.id === pathname.split('/')[2].substring(1)
+				(pizza) => pizza.id === pathname.split('/')[2].substring(0)
 			);
-			setItemModifer({ ...itemSelected });
+
+			setItemModifer({ ...itemSelected, price: itemSelected.price + 30 });
 		}
-		console.log(pathname);
 	}, [pathname]);
 
-	// On Click I want
-	// We filledUp the selectedItem with the selected Pizza And we add the pizza to the Middleman
-	// We passed selectedItem to the Modal
-	// Any changes in the Modal will be pushed to the Middleman List
-	// On Click Add to Basket
-	// We look for the item in the middleman array, is the pizza already in trolly? If not! then add it.
-	// I need to make the previous methodoogy better as different pizzas witth different extra should be allowed in the trolly
-
+	// Retrieve Items from LocalStorage
 	useEffect(() => {
 		const itemsJson = localStorage.getItem(LOCAL_STORAGE_KEY);
 		if (itemsJson != null) setTrollyItems(JSON.parse(itemsJson));
 		if (trollyItems.length > 0) setItemsInTheTrolly(true);
 	}, []);
 
+	// Trolly modifications
 	useEffect(() => {
 		// Check if we have items in the trolly
 		if (trollyItems.length > 0) setItemsInTheTrolly(true);
@@ -73,6 +62,19 @@ function App() {
 		// Update localStorage
 		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(trollyItems));
 	}, [trollyItems]);
+
+	// Check it the item is already in the trolly
+	useEffect(() => {
+		if (itemModifier) {
+			const inTreTrollyAlready = trollyItems.find(
+				(item) =>
+					JSON.stringify(itemModifier.ingredients) ===
+					JSON.stringify(item.ingredients)
+			);
+
+			inTreTrollyAlready ? setAlreadyInTrolly(true) : setAlreadyInTrolly(false);
+		}
+	}, [itemModifier]);
 
 	const handleAddToTrolly = () => {
 		const itemSelected = { ...itemModifier };
@@ -96,11 +98,19 @@ function App() {
 
 		// If it is not added to trolly
 		itemSelected.id = uid(5);
+
+		let extra_cost = 0;
+		itemSelected.ingredients.forEach((item) =>
+			item.extra ? (extra_cost += 30) : ''
+		);
+
+		itemSelected.extra_cost = extra_cost;
 		setTrollyItems((items) => {
 			return [...items, itemSelected];
 		});
 	};
 
+	
 	const handleEmptyTrolly = () => {
 		setTrollyItems([]);
 	};
@@ -119,20 +129,6 @@ function App() {
 	const handleModifyPizza = (change) => {
 		setItemModifer({ ...itemModifier, ...change });
 	};
-
-	useEffect(() => {
-		const inTreTrollyAlready = trollyItems.find(
-			(item) =>
-				JSON.stringify(itemModifier.ingredients) ===
-				JSON.stringify(item.ingredients)
-		);
-
-		inTreTrollyAlready ? setAlreadyInTrolly(true) : setAlreadyInTrolly(false);
-	}, [itemModifier]);
-
-	useEffect(() => {
-		console.log(itemModifier);
-	}, [itemModifier]);
 
 	const handleModifyTrollyItem = (modifiedPizza, item) => {
 		const newPizzas = [...trollyItems];
@@ -154,9 +150,8 @@ function App() {
 		totalOrderPrice,
 		totalOrderSize,
 		handleModifyPizza,
-		pizzaBuilderOn,
-		setPizzaBuilderOn,
-		handleAddToItemModifier,
+		// pizzaBuilderOn,
+		// setPizzaBuilderOn,
 		handleModifyTrollyItem,
 		handleDeleteTrollyItem,
 		itemModifier,
@@ -164,7 +159,6 @@ function App() {
 		togglePizzaModifier,
 		alreadyInTrolly,
 		setItemModifer,
-		setPizzaSelectedID,
 		pathname,
 	};
 
@@ -172,23 +166,17 @@ function App() {
 		<>
 			<PizzaContext.Provider value={pizzaContextValue}>
 				<div className="App">
-					<Nav />
+					{pathname === '/checkout' ? '' : <Nav />}
 
 					<Switch>
 						<Route path={['/pizza/:id', '/']} exact component={Pizzas} />
 						<Route path="/drinks" strict component={Drinks} />
 						<Route path="/about" strict component={About} />
 						<Route path="/contact" strict component={Contact} />
+						<Route path="/checkout" strict component={Checkout} />
 					</Switch>
 
 					<Trolly />
-					<div
-						className={
-							toogleSideBar
-								? 'darken-background toggle-opacity'
-								: 'darken-background'
-						}
-					></div>
 				</div>
 			</PizzaContext.Provider>
 		</>
