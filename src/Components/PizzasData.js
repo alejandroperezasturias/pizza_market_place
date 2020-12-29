@@ -5,14 +5,14 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza Margarita',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false, amount: 1 },
-				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false, amount: 1 },
+				{ ingredient: 'Burrata', basic: false, extra: false, id: 'burrata1' },
+				{ ingredient: 'Tomato Sauce', basic: true, id: 'tomato_sauce' },
+				{ ingredient: 'Olives', basic: false, extra: false, id: 'olives1' },
 			],
 			image: pizza_diavola,
 			price: 230,
-			id: 'margarita1',
-			vegetarian: true,
+			id: 'margarita',
+			vegetarian: false,
 			vegan: false,
 			spicy: true,
 			all_time_favourite: true,
@@ -21,9 +21,9 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza Primavera',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false, amount: 1 },
-				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false, amount: 1 },
+				{ ingredient: 'Burrata', basic: false, extra: false, id: 'burrata2' },
+				{ ingredient: 'Tomato Sauce', basic: true, id: 'tomato_sauce2' },
+				{ ingredient: 'Olives', basic: false, extra: false, id: 'olives2' },
 			],
 			image: pizza_diavola,
 			id: 'primavera1',
@@ -37,9 +37,9 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza Bufffalina',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false, amount: 1 },
-				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false, amount: 1 },
+				{ ingredient: 'Burrata', basic: false, extra: false, id: 'burrata3' },
+				{ ingredient: 'Tomato Sauce', basic: true, id: 'tomato_sauce3' },
+				{ ingredient: 'Olives', basic: false, extra: false, id: 'olives3' },
 			],
 			image: pizza_diavola,
 			id: 'bufffalina1',
@@ -53,9 +53,9 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza Diavola',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false, amount: 1 },
-				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false, amount: 1 },
+				{ ingredient: 'Burrata', basic: false, extra: false, id: 'burrata4' },
+				{ ingredient: 'Tomato Sauce', basic: true, id: 'tomato_sauce4' },
+				{ ingredient: 'Olives', basic: false, extra: false, id: 'olives4' },
 			],
 			image: pizza_diavola,
 			id: 'diavola1',
@@ -69,12 +69,12 @@ export const PizzasData = () => {
 		{
 			name: 'Pizza BBQ',
 			ingredients: [
-				{ ingredient: 'Burrata', basic: false, amount: 1 },
-				{ ingredient: 'Tomato Sauce', basic: true },
-				{ ingredient: 'Oviles', basic: false, amount: 1 },
+				{ ingredient: 'Burrata', basic: false, extra: false, id: 'burrata5' },
+				{ ingredient: 'Tomato Sauce', basic: true, id: 'tomato_sauce5' },
+				{ ingredient: 'Olives', basic: false, extra: false, id: 'olives5' },
 			],
 			image: pizza_diavola,
-			id: 'bbq1',
+			id: 'bbq4',
 			vegetarian: false,
 			price: 210,
 			spicy: false,

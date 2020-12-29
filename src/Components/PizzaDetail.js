@@ -1,56 +1,216 @@
-import React, { useContext } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { backDrop, modal } from '../animations/Animations';
+import React, { useContext, useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import Switch from './switch';
+import { motion } from 'framer-motion';
+import { backDrop, transionTitle, imageModal } from '../animations/Animations';
 import { Link } from 'react-router-dom';
 import { PizzaContext } from '../App.js';
 import chili from '../Images/chili_svg.svg';
 import leaf from '../Images/vegetarian_svg.svg';
 
 export default function PizzaDetail() {
-	const { selectedItem } = useContext(PizzaContext);
+	const {
+		handleModifyPizza,
+		handleAddToTrolly,
+		togglePizzaModifier,
+		seTogglePizzaModifier,
+		alreadyInTrolly,
+		itemModifier,
+		setItemModifer,
+	} = useContext(PizzaContext);
+	// const [note, setNote] = useState();
+
+	// Useparams from rooter to query the product info
+	// const { id } = useParams();
+	// let product;
+	// id
+	// 	? (product = pizzas.find((pizza) => pizza.id === id.substring(1)))
+	// 	: (product = pizzas[0]);
+
+	// console.log(pizzaBuilderOn.substring(1));
+
+	// Prevent Scrolling
+	let targetElement = document.querySelector('html');
+	useEffect(() => {
+		togglePizzaModifier
+			? targetElement.classList.add('no-scroll')
+			: targetElement.classList.remove('no-scroll');
+	});
+	//
+
+	const handleIngredientChange = (id, ingredient, priceIncrease) => {
+		const newIngredients = [...itemModifier.ingredients];
+		let newPrice = itemModifier.price;
+		const indexIngredient = newIngredients.findIndex((r) => r.id === id);
+		newIngredients[indexIngredient] = {
+			...newIngredients[indexIngredient],
+			...ingredient,
+		};
+
+		handleModifyPizza({
+			...itemModifier,
+			ingredients: newIngredients,
+			price: newPrice - priceIncrease,
+		});
+	};
+
+	const handleAmountChange = (quantity) => {
+		let newAmount = itemModifier.amount;
+
+		newAmount = newAmount - quantity;
+
+		newAmount = newAmount < 1 ? (newAmount = 1) : newAmount;
+
+		handleModifyPizza({ ...itemModifier, amount: newAmount });
+	};
+
+	// const handleChangeNote = (text) => {
+	// 	setNote(text);
+	// };
+
 	return (
 		<>
-			{selectedItem && (
-				<AnimatePresence exitBeforeEnter>
-					<motion.div
-						className="backdrop"
-						variants={backDrop}
-						initial="close"
-						animate="open"
-						exit="close"
-					>
-						<motion.div
-							variants={modal}
-							className="modal bg-primary-400 flow-content"
-						>
-							<h2>{selectedItem.name}</h2>
-							<div className={'split center-center'}>
-								{selectedItem.vegetarian && (
-									<div className="characteristic">
-										<img src={leaf} alt="vegetarian emoji"></img>
-										<p className="text-300">vegetarian</p>
-									</div>
-								)}
-								{selectedItem.spicy && (
-									<div className="characteristic">
-										<img src={chili} alt="spicy emoji"></img>
-										<p className="text-300">spicy</p>
-									</div>
-								)}
+			{itemModifier && (
+				<div
+					className="modal-backdrop"
+					variants={backDrop}
+					initial="close"
+					animate="open"
+					exit="close"
+				>
+					<div className={'modal-image'}>
+						<motion.div variants={imageModal}>
+							<img src={itemModifier.image} alt={itemModifier.name}></img>
+						</motion.div>
+					</div>
+
+					<div className="modal bg-primary-400">
+						<div className="flow-content modal-wrapper">
+							<Link to="/">
+								<button
+									onClick={() => {
+										seTogglePizzaModifier(false);
+										setItemModifer(undefined);
+									}}
+									className={'btn modal-button-back'}
+								>
+									Back To Menu
+								</button>
+							</Link>
+							<div className="modal-intro-wrapper flow-content">
+								<div className="modal-name-wrapper xl-space">
+									<motion.h2
+										variants={transionTitle}
+										layoutId={`card-name-container-${itemModifier.id}`}
+										className={'modal-name'}
+									>
+										{itemModifier.name}
+									</motion.h2>
+								</div>
+								<div className={'modal-ingredients'}>
+									{itemModifier.ingredients.map((ingredient, index) => {
+										return (
+											<p className="text-300" key={index}>
+												{ingredient.ingredient}
+											</p>
+										);
+									})}
+								</div>
+								<div className={'modal-ingredients'}>
+									{itemModifier.vegetarian && (
+										<div className="modal-characteristic characteristic  ">
+											<img src={leaf} alt="vegetarian emoji"></img>
+											<p className="text-300">vegetarian</p>
+										</div>
+									)}
+									{itemModifier.spicy && (
+										<div className="modal-characteristic characteristic  ">
+											<img src={chili} alt="spicy emoji"></img>
+											<p className="text-300">spicy</p>
+										</div>
+									)}
+								</div>
 							</div>
-							<div>
-								{selectedItem.ingredients.map((ingredient, index) => {
-									return <p key={index}>{ingredient.ingredient}</p>;
+							<div className="modal-Extra-Ingredients-wrapper flow-content">
+								<h2 className={'text-500'}>Make It Your Own</h2>
+								{itemModifier.ingredients.map((ingredient, index) => {
+									if (!ingredient.basic) {
+										return (
+											<div className="modal-Extra-Ingredients" key={index}>
+												<div className="modal-Switch-container">
+													<p className="text-300">
+														Extra {ingredient.ingredient}?
+													</p>
+													<Switch
+														handleIngredientChange={handleIngredientChange}
+														id={ingredient.id}
+													/>
+												</div>
+												<div className="test-pizza-detail">
+													<p className="text-300">CZK 30</p>
+												</div>
+											</div>
+										);
+									}
 								})}
 							</div>
-							<h2>Etra Drinks</h2>
-							<input typeof="text"></input>
-							<Link to="/">
-								<button className={'btn'}>Close</button>
-							</Link>
-						</motion.div>
-					</motion.div>
-				</AnimatePresence>
+							{/* <input
+									onChange={(e) => handleChangeNote(e.target.value)}
+									typeof="text"
+								></input> */}
+
+							<div className="modal-quantity flex-gap-horizontal xl-space">
+								<div
+									onClick={() => {
+										handleAmountChange(-1);
+									}}
+								>
+									<FontAwesomeIcon
+										size={'2x'}
+										icon={faPlusCircle}
+										className={'icon plus_modal'}
+										style={{ color: 'white' }}
+									/>
+								</div>
+								<p className="text-400 text-center no-select">
+									{itemModifier.amount}
+								</p>
+								<div
+									onClick={() => {
+										handleAmountChange(1);
+									}}
+								>
+									<FontAwesomeIcon
+										size={'2x'}
+										icon={faMinusCircle}
+										className={'icon minus_modal'}
+									/>
+								</div>
+							</div>
+							<div className="modal-buttom-price-wrapper xl-space">
+								<Link to="/">
+									<motion.button
+										onClick={() => {
+											handleAddToTrolly(itemModifier.id);
+											setItemModifer(undefined);
+											seTogglePizzaModifier(false);
+										}}
+										className={'btn bg-primary-300 modal-button-add no-select'}
+									>
+										{alreadyInTrolly
+											? 'Already In the Trolly'
+											: 'Add To Basket'}
+									</motion.button>
+								</Link>
+								<p className="text-300 no-select">
+									<span>CZK </span>
+									{itemModifier.price}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			)}
 		</>
 	);

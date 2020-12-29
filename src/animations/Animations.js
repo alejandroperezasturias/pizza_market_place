@@ -13,9 +13,9 @@ export const burgerAnimation = {
 		opacity: 1,
 		x: '0%',
 		transition: {
-			type: 'spring',
-			duration: 0.2,
-			bounce: 0.5,
+			delay: 0.1,
+			duration: 0.1,
+			ease: 'easeOut',
 			when: 'beforeChildren',
 			staggerChildren: 0.09,
 		},
@@ -58,9 +58,10 @@ export const trollyItemAnim = {
 // First line
 
 export const lineOneBurger = {
-	open: { rotate: 45, background: 'white' },
+	open: { rotate: 45, translateY: -3, background: 'white' },
 	close: {
 		rotate: 0,
+		translateY: 0,
 		background: 'var(--clr-neutral-300)',
 		transition: { duration: 0.1 },
 	},
@@ -98,18 +99,101 @@ export const spanQuantityAnimation = {
 // Modal Backdrop Opacity
 
 export const backDrop = {
-	open: { opacity: 1 },
-	close: { opacity: 0 },
-};
-
-export const modal = {
 	open: {
 		opacity: 1,
-		y: '0%',
-		transition: { delay: 0.1, type: 'spring', duration: 0.2, bounce: 0.3 },
+		transition: {
+			duration: 0,
+			ease: 'easeOut',
+		},
 	},
 	close: {
 		opacity: 0,
-		y: '-300%',
+		transition: {
+			duration: 0,
+		},
 	},
+};
+
+export const transionTitle = {
+	open: {
+		opacity: 1,
+	},
+};
+
+export const imageModal = {
+	open: {
+		x: '0%',
+		transition: { ease: 'easeOut', duration: 0.2, delay: 0.1 },
+	},
+	close: {
+		x: '300%',
+		transition: {
+			duration: 0,
+		},
+	},
+};
+
+export const spring = {
+	type: 'spring',
+	stiffness: 700,
+	damping: 30,
+};
+
+// Trolly Item
+
+export const trollyItem = {
+	open: {
+		opacity: 1,
+		x: '0%',
+		transition: { ease: 'easeOut', duration: 0.2 },
+	},
+	close: {
+		opacity: 0,
+		x: '-300%',
+	},
+};
+
+// Checkout
+
+export const holdUp = {
+	close: {
+		y: 0,
+	},
+	open: {
+		y: 0,
+		transition: {
+			delayChildren: 0.1,
+			staggerChildren: 0.04,
+			staggerDirection: 1,
+		},
+	},
+};
+
+export const letter = {
+	close: {
+		y: -400,
+	},
+	open: {
+		y: 0,
+		transition: {
+			duration: 0.5,
+			ease: 'easeOut',
+			yoyo: Infinity,
+			repeatDelay: 1,
+		},
+	},
+};
+
+const getData = async () => {
+	try {
+		const data = await fetch('https://jsonplaceholder.typicode.com/users/20');
+		if (data.ok) {
+			const json = await data.json();
+			console.log(json.map((user) => user.name));
+		} else {
+			console.log('failure');
+		}
+	} catch (e) {
+		console.error(e);
+	}
 };

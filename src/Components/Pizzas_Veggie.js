@@ -4,16 +4,10 @@ import Pizza from './Pizza.js';
 import { PizzaContext } from '../App.js';
 
 export default function Pizzas_Veggie() {
-	const { pizzas, toogleSideBar } = useContext(PizzaContext);
+	const { pizzas } = useContext(PizzaContext);
 	return (
 		<>
-			<div
-				className={
-					toogleSideBar
-						? 'pizza-section pizza-section-veggie xl-space display-none'
-						: 'pizza-section pizza-section-veggie xl-space '
-				}
-			>
+			<div className={'pizza-section pizza-section-veggie xl-space '}>
 				<div className="title flow-content">
 					<p className={'text-900'}>100%</p>
 					<p className={'text-900'}>Veggie</p>

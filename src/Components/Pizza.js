@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import chili from '../Images/chili_svg.svg';
 import leaf from '../Images/vegetarian_svg.svg';
-import { PizzaContext } from '../App.js';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export default function Pizza({ pizza }) {
 	const { image, ingredients, name, vegetarian, spicy, id, price } = pizza;
-	const { handleAddToTrolly, setSelectedItemID } = useContext(PizzaContext);
 	return (
 		<div className={'flow-content split pizza'}>
 			<div className="image flow-content ">
@@ -27,10 +26,15 @@ export default function Pizza({ pizza }) {
 				</div>
 			</div>
 			<div className="pizza-info flow-content">
-				<h2>{name}</h2>
+				<motion.h2
+					className="pizza-info-name"
+					layoutId={`card-name-container-${id}`}
+				>
+					{name}
+				</motion.h2>
 				<div className={'pizza-ingredients-wrapper'}>
 					{ingredients.map((ingredient, index) => {
-						return <p key={index}>{ingredient.ingredient}</p>;
+						return <p className="text-300" key={index}>{ingredient.ingredient}</p>;
 					})}
 				</div>
 				<p className="text-400">
@@ -38,16 +42,8 @@ export default function Pizza({ pizza }) {
 					{price}
 				</p>
 				<div className="split pizza-buttons-container">
-					<Link to={`/pizza/:${id}`}>
-						<button
-							onClick={() => {
-								handleAddToTrolly(id);
-								setSelectedItemID(id);
-							}}
-							className="btn btn-red "
-						>
-							I WANT
-						</button>
+					<Link to={`/pizza/${id}`}>
+						<button className="btn btn-red ">I WANT</button>
 					</Link>
 				</div>
 			</div>

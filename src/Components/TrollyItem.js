@@ -1,17 +1,25 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'framer-motion';
-import { trollyItemAnim } from '../animations/Animations';
+import { motion, AnimatePresence } from 'framer-motion';
+import { trollyItemAnim, trollyItem } from '../animations/Animations';
 import { PizzaContext } from '../App';
 
 export default function TrollyItem({ item }) {
-	const { handleModifyPizza } = useContext(PizzaContext);
-	const { image, name, price, id, amount } = item;
+	const { handleModifyTrollyItem, handleDeleteTrollyItem } = useContext(
+		PizzaContext
+	);
+	const { image, name, price, ingredients, amount } = item;
 	const [quantity, setQuantity] = useState(amount);
+	const [iQuantityZero, setQuantityZero] = useState(false);
 
 	// Increase the Quantity
 	const handleSetQuantityUp = () => {
+		setQuantity((previousQuantity) => (previousQuantity += 1));
+	};
+
+	// Keep the item
+	const handleKeepTheItem = () => {
 		setQuantity((previousQuantity) => (previousQuantity += 1));
 	};
 
@@ -21,6 +29,7 @@ export default function TrollyItem({ item }) {
 			if (previousQuantity < 1) {
 				return (previousQuantity = 0);
 			} else {
+				setQuantityZero(false);
 				return (previousQuantity -= 1);
 			}
 		});
@@ -31,39 +40,78 @@ export default function TrollyItem({ item }) {
 	};
 
 	useEffect(() => {
-		handleModifyPizza(handleChange(), id);
+		handleModifyTrollyItem(handleChange(), item);
+		if (quantity === 0) return setQuantityZero(true);
+		if (quantity > 0) return setQuantityZero(false);
 	}, [quantity]);
 
 	return (
-		<motion.div
-			variants={trollyItemAnim}
-			className={'trolly-item'}
-		>
-			<div className="image">
-				<img src={image} alt="pizza-image"></img>
-			</div>
-			<div className="trolly-intem-info flow-content">
-				<h2 className="text-300">{name}</h2>
-				<p className="text-400">
-					<span>CZK </span>
-					{price}
-				</p>
-			</div>
-			<div className="trolly-item-control flow-content">
-				<FontAwesomeIcon
-					size={'lg'}
-					icon={faPlusCircle}
-					className={'icon plus'}
-					onClick={handleSetQuantityUp}
-				/>
-				<p className="text-400 text-center">{amount}</p>
-				<FontAwesomeIcon
-					size={'lg'}
-					icon={faMinusCircle}
-					className={'icon minus'}
-					onClick={handleSetQuantityDown}
-				/>
-			</div>
-		</motion.div>
+		<>
+			<AnimatePresence exitBeforeEnter>
+				<motion.div
+					variants={trollyItemAnim}
+					className={'trolly-item flex-gap-horizontal'}
+				>
+					<div className="image">
+						<img src={image} alt="pizza-image"></img>
+					</div>
+					<AnimatePresence exitBeforeEnter>
+						{iQuantityZero && (
+							<motion.div
+								className={'delete-item-pop-up flex-gap-horizontal'}
+								variants={trollyItem}
+								initial="close"
+								animate="open"
+								exit="close"
+							>
+								<h3>Do you want to delete this item?</h3>
+								<button
+									onClick={() => {
+										handleDeleteTrollyItem(item);
+									}}
+									className="btn btn-red"
+								>
+									Delete Me
+								</button>
+								<button onClick={handleKeepTheItem} className="btn btn-white">
+									Keep Me
+								</button>
+							</motion.div>
+						)}
+					</AnimatePresence>
+					<div className="trolly-intem-info flow-content">
+						<h2 className="text-300">{name}</h2>
+						{ingredients.map((i, index) => {
+							if (i.extra) {
+								return (
+									<p className="text-200 no-select" key={index}>
+										Extra {i.ingredient}
+									</p>
+								);
+							}
+						})}
+						<p className="text-400 no-select">
+							<span>CZK </span>
+							{price}
+						</p>
+					</div>
+					<div className="trolly-item-control flow-content">
+						<FontAwesomeIcon
+							size={'lg'}
+							icon={faPlusCircle}
+							className={'icon plus'}
+							onClick={handleSetQuantityUp}
+						/>
+						<p className="text-400 text-center no-select">{quantity}</p>
+						<FontAwesomeIcon
+							size={'lg'}
+							icon={faMinusCircle}
+							className={'icon minus'}
+							onClick={handleSetQuantityDown}
+						/>
+					</div>
+				</motion.div>
+			</AnimatePresence>
+		</>
 	);
 }
