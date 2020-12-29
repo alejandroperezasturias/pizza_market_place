@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import arrow_black from '../Images/Arrow-black.svg';
 import { motion } from 'framer-motion';
 import Pizza from './Pizza.js';
@@ -6,6 +7,10 @@ import { PizzaContext } from '../App.js';
 
 export default function DrinksNonAlcoholic() {
 	const { pizzas, toogleSideBar, setToogleSideBar } = useContext(PizzaContext);
+	const location = useLocation(
+		
+	)
+	console.log(location)
 
 	return (
 		<motion.div
