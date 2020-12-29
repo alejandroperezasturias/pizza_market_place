@@ -196,7 +196,7 @@ export default function PizzaDetail() {
 											setItemModifer(undefined);
 											seTogglePizzaModifier(false);
 										}}
-										className={'btn bg-primary-300 modal-button-add no-select'}
+										className={'btn btn-blue no-select'}
 									>
 										{alreadyInTrolly
 											? 'Already In the Trolly'

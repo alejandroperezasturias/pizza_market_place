@@ -224,10 +224,17 @@ h2 {
 	font-size: var(--fs-200);
 }
 
+.btn-red-small {
+	background-color: var(--clr-accent-400);
+	color: var(--clr-neutral-100);
+	font-size: var(--fs-200);
+}
+
 .btn-blue {
-	background-color: transparent;
-	border: 1px solid var(--clr-accent-300);
-	color: var(--clr-neutral-300);
+	background-color: var(--clr-accent-300);
+	color: var(--clr-neutral-100);
+	padding: 0.6rem 1.5rem;
+	font-size: var(--fs-300);
 }
 
 .icon {

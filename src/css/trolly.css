@@ -61,7 +61,7 @@
 	--flow-spacer: 0.5em;
 	display: flex;
 	background: var(--clr-neutral-100);
-	width: 90%;
+	width: 95%;
 	margin: 1.2rem auto 0rem auto;
 	padding: 2.5rem 1.5rem;
 	border-radius: 2rem;
@@ -116,7 +116,7 @@
 
 .order-now {
 	--flow-spacer: 1.5em;
-	margin: calc(var(--br) * 1.1) auto auto auto;
+	margin: calc(var(--br) * 0.9) auto auto auto;
 	opacity: 0;
 	width: 80%;
 	padding: 0rem 2rem;
@@ -148,7 +148,7 @@
 	.trolly-item {
 		flex-direction: row;
 		width: 80%;
-		padding: 1rem 1rem;
+		padding: 1.2rem 1.5rem;
 	}
 
 	.trolly-list {

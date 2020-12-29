@@ -138,12 +138,6 @@
 	align-items: center;
 	justify-content: space-between;
 }
-.btn.modal-button-add {
-	padding: 1em 2em;
-	font-size: var(--fs-300);
-	color: var(--clr-neutral-300);
-	transition: all 200ms ease;
-}
 
 .plus_modal {
 	font-size: 1.8em;

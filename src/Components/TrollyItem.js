@@ -69,7 +69,7 @@ export default function TrollyItem({ item }) {
 									onClick={() => {
 										handleDeleteTrollyItem(item);
 									}}
-									className="btn btn-red"
+									className="btn btn-red-small"
 								>
 									Delete Me
 								</button>
