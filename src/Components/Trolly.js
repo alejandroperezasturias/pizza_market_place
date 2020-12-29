@@ -179,15 +179,7 @@ export default function Trolly() {
 						<motion.h1 variants={letter}>d</motion.h1>
 						<motion.h1 variants={letter}>i</motion.h1>
 						<motion.h1 variants={letter}>n</motion.h1>
-						<motion.h1 variants={letter}>g </motion.h1>
-						<motion.h1 variants={letter}> C</motion.h1>
-						<motion.h1 variants={letter}>h</motion.h1>
-						<motion.h1 variants={letter}>e</motion.h1>
-						<motion.h1 variants={letter}>c</motion.h1>
-						<motion.h1 variants={letter}>k</motion.h1>
-						<motion.h1 variants={letter}>o</motion.h1>
-						<motion.h1 variants={letter}>u</motion.h1>
-						<motion.h1 variants={letter}>t</motion.h1>
+						<motion.h1 variants={letter}>g</motion.h1>
 					</motion.div>
 				</div>
 			)}

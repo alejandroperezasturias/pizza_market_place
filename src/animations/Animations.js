@@ -163,7 +163,7 @@ export const holdUp = {
 		y: 0,
 		transition: {
 			delayChildren: 0.1,
-			staggerChildren: 0.1,
+			staggerChildren: 0.04,
 			staggerDirection: 1,
 		},
 	},
@@ -176,11 +176,24 @@ export const letter = {
 	open: {
 		y: 0,
 		transition: {
-			duration: 0.4,
+			duration: 0.5,
 			ease: 'easeOut',
 			yoyo: Infinity,
-
-			repeatDelay: 0.8,
+			repeatDelay: 1,
 		},
 	},
+};
+
+const getData = async () => {
+	try {
+		const data = await fetch('https://jsonplaceholder.typicode.com/users/20');
+		if (data.ok) {
+			const json = await data.json();
+			console.log(json.map((user) => user.name));
+		} else {
+			console.log('failure');
+		}
+	} catch (e) {
+		console.error(e);
+	}
 };
