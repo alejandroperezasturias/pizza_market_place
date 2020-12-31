@@ -67,16 +67,14 @@ export default function Nav() {
 						variants={lineThreeBurger}
 					></motion.div>
 				</div>
-				<a href="" aria-label="pizza-page" className="logo flow-content">
+				<a href="" aria-label="pizza-page" className="logo">
 					<div>
 						<img src={logo} alt="img/logo.svg" />
 					</div>
 				</a>
 				<div
 					className="nav-links"
-					onClick={() => {
-						return toogleSideBar ? setToogleSideBar(false) : '';
-					}}
+					
 				>
 					<ul>
 						<div className={'pizza-drinks-wrapper'}>
@@ -94,7 +92,7 @@ export default function Nav() {
 										pathname === '/' ? 'navigation-link-underline-active' : ''
 									}
 								>
-									Pizza
+									<a>Pizza</a>
 								</li>
 							</Link>
 							<Link
@@ -113,7 +111,7 @@ export default function Nav() {
 											: ''
 									}
 								>
-									Drinks
+									<a>Drinks</a>
 								</li>
 							</Link>
 						</div>
@@ -134,7 +132,7 @@ export default function Nav() {
 											: ''
 									}
 								>
-									About
+									<a>About</a>
 								</li>
 							</Link>
 							<Link
@@ -153,7 +151,7 @@ export default function Nav() {
 											: ''
 									}
 								>
-									Contact
+									<a>Contact</a>
 								</li>
 							</Link>
 						</div>
@@ -178,9 +176,8 @@ export default function Nav() {
 				>
 					<div>
 						<FontAwesomeIcon
-							size={'lg'}
 							icon={faShoppingCart}
-							className={'icon'}
+							className={'trolly-icon'}
 						/>
 						<motion.span
 							initial="close"
@@ -192,7 +189,7 @@ export default function Nav() {
 						</motion.span>
 					</div>
 
-					<span className="text-200">CZK {totalOrderPrice}</span>
+					<span>CZK {totalOrderPrice}</span>
 				</div>
 			</nav>
 		</header>

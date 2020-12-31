@@ -183,17 +183,3 @@ export const letter = {
 		},
 	},
 };
-
-const getData = async () => {
-	try {
-		const data = await fetch('https://jsonplaceholder.typicode.com/users/20');
-		if (data.ok) {
-			const json = await data.json();
-			console.log(json.map((user) => user.name));
-		} else {
-			console.log('failure');
-		}
-	} catch (e) {
-		console.error(e);
-	}
-};

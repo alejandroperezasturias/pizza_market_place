@@ -43,7 +43,7 @@ export default function Pizza({ pizza }) {
 				</p>
 				<div className="split pizza-buttons-container">
 					<Link to={`/pizza/${id}`}>
-						<button className="btn btn-red ">I WANT</button>
+						<button className="btn btn-red">I WANT</button>
 					</Link>
 				</div>
 			</div>

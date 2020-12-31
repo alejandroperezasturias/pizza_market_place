@@ -39,13 +39,19 @@
 	left: 0;
 	right: 0;
 	font-family: var(--ff-sans);
-	padding: 1.7rem 3rem;
+	padding: 1.8rem 2rem;
 	list-style: none;
 }
 
 .pizza-drinks-wrapper {
 	z-index: 1;
+	pointer-events: ALL;
 	right: 50%;
+}
+
+.pizza-drinks-wrapper a {
+	color: var(--clr-neutral-100);
+	font-size: var(--fs-500);
 }
 /*  Trolly to the bottom */
 .trolly {
@@ -57,12 +63,12 @@
 	cursor: pointer;
 }
 
-.trolly > * + * {
-	margin: 0 0 0 2em;
+.trolly-icon {
+	font-size: var(--fs-500);
 }
 
 .trolly > span {
-	font-size: var(--fs-300);
+	font-size: var(--fs-100);
 	line-height: 0;
 	color: rgb(215, 215, 215);
 }
@@ -73,13 +79,15 @@
 
 .nav-order-size {
 	position: absolute;
-	top: -9.4em;
-	right: -7.9em;
-	font-size: 0.1rem;
+	top: -1.6em;
+	right: -1.4em;
+	font-size: var(--fs-100);
 	background-color: var(--clr-neutral-100);
 	color: var(--clr-neutral-300);
-	padding: 0.9em 2em;
+	padding: 0.2em 0.5em;
 	border-radius: 100vw;
+	display: flex;
+	align-items: center;
 }
 
 .about-contact-wrapper,
@@ -89,12 +97,17 @@
 }
 
 /* Flex row Gap */
+.trolly > * + * {
+	margin: 0 0 0 calc(var(--br) / 2);
+}
+
+/* Flex row Gap */
 .pizza-drinks-wrapper > * + * {
-	margin: 0 0 0 3rem;
+	margin: 0 0 0 var(--br);
 }
 /* Flex Columns Gap */
 .about-contact-wrapper > * + * {
-	margin: 1rem 0 0 0;
+	margin: var(--br) 0 0 0;
 }
 
 .about-contact-wrapper {
@@ -144,7 +157,7 @@
 	height: 0.15rem;
 	width: 100%;
 	transform: scale(0, 1);
-	background: black;
+	background: var(--clr-neutral-100);
 	border-radius: 100vw;
 	transition: all 250ms ease-in-out;
 }
@@ -183,20 +196,19 @@
 		align-items: center;
 		flex-direction: column;
 		justify-content: center;
-		background-color: yellow;
 	}
 
 	.trolly > span {
 		margin-top: 1rem;
 		margin: 1rem auto;
-		font-size: var(--fs-300);
+		font-size: var(--fs-200);
 		color: var(--clr-neutral-300);
 	}
 
 	.nav-order-size {
-		top: -7.8em;
+		top: -7.9em;
 		right: -6.5em;
-		padding: 3.8em 1.8em;
+		padding: 4em 1.8em;
 		line-height: 0;
 		width: 1.3rem;
 		text-align: center;
@@ -234,20 +246,28 @@
 	}
 
 	.nav-links ul > * + * {
-		margin: 0 0 0 3rem;
+		margin: 0 0 0 var(--br);
 		list-style: none;
 	}
 
-	.nav-links ul a {
+	.nav-links ul {
 		color: inherit;
 	}
 
+	.pizza-drinks-wrapper a {
+		color: var(--clr-neutral-300);
+	}
 	.about-contact-wrapper-visible {
 		display: flex;
 	}
 
+	.about-contact-wrapper-visible a {
+		font-size: var(--fs-500);
+		color: var(--clr-neutral-300);
+	}
+
 	.about-contact-wrapper-visible > * + * {
-		margin: 0 0 0 3rem;
+		margin: 0 0 0 var(--br);
 	}
 
 	.burger {
@@ -256,5 +276,9 @@
 	/* Special Links with animations for the Mobile Version */
 	.about-contact-wrapper {
 		display: none;
+	}
+
+	.navigation-link li::after {
+		background-color: var(--clr-neutral-300);
 	}
 }
