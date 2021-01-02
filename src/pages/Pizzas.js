@@ -9,7 +9,6 @@ export default function Pizza() {
 
 	const { itemModifier } = useContext(PizzaContext);
 
-	console.log(itemModifier)
 	return (
 		<div>
 			<AnimatePresence exitBeforeEnter >{itemModifier && <PizzaDetail />}</AnimatePresence>

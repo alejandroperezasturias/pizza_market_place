@@ -6,10 +6,6 @@
 	bottom: 0;
 	background: rgba(210, 210, 210, 0.735);
 	z-index: 2;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 }
 
 .modal-backdrop.checkout {
@@ -20,53 +16,53 @@
 }
 
 .trolly-side-bar {
-	padding: 3.5rem 0rem 0rem 0rem;
+	padding: 0;
 	position: fixed;
 	top: 0;
 	left: 0;
 	transform: translatex(+100%);
 	height: 100vh;
 	width: 100%;
-	margin: auto;
 	transition: 200ms all ease-in-out;
 	background-color: var(--clr-accent-300);
 	color: var(--clr-neutral-300);
 	z-index: 10;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
 }
 
 .trolly-header {
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 3%;
+	width: 100%;
+	padding: 2.5rem 2rem 0rem 2rem;
 }
 
 .trolly-list {
 	background-color: var(--clr-neutral-150);
 	width: 100%;
-	margin: auto;
-	height: 70%;
 	display: flex;
 	flex-direction: column;
+	place-items: center;
 	border-radius: 2rem;
 	overflow-y: scroll;
-	margin-top: var(--br);
-	padding: 0.7rem 0.5rem;
+	padding: calc(var(--br) / 2) calc(var(--br) / 2);
 }
 
-/* .trolly-list > * + * {
-	margin: var(--br) 0rem 0rem 0rem;
-} */
+.trolly-list > * + * {
+	margin: calc(var(--br) / 2) 0rem 0rem 0rem;
+}
 
 .trolly-item {
-	--flow-spacer: 0.5em;
+	--flow-spacer: calc(var(--br) / 4);
 	display: flex;
-	background: var(--clr-neutral-100);
-	width: 95%;
-	margin: 1.2rem auto 0rem auto;
-	padding: 2.5rem 1.5rem;
-	border-radius: 2rem;
 	justify-content: space-between;
 	align-items: center;
+	background: var(--clr-neutral-100);
+	width: 100%;
+	padding: var(--br) var(--br);
+	border-radius: 2rem;
 	text-transform: uppercase;
 	position: relative;
 }
@@ -75,11 +71,12 @@
 	position: absolute;
 	background-color: var(--clr-accent-300);
 	align-items: center;
+	justify-content: space-between;
 	left: -5%;
 	top: 0;
 	bottom: 0;
 	display: flex;
-	padding: 1rem 1rem;
+	padding: var(--br) var(--br);
 	border-radius: 2rem;
 }
 
@@ -88,20 +85,17 @@
 }
 
 .delete-item-pop-up button {
-	width: 20%;
+	padding: 0.6rem calc(var(--br) / 1.7);
 }
 
 .trolly-item > img {
 	max-width: 50%;
 }
 
-.trolly-item:last-child {
-	margin-bottom: 2rem;
-}
-
 .trolly-intem-info {
 	flex-basis: 100%;
 }
+
 .bin {
 	color: rgb(104, 104, 104);
 }
@@ -115,11 +109,9 @@
 }
 
 .order-now {
-	--flow-spacer: 1.5em;
-	margin: calc(var(--br) * 0.9) auto auto auto;
 	opacity: 0;
-	width: 80%;
-	padding: 0rem 2rem;
+	width: 100%;
+	padding: 0rem 2rem 6rem 2rem;
 }
 
 .order-total-info {
@@ -128,36 +120,33 @@
 	align-items: center;
 }
 
-.trolly-main-buttom-wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: var(--bre) auto;
-}
 .order-now .btn {
-	padding: 0.5rem 1.8rem;
+	padding: 0.6rem 1.8rem;
 	font-size: var(--fs-400);
 }
 
 @media (min-width: 58em) {
 	.trolly-side-bar {
 		width: 35%;
-		padding: 5rem 0rem 0rem 0rem;
+		/* padding: 5rem 0rem 0rem 0rem; */
 	}
 
 	.trolly-item {
 		flex-direction: row;
-		width: 80%;
+		width: 100%;
 		padding: 1.2rem 1.5rem;
 	}
 
-	.trolly-list {
-		margin-top: 4rem;
-		height: 65%;
+	.trolly-header {
+		padding: 4rem 2rem 0rem 2rem;
+	}
+
+	.order-now {
+		padding: 0rem 2rem 4rem 2rem;
 	}
 
 	.plus,
 	.minus {
-		font-size: 1rem;
+		font-size: 1.4rem;
 	}
 }

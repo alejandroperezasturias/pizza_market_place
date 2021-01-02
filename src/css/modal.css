@@ -207,9 +207,4 @@
 	.modal-buttom-price-wrapper {
 		--xl-space: 2em;
 	}
-
-	.btn.modal-button-add {
-		padding: 0.7em 2em;
-		font-size: var(--fs-300);
-	}
 }

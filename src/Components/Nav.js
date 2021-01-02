@@ -72,10 +72,7 @@ export default function Nav() {
 						<img src={logo} alt="img/logo.svg" />
 					</div>
 				</a>
-				<div
-					className="nav-links"
-					
-				>
+				<div className="nav-links">
 					<ul>
 						<div className={'pizza-drinks-wrapper'}>
 							<Link
@@ -92,7 +89,7 @@ export default function Nav() {
 										pathname === '/' ? 'navigation-link-underline-active' : ''
 									}
 								>
-									<a>Pizza</a>
+									Pizza
 								</li>
 							</Link>
 							<Link
@@ -111,7 +108,7 @@ export default function Nav() {
 											: ''
 									}
 								>
-									<a>Drinks</a>
+									Drinks
 								</li>
 							</Link>
 						</div>
@@ -132,7 +129,7 @@ export default function Nav() {
 											: ''
 									}
 								>
-									<a>About</a>
+									About
 								</li>
 							</Link>
 							<Link
@@ -151,7 +148,7 @@ export default function Nav() {
 											: ''
 									}
 								>
-									<a>Contact</a>
+									Contact
 								</li>
 							</Link>
 						</div>
@@ -175,10 +172,7 @@ export default function Nav() {
 					onClick={() => setToogleSideBar(!toogleSideBar)}
 				>
 					<div>
-						<FontAwesomeIcon
-							icon={faShoppingCart}
-							className={'trolly-icon'}
-						/>
+						<FontAwesomeIcon icon={faShoppingCart} className={'trolly-icon'} />
 						<motion.span
 							initial="close"
 							animate={animateSpanAmount ? 'open' : 'close'}

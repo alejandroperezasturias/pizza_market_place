@@ -93,8 +93,8 @@ export default function Trolly() {
 		if (result.error) {
 			// If `redirectToCheckout` fails due to a browser or network
 			// error, display the localized error message to your customer
-			// using `result.error.message`.
-			console.log(result.error.message);
+			// using `result.error.message`
+			console.error(result.error.message);
 		}
 	};
 
@@ -104,9 +104,9 @@ export default function Trolly() {
 				initial="close"
 				animate={toogleSideBar ? 'open' : 'close'}
 				variants={burgerAnimation}
-				className="trolly-side-bar"
+				className="trolly-side-bar flow-content"
 			>
-				<div className={'trolly-header trolly-width-padding'}>
+				<div className={'trolly-header'}>
 					<FontAwesomeIcon
 						size={'2x'}
 						icon={faArrowAltCircleLeft}
@@ -141,8 +141,8 @@ export default function Trolly() {
 				<div
 					className={
 						itemsInTheTrolly
-							? 'order-now toggle-opacity flow-content'
-							: 'order-now flow-content'
+							? 'order-now toggle-opacity flow-content '
+							: 'order-now flow-content '
 					}
 				>
 					<div className="order-total-info">

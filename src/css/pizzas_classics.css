@@ -40,7 +40,6 @@
 }
 
 .pizza-buttons-container > .btn {
-	padding: 1em 2em;
 	font-size: var(--fs-300);
 	align-self: center;
 }
@@ -171,11 +170,5 @@
 	.image {
 		display: flex;
 		flex-direction: column;
-	}
-
-	.pizza-buttons-container .btn {
-		padding: 0.5em 2em;
-		text-transform: capitalize;
-		font-size: var(--fs-300);
 	}
 }

@@ -206,15 +206,14 @@
 	}
 
 	.nav-order-size {
-		top: -7.9em;
+		top: -8.9em;
 		right: -6.5em;
-		padding: 4em 1.8em;
-		line-height: 0;
-		width: 1.3rem;
-		text-align: center;
+		padding: 1.8em 3em;
 		font-size: var(--fs-200);
 		background-color: var(--clr-neutral-300);
 		color: var(--clr-neutral-100);
+		/* line-height: 1; */
+		margin: auto;
 	}
 
 	/* Resetting values for desktop version */
