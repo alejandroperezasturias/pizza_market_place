@@ -10,6 +10,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Checkout from './pages/Checkout';
 import { uid } from 'uid';
+import Footer from './Components/footer';
+
 export const PizzaContext = React.createContext({});
 const LOCAL_STORAGE_KEY = 'the_5ht_hut_trolly';
 
@@ -28,6 +30,7 @@ function App() {
 	// Handle openning and clossing the modal. As soon as we have the right id in the path, we instantiate the item modifier with the item.
 	// Check Pizzas.js to see the conditional that prevents the app from crassing with the annoying undefiened error.
 	const { pathname } = useLocation();
+
 	useEffect(() => {
 		if (pathname.split('/')[2]) {
 			seTogglePizzaModifier(true);
@@ -43,6 +46,7 @@ function App() {
 	useEffect(() => {
 		const itemsJson = localStorage.getItem(LOCAL_STORAGE_KEY);
 		if (itemsJson != null) setTrollyItems(JSON.parse(itemsJson));
+		console.log('hi app')
 		if (trollyItems.length > 0) setItemsInTheTrolly(true);
 	}, []);
 
@@ -73,15 +77,25 @@ function App() {
 			);
 
 			inTreTrollyAlready ? setAlreadyInTrolly(true) : setAlreadyInTrolly(false);
-		}
+		} 
+		
+
+
 	}, [itemModifier]);
 
-	const handleAddToTrolly = () => {
-		const itemSelected = { ...itemModifier };
+	function handleAddToTrolly(item) {
+		// const itemSelected = { ...itemModifier };
 		// Check if the recipe is already added
-
+		let itemSelected = '';
+		if (item) {
+			itemSelected = item;
+		} else {
+			itemSelected = { ...itemModifier };
+		}
+		
 		if (
 			trollyItems.find((item) => {
+				if (item.ingredients === null) return;
 				if (
 					itemSelected.name === item.name &&
 					JSON.stringify(item.ingredients) ===
@@ -100,17 +114,18 @@ function App() {
 		itemSelected.id = uid(5);
 
 		let extra_cost = 0;
-		itemSelected.ingredients.forEach((item) =>
-			item.extra ? (extra_cost += 30) : ''
-		);
+		if (itemSelected.ingredients) {
+			itemSelected.ingredients.forEach((item) =>
+				item.extra ? (extra_cost += 30) : ''
+			);
+		}
 
 		itemSelected.extra_cost = extra_cost;
 		setTrollyItems((items) => {
 			return [...items, itemSelected];
 		});
-	};
+	}
 
-	
 	const handleEmptyTrolly = () => {
 		setTrollyItems([]);
 	};
@@ -167,7 +182,7 @@ function App() {
 			<PizzaContext.Provider value={pizzaContextValue}>
 				<div className="App">
 					{pathname === '/checkout' ? '' : <Nav />}
-
+					{/* <AnimatePresence exitBeforeEnter> */}
 					<Switch>
 						<Route path={['/pizza/:id', '/']} exact component={Pizzas} />
 						<Route path="/drinks" strict component={Drinks} />
@@ -175,6 +190,8 @@ function App() {
 						<Route path="/contact" strict component={Contact} />
 						<Route path="/checkout" strict component={Checkout} />
 					</Switch>
+					{/* </AnimatePresence> */}
+					<Footer />
 
 					<Trolly />
 				</div>

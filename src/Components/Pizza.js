@@ -3,14 +3,17 @@ import chili from '../Images/chili_svg.svg';
 import leaf from '../Images/vegetarian_svg.svg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import BottomRed from '../styles-material/bottomAdd';
 
 export default function Pizza({ pizza }) {
 	const { image, ingredients, name, vegetarian, spicy, id, price } = pizza;
 	return (
 		<div className={'flow-content split pizza'}>
-			<div className="image flow-content ">
-				<img src={image} alt="pizza-image"></img>
-				<div className={'split center-center'}>
+			<div className="image">
+				<div className="pizza-image-wrapper">
+					<img src={image} alt="pizza-image"></img>
+				</div>
+				<div className={'split center-center pizza-characteristics-wrapper'}>
 					{vegetarian && (
 						<div className="characteristic">
 							<img src={leaf} alt="vegetarian emoji"></img>
@@ -25,7 +28,7 @@ export default function Pizza({ pizza }) {
 					)}
 				</div>
 			</div>
-			<div className="pizza-info flow-content">
+			<div className="pizza-info">
 				<motion.h2
 					className="pizza-info-name"
 					layoutId={`card-name-container-${id}`}
@@ -34,7 +37,11 @@ export default function Pizza({ pizza }) {
 				</motion.h2>
 				<div className={'pizza-ingredients-wrapper'}>
 					{ingredients.map((ingredient, index) => {
-						return <p className="text-300" key={index}>{ingredient.ingredient}</p>;
+						return (
+							<p className="text-300" key={index}>
+								{ingredient.ingredient}
+							</p>
+						);
 					})}
 				</div>
 				<p className="text-400">
@@ -43,7 +50,7 @@ export default function Pizza({ pizza }) {
 				</p>
 				<div className="split pizza-buttons-container">
 					<Link to={`/pizza/${id}`}>
-						<button className="btn btn-red">I WANT</button>
+						<BottomRed />
 					</Link>
 				</div>
 			</div>

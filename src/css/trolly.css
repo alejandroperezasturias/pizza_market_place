@@ -78,6 +78,7 @@
 	display: flex;
 	padding: var(--br) var(--br);
 	border-radius: 2rem;
+	z-index: 2;
 }
 
 .delete-item-pop-up > h3 {

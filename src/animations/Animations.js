@@ -13,7 +13,7 @@ export const burgerAnimation = {
 		opacity: 1,
 		x: '0%',
 		transition: {
-			delay: 0.1,
+			delay: 0.05,
 			duration: 0.1,
 			ease: 'easeOut',
 			when: 'beforeChildren',
@@ -90,7 +90,7 @@ export const lineThreeBurger = {
 // Nav Spn Quantity
 
 export const spanQuantityAnimation = {
-	open: { scale: [1, 1.3, 1], transition: { duration: 0.2 } },
+	open: { scale: [1, 1.4, 1], transition: { duration: 0.2 } },
 	close: {
 		scale: 1,
 	},
@@ -180,6 +180,50 @@ export const letter = {
 			ease: 'easeOut',
 			yoyo: Infinity,
 			repeatDelay: 1,
+		},
+	},
+};
+export const quoteAnimationParent = {
+	close: {
+		// opacity: 0,
+	},
+	open: {
+		// opacity: 1,
+		transition: {
+			// staggerDirection: -1,
+			// staggerChildren: 0.1,
+			duration: 1,
+		},
+	},
+};
+
+export const quoteAnimationSibling = {
+	close: {
+		opacity: '0',
+		x: '-300%',
+		skew: '70deg',
+	},
+	open: {
+		opacity: '1',
+		x: '800%',
+		skew: '0deg',
+
+		transition: {
+			// ease: 'easeOut',
+			duration: 0.7,
+		},
+	},
+};
+
+export const aboutAnimationSibling = {
+	close: {
+		x: '-200%',
+	},
+	open: {
+		x: '700%',
+
+		transition: {
+			duration: 1,
 		},
 	},
 };

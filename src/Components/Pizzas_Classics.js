@@ -1,39 +1,76 @@
 import { useState, useContext } from 'react';
-import arrow_black from '../Images/Arrow-black.svg';
 import { motion } from 'framer-motion';
 import Pizza from './Pizza.js';
 import { PizzaContext } from '../App.js';
+import {
+	quoteAnimationParent,
+	quoteAnimationSibling,
+} from '../animations/Animations';
 
 export default function PizzasClassic() {
-	const { pizzas, toogleSideBar, setToogleSideBar,  itemModifier} = useContext(PizzaContext);
+	const { pizzas } = useContext(PizzaContext);
+	const [animationStart, setAnimationStart] = useState(true);
+
+	const turnOnAnimation = () => setAnimationStart(true);
+	const turnOffAnimation = () => setAnimationStart(false);
 
 	return (
-		<motion.div
-			className={'pizza-section pizza-section-classic pizza-section-after'}
-			onClick={() => {
-				return toogleSideBar ? setToogleSideBar(false) : '';
-			}}
-		>
-			<div className="name ">
-				<h1>The 5th Hut</h1>
-				<h2>Slow Pizza</h2>
+		<div className={'pizza-section'}>
+			<div className={'info'}>
+				<div className={'quote'}>
+					<p className="text-500 quote-text">
+						Pizza as it should be. Slow and mouth-watering. Only sourdough.
+					</p>
+
+					<motion.div
+						variants={quoteAnimationParent}
+						initial="close"
+						animate={animationStart ? 'open' : 'close'}
+						className="colors-quote-wrapper"
+						onHoverStart={() => {
+							turnOnAnimation();
+						}}
+						onHoverEnd={() => turnOffAnimation()}
+					>
+						<motion.div
+							variants={quoteAnimationSibling}
+							className="purple-bar"
+						></motion.div>
+						<motion.div
+							variants={quoteAnimationSibling}
+							className="orange-bar"
+						></motion.div>
+						<motion.div
+							variants={quoteAnimationSibling}
+							className="blue-bar"
+						></motion.div>
+						<motion.div
+							variants={quoteAnimationSibling}
+							className="yellow-bar"
+						></motion.div>
+						<motion.div
+							variants={quoteAnimationSibling}
+							className="green-bar"
+						></motion.div>
+						<motion.div
+							variants={quoteAnimationSibling}
+							className="blue-bar"
+						></motion.div>
+					</motion.div>
+				</div>
+
+				<div className="title flow-content">
+					<p className={'text-900'}>All Time</p>
+					<p className={'text-900'}>Favourites</p>
+				
+				</div>
 			</div>
-			<div className={'quote'}>
-				<p className="text-500 quote-text">
-					Pizza as it should be. Slow and mouth-watering. Only sourdough.
-				</p>
-			</div>
-			<div className="title flow-content">
-				<p className={'text-900'}>All Time</p>
-				<p className={'text-900'}>Favourites</p>
-				<img src={arrow_black} className="arrow"></img>
-			</div>
-			<div className="pizzas">
+			<div className="pizzas flow-content">
 				{pizzas.map((pizza) => {
-					if (pizza.all_time_favourite)
-						return <Pizza pizza={pizza} key={pizza.id}/>;
+					if (pizza.all_time_favourite && pizza.is_pizza)
+						return <Pizza pizza={pizza} key={pizza.id} />;
 				})}
 			</div>
-		</motion.div>
+		</div>
 	);
 }

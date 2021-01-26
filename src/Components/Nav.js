@@ -12,8 +12,9 @@ import {
 	lineTwoBurger,
 	spanQuantityAnimation,
 } from '../animations/Animations';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import IconButton from '@material-ui/core/IconButton';
+import ShoppingCartRoundedIcon from '@material-ui/icons/ShoppingCartRounded';
+import TrollyBottom from '../styles-material/bottomTrolly';
 
 export default function Nav() {
 	const {
@@ -67,9 +68,13 @@ export default function Nav() {
 						variants={lineThreeBurger}
 					></motion.div>
 				</div>
-				<a href="" aria-label="pizza-page" className="logo">
-					<div>
-						<img src={logo} alt="img/logo.svg" />
+				<a href="" aria-label="pizza-page" className="logo no-select">
+					<div className="logo-image-wrapper">
+						<img src={logo} className={'no-select'} alt="img/logo.svg" />
+					</div>
+					<div className="name">
+						<h1>The 5th Hut</h1>
+						<h2>Slow Pizza</h2>
 					</div>
 				</a>
 				<div className="nav-links">
@@ -79,8 +84,17 @@ export default function Nav() {
 								to={'/'}
 								style={
 									pathname === '/'
-										? { textDecoration: 'none', fontWeight: '900' }
-										: { textDecoration: 'none', fontWeight: 'initial' }
+										? {
+												textDecoration: 'none',
+												fontWeight: '900',
+												transition: '0',
+												
+										  }
+										: {
+												textDecoration: 'none',
+												fontWeight: 'initial',
+												transition: '0',
+										  }
 								}
 								className={'navigation-link'}
 							>
@@ -96,8 +110,16 @@ export default function Nav() {
 								to={'/drinks'}
 								style={
 									pathname === '/drinks'
-										? { textDecoration: 'none', fontWeight: '900' }
-										: { textDecoration: 'none', fontWeight: 'initial' }
+										? {
+												textDecoration: 'none',
+												fontWeight: '900',
+												transition: 'all 0.25ms ease-in-out',
+										  }
+										: {
+												textDecoration: 'none',
+												fontWeight: 'initial',
+												transition: 'all 0.25ms ease-in-out',
+										  }
 								}
 								className={'navigation-link'}
 							>
@@ -117,8 +139,16 @@ export default function Nav() {
 								to={'/about'}
 								style={
 									pathname === '/about'
-										? { textDecoration: 'none', fontWeight: '900' }
-										: { textDecoration: 'none', fontWeight: 'initial' }
+										? {
+												textDecoration: 'none',
+												fontWeight: '900',
+												transition: 'all 0.25ms ease-in-out',
+										  }
+										: {
+												textDecoration: 'none',
+												fontWeight: 'initial',
+												transition: 'all 0.25ms ease-in-out',
+										  }
 								}
 								className={'navigation-link'}
 							>
@@ -136,8 +166,16 @@ export default function Nav() {
 								to={'/contact'}
 								style={
 									pathname === '/contact'
-										? { textDecoration: 'none', fontWeight: '900' }
-										: { textDecoration: 'none', fontWeight: 'initial' }
+										? {
+												textDecoration: 'none',
+												fontWeight: '900',
+												transition: 'all 0.25ms ease-in-out',
+										  }
+										: {
+												textDecoration: 'none',
+												fontWeight: 'initial',
+												transition: 'all 0.25ms ease-in-out',
+										  }
 								}
 								className={'navigation-link'}
 							>
@@ -158,12 +196,30 @@ export default function Nav() {
 							animate={isOpen ? 'open' : 'close'}
 							variants={burgerAnimation}
 						>
-							<motion.li variants={titleAnim}>
-								<a className="overflow-hidden">About</a>
-							</motion.li>
-							<motion.li variants={titleAnim}>
-								<a>Contact</a>
-							</motion.li>
+							<Link to={'/about'}>
+								<motion.li variants={titleAnim}>
+									<p
+										className="burger-menu-links overflow-hidden"
+										onClick={() => {
+											setIsOpen(!isOpen);
+										}}
+									>
+										About
+									</p>
+								</motion.li>
+							</Link>
+							<Link to={'/contact'}>
+								<motion.li variants={titleAnim}>
+									<p
+										className="burger-menu-links overflow-hidden"
+										onClick={() => {
+											setIsOpen(!isOpen);
+										}}
+									>
+										Contact
+									</p>
+								</motion.li>
+							</Link>
 						</motion.div>
 					</ul>
 				</div>
@@ -172,7 +228,7 @@ export default function Nav() {
 					onClick={() => setToogleSideBar(!toogleSideBar)}
 				>
 					<div>
-						<FontAwesomeIcon icon={faShoppingCart} className={'trolly-icon'} />
+						<TrollyBottom />
 						<motion.span
 							initial="close"
 							animate={animateSpanAmount ? 'open' : 'close'}
@@ -182,8 +238,10 @@ export default function Nav() {
 							{totalOrderSize}
 						</motion.span>
 					</div>
-
-					<span>CZK {totalOrderPrice}</span>
+					<div className={'nav-cost'}>
+						<span>CZK </span>
+						<span>{totalOrderPrice}</span>
+					</div>
 				</div>
 			</nav>
 		</header>

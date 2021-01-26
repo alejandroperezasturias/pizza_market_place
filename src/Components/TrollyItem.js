@@ -1,9 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { trollyItemAnim, trollyItem } from '../animations/Animations';
 import { PizzaContext } from '../App';
+import IconButton from '@material-ui/core/IconButton';
+import AddCircleRoundedIcon from '@material-ui/icons/AddCircleRounded';
+import RemoveCircleRoundedIcon from '@material-ui/icons/RemoveCircleRounded';
 
 export default function TrollyItem({ item }) {
 	const { handleModifyTrollyItem, handleDeleteTrollyItem } = useContext(
@@ -81,7 +82,7 @@ export default function TrollyItem({ item }) {
 					</AnimatePresence>
 					<div className="trolly-intem-info flow-content">
 						<h2 className="text-300">{name}</h2>
-						{ingredients.map((i, index) => {
+						{ingredients && ingredients.map((i, index) => {
 							if (i.extra) {
 								return (
 									<p className="text-200 no-select" key={index}>
@@ -96,19 +97,25 @@ export default function TrollyItem({ item }) {
 						</p>
 					</div>
 					<div className="trolly-item-control flow-content">
-						<FontAwesomeIcon
-							size={'2x'}
-							icon={faPlusCircle}
-							className={'icon plus'}
+						<IconButton
+							color="primary"
+							style={{ color: '#242222' }}
+							aria-label="Add one more pizza"
+							component="span"
 							onClick={handleSetQuantityUp}
-						/>
+						>
+							<AddCircleRoundedIcon />
+						</IconButton>
 						<p className="text-400 text-center no-select">{quantity}</p>
-						<FontAwesomeIcon
-							size={'2x'}
-							icon={faMinusCircle}
-							className={'icon minus'}
+						<IconButton
+							color="primary"
+							style={{ color: '#242222' }}
+							aria-label="Remove one pizza"
+							component="span"
 							onClick={handleSetQuantityDown}
-						/>
+						>
+							<RemoveCircleRoundedIcon />
+						</IconButton>
 					</div>
 				</motion.div>
 			</AnimatePresence>

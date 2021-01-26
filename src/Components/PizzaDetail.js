@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import React, { useContext, useEffect } from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import AddCircleRoundedIcon from '@material-ui/icons/AddCircleRounded';
+import RemoveCircleRoundedIcon from '@material-ui/icons/RemoveCircleRounded';
 import Switch from './switch';
 import { motion } from 'framer-motion';
 import { backDrop, transionTitle, imageModal } from '../animations/Animations';
@@ -8,17 +9,18 @@ import { Link } from 'react-router-dom';
 import { PizzaContext } from '../App.js';
 import chili from '../Images/chili_svg.svg';
 import leaf from '../Images/vegetarian_svg.svg';
+import ToTheTrollyNow from '../styles-material/bottomToTrolly';
+import BottomBack from '../styles-material/bottomBack';
 
 export default function PizzaDetail() {
 	const {
 		handleModifyPizza,
-		handleAddToTrolly,
 		togglePizzaModifier,
 		seTogglePizzaModifier,
-		alreadyInTrolly,
 		itemModifier,
 		setItemModifer,
 	} = useContext(PizzaContext);
+
 	// const [note, setNote] = useState();
 
 	// Useparams from rooter to query the product info
@@ -87,17 +89,17 @@ export default function PizzaDetail() {
 
 					<div className="modal bg-primary-400">
 						<div className="flow-content modal-wrapper">
-							<Link to="/">
-								<button
+							<div className="modal-bottomBack-wrapper">
+								<Link
+									to="/"
 									onClick={() => {
 										seTogglePizzaModifier(false);
 										setItemModifer(undefined);
 									}}
-									className={'btn modal-button-back'}
 								>
-									Back To Menu
-								</button>
-							</Link>
+									<BottomBack />
+								</Link>
+							</div>
 							<div className="modal-intro-wrapper flow-content">
 								<div className="modal-name-wrapper xl-space">
 									<motion.h2
@@ -166,12 +168,14 @@ export default function PizzaDetail() {
 										handleAmountChange(-1);
 									}}
 								>
-									<FontAwesomeIcon
-										size={'2x'}
-										icon={faPlusCircle}
-										className={'icon plus_modal'}
+									<IconButton
+										color="primary"
 										style={{ color: 'white' }}
-									/>
+										aria-label="Add one pizza"
+										component="span"
+									>
+										<AddCircleRoundedIcon fontSize="large" />
+									</IconButton>
 								</div>
 								<p className="text-400 text-center no-select">
 									{itemModifier.amount}
@@ -181,27 +185,19 @@ export default function PizzaDetail() {
 										handleAmountChange(1);
 									}}
 								>
-									<FontAwesomeIcon
-										size={'2x'}
-										icon={faMinusCircle}
-										className={'icon minus_modal'}
-									/>
+									<IconButton
+										color="primary"
+										style={{ color: 'white' }}
+										aria-label="Remove one  pizza"
+										component="span"
+									>
+										<RemoveCircleRoundedIcon fontSize="medium" />
+									</IconButton>
 								</div>
 							</div>
 							<div className="modal-buttom-price-wrapper xl-space">
 								<Link to="/">
-									<motion.button
-										onClick={() => {
-											handleAddToTrolly(itemModifier.id);
-											setItemModifer(undefined);
-											seTogglePizzaModifier(false);
-										}}
-										className={'btn btn-blue no-select'}
-									>
-										{alreadyInTrolly
-											? 'Already In the Trolly'
-											: 'Add To Basket'}
-									</motion.button>
+									<ToTheTrollyNow />
 								</Link>
 								<p className="text-300 no-select">
 									<span>CZK </span>

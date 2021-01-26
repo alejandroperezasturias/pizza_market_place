@@ -46,6 +46,7 @@
 @import 'pizzas_veggie.css';
 @import 'trolly.css';
 @import 'modal.css';
+@import 'about.css';
 
 /* ///////////////
   Reset
@@ -285,7 +286,7 @@ footer {
 	margin: 0rem 0rem 0rem var(--spacer-horizontal, 1rem);
 }
 
-@media (min-width: 40em) {
+@media (min-width: 54em) {
 	.split {
 		flex-direction: row;
 	}
@@ -364,4 +365,45 @@ footer {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.primary-footer-wrapper {
+	--border: 2px solid var(--clr-neutral-200);
+	border-top: var(--border);
+	border-bottom: var(--border);
+	padding: 3em 0;
+	margin: 2em 0;
+}
+
+footer {
+	padding-bottom: 1em;
+}
+
+.primary-footer-wrapper > a {
+	flex: 0 1 60%;
+}
+
+.logo-footer {
+	transform: scale(0.5);
+}
+
+.primary-footer a {
+	color: var(--clr-neutral-300);
+}
+
+.footer-nav > *:first-child {
+	margin-right: 10em;
+}
+
+.footer-social {
+	display: flex;
+	gap: 4em;
+}
+
+.copywrite-social-wrapper {
+	padding: 2em 0;
+}
+
+.footer-social a {
+	font-weight: var(--fw-200);
 }
