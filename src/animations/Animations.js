@@ -185,17 +185,32 @@ export const letter = {
 };
 export const quoteAnimationParent = {
 	close: {
-		// opacity: 0,
 	},
 	open: {
-		// opacity: 1,
 		transition: {
-			// staggerDirection: -1,
-			// staggerChildren: 0.1,
 			duration: 1,
 		},
 	},
 };
+
+export const aboutCardAnimation = {
+	close: {
+		opacity: 0,
+		x: '-100%'
+	},
+	open: {
+		opacity: 1,
+		x: '0%',
+		transition: {
+			ease: 'easeOut',
+			duration: 0.6,
+			delay:0.5
+		},
+	},
+};
+
+
+
 
 export const quoteAnimationSibling = {
 	close: {

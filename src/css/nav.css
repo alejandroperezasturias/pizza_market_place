@@ -5,6 +5,10 @@
 	text-transform: uppercase;
 }
 
+.name h1 {
+	font-size: 3rem;
+}
+
 .logo {
 	text-align: center;
 	width: 100%;
@@ -268,7 +272,7 @@
 	.nav-links,
 	.trolly {
 		margin-bottom: 0;
-		margin-top: 3rem;
+		height: 100%;
 	}
 
 	.nav-links ul {

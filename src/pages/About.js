@@ -4,12 +4,28 @@ import {
 	quoteAnimationParent,
 	aboutAnimationSibling,
 } from '../animations/Animations';
+import alejandroPicture from '../Images/Alejandro_Perez.svg';
+import matijaSetina from '../Images/Matja_Setina.svg';
+import AboutCard from '../Components/AboutCard';
 
 export default function About() {
 	return (
-		<div className="about-section">
-			<h1>About</h1>
-			<div style={{ minHeight: '50rem' }}></div>
+		<div className="about-section xl-space flow-content">
+			<AboutCard
+				image={alejandroPicture}
+				name={'Alejandro Perez'}
+				description={
+					'lorem onsectetur adipisicing el uptatum beatae porro sint praesentium iust '
+				}
+			/>
+			<AboutCard
+				image={matijaSetina}
+				name={'Matija Šetina'}
+				description={
+					'lorem onsectetur adipisicing el uptatum beatae porro sint praesentium iust '
+				}
+			/>
+
 			<motion.div
 				variants={quoteAnimationParent}
 				initial="close"

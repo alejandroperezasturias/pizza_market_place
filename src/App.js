@@ -30,6 +30,7 @@ function App() {
 	// Handle openning and clossing the modal. As soon as we have the right id in the path, we instantiate the item modifier with the item.
 	// Check Pizzas.js to see the conditional that prevents the app from crassing with the annoying undefiened error.
 	const { pathname } = useLocation();
+	const location = useLocation();
 
 	useEffect(() => {
 		if (pathname.split('/')[2]) {
@@ -46,7 +47,7 @@ function App() {
 	useEffect(() => {
 		const itemsJson = localStorage.getItem(LOCAL_STORAGE_KEY);
 		if (itemsJson != null) setTrollyItems(JSON.parse(itemsJson));
-		console.log('hi app')
+		console.log('hi app');
 		if (trollyItems.length > 0) setItemsInTheTrolly(true);
 	}, []);
 
@@ -77,10 +78,7 @@ function App() {
 			);
 
 			inTreTrollyAlready ? setAlreadyInTrolly(true) : setAlreadyInTrolly(false);
-		} 
-		
-
-
+		}
 	}, [itemModifier]);
 
 	function handleAddToTrolly(item) {
@@ -92,7 +90,7 @@ function App() {
 		} else {
 			itemSelected = { ...itemModifier };
 		}
-		
+
 		if (
 			trollyItems.find((item) => {
 				if (item.ingredients === null) return;
@@ -165,8 +163,6 @@ function App() {
 		totalOrderPrice,
 		totalOrderSize,
 		handleModifyPizza,
-		// pizzaBuilderOn,
-		// setPizzaBuilderOn,
 		handleModifyTrollyItem,
 		handleDeleteTrollyItem,
 		itemModifier,
@@ -182,7 +178,7 @@ function App() {
 			<PizzaContext.Provider value={pizzaContextValue}>
 				<div className="App">
 					{pathname === '/checkout' ? '' : <Nav />}
-					{/* <AnimatePresence exitBeforeEnter> */}
+
 					<Switch>
 						<Route path={['/pizza/:id', '/']} exact component={Pizzas} />
 						<Route path="/drinks" strict component={Drinks} />
@@ -190,7 +186,7 @@ function App() {
 						<Route path="/contact" strict component={Contact} />
 						<Route path="/checkout" strict component={Checkout} />
 					</Switch>
-					{/* </AnimatePresence> */}
+
 					<Footer />
 
 					<Trolly />

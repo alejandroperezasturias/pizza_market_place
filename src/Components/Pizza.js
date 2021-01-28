@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import chili from '../Images/chili_svg.svg';
-import leaf from '../Images/vegetarian_svg.svg';
+import leaf from '../Images/vegetarian.svg';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import BottomRed from '../styles-material/bottomAdd';

@@ -20,7 +20,7 @@ export default function Drink({ drink }) {
 	
 
 	return (
-		<div className={'flow-content split pizza'}>
+		<div className={'flow-content split drink'}>
 			<div className="image">
 				<div className="pizza-image-wrapper">
 					<img src={image} alt="pizza-image"></img>

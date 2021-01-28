@@ -3,9 +3,9 @@ import pizza_margherita from '../Images/margharita_1.svg';
 import pizza_buffalina from '../Images/buffalina.svg';
 import pizza_funghi from '../Images/funghi.svg';
 import pizza_prosciutto from '../Images/prosciuto.svg';
-import pilsner_urquell from '../Images/pilnser_2.svg';
+import pilsner_urquell from '../Images/pilsner.svg';
 import estrella_galicia from '../Images/estrella_galicia.svg';
-
+import pepsi from '../Images/pepsi.svg';
 
 export const PizzasData = () => {
 	return [
@@ -113,21 +113,7 @@ export const PizzasData = () => {
 			amount: 1,
 			is_pizza: true
 		},
-		{
-			name: 'Pilsner Urquell',
-			image: pilsner_urquell,
-			id: 'pilnserUrquell',
-			price: 50,
-			vegetarian: false,
-			vegan: false,
-			spicy: false,
-			all_time_favourite: false,
-			amount: 1,
-			is_pizza: false,
-			ingredients: [
-				
-			],
-		},
+		
 		{
 			name: 'Pilsner',
 			image: pilsner_urquell,
@@ -158,6 +144,24 @@ export const PizzasData = () => {
 				
 			],
 		},
+
+		{
+			name: 'Pepsi',
+			image: pepsi,
+			id: 'pepsi_3',
+			price: 30,
+			vegetarian: false,
+			vegan: false,
+			spicy: false,
+			all_time_favourite: false,
+			amount: 1,
+			is_pizza: false
+			,ingredients: [
+				
+			],
+		},
+
+		
 		
 	];
 };

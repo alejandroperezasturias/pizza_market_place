@@ -1,6 +1,20 @@
 .about-section {
 	position: relative;
 	overflow: hidden;
+	--flow-spacer: 5rem;
+	--xl-space: 1rem;
+	color: var(--clr-neutral-300);
+	text-align: left;
+}
+
+.about-card {
+	--split-spacer: 3rem;
+}
+
+.about-info {
+	--flow-spacer: 1rem;
+	width: 75%;
+	margin: auto;
 }
 
 .colors-about-wrapper {

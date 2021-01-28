@@ -8,7 +8,7 @@ import { backDrop, transionTitle, imageModal } from '../animations/Animations';
 import { Link } from 'react-router-dom';
 import { PizzaContext } from '../App.js';
 import chili from '../Images/chili_svg.svg';
-import leaf from '../Images/vegetarian_svg.svg';
+import leaf from '../Images/vegetarian.svg';
 import ToTheTrollyNow from '../styles-material/bottomToTrolly';
 import BottomBack from '../styles-material/bottomBack';
 

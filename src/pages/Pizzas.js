@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import PizzasClassic from '../Components/Pizzas_Classics';
-import Pizzas_Second_Section from '../Components/Pizzas_Second_Section';
+import PizzasFavourites from '../Components/PizzasFavourties';
+import PizzasSecondSection from '../Components/PizzasSecondSection';
 import PizzaDetail from '../Components/PizzaDetail';
 import { PizzaContext } from '../App.js';
 
@@ -11,11 +11,11 @@ export default function Pizza() {
 
 	return (
 		<div>
-			<AnimatePresence exitBeforeEnter>
+			<AnimatePresence >
 				{itemModifier && <PizzaDetail />}
 			</AnimatePresence>
-			<PizzasClassic />
-			<Pizzas_Second_Section />
+			<PizzasFavourites />
+			<PizzasSecondSection />
 		</div>
 	);
 }

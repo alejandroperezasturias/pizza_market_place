@@ -47,10 +47,12 @@
 @import 'trolly.css';
 @import 'modal.css';
 @import 'about.css';
+@import 'footer.css';
 
 /* ///////////////
   Reset
   ////////////// */
+
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
@@ -271,10 +273,11 @@ footer {
 .split {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .split > * + * {
-	margin: 1rem 0 0 0;
+	margin: var(--split-spacer, 1rem) 0 0 0;
 }
 
 .center-center {
@@ -292,7 +295,7 @@ footer {
 	}
 
 	.split > * + * {
-		margin: 0 0 0 1.6rem;
+		margin: 0 0 0 var(--split-spacer, 1.6rem);
 	}
 	.container {
 		width: 84%;
@@ -365,45 +368,4 @@ footer {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-}
-
-.primary-footer-wrapper {
-	--border: 2px solid var(--clr-neutral-200);
-	border-top: var(--border);
-	border-bottom: var(--border);
-	padding: 3em 0;
-	margin: 2em 0;
-}
-
-footer {
-	padding-bottom: 1em;
-}
-
-.primary-footer-wrapper > a {
-	flex: 0 1 60%;
-}
-
-.logo-footer {
-	transform: scale(0.5);
-}
-
-.primary-footer a {
-	color: var(--clr-neutral-300);
-}
-
-.footer-nav > *:first-child {
-	margin-right: 10em;
-}
-
-.footer-social {
-	display: flex;
-	gap: 4em;
-}
-
-.copywrite-social-wrapper {
-	padding: 2em 0;
-}
-
-.footer-social a {
-	font-weight: var(--fw-200);
 }

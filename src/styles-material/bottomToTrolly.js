@@ -28,7 +28,6 @@ export default function ToTheTrollyNow() {
 		handleAddToTrolly,
 		setItemModifer,
 		seTogglePizzaModifier,
-		itemModifier,
 	} = useContext(PizzaContext);
 	const classes = useStyles();
 	return (

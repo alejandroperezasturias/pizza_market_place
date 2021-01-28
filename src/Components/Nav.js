@@ -12,8 +12,6 @@ import {
 	lineTwoBurger,
 	spanQuantityAnimation,
 } from '../animations/Animations';
-import IconButton from '@material-ui/core/IconButton';
-import ShoppingCartRoundedIcon from '@material-ui/icons/ShoppingCartRounded';
 import TrollyBottom from '../styles-material/bottomTrolly';
 
 export default function Nav() {
@@ -68,7 +66,16 @@ export default function Nav() {
 						variants={lineThreeBurger}
 					></motion.div>
 				</div>
-				<a href="" aria-label="pizza-page" className="logo no-select">
+				<a
+					href="http://localhost:3000/"
+					aria-label="acme home page"
+					className="logo no-select"
+					style={
+						pathname === '/about' || pathname === '/contact'
+							? { borderRadius: '1rem', paddingBottom: '2rem' }
+							: {}
+					}
+				>
 					<div className="logo-image-wrapper">
 						<img src={logo} className={'no-select'} alt="img/logo.svg" />
 					</div>
@@ -88,7 +95,6 @@ export default function Nav() {
 												textDecoration: 'none',
 												fontWeight: '900',
 												transition: '0',
-												
 										  }
 										: {
 												textDecoration: 'none',

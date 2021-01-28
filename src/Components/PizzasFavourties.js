@@ -6,8 +6,9 @@ import {
 	quoteAnimationParent,
 	quoteAnimationSibling,
 } from '../animations/Animations';
+import deco from '../Images/deco_underline.svg';
 
-export default function PizzasClassic() {
+export default function PizzasFavourites() {
 	const { pizzas } = useContext(PizzaContext);
 	const [animationStart, setAnimationStart] = useState(true);
 
@@ -62,6 +63,7 @@ export default function PizzasClassic() {
 				<div className="title flow-content">
 					<p className={'text-900'}>All Time</p>
 					<p className={'text-900'}>Favourites</p>
+					<img src={deco} alt={'decoration item'} />
 				
 				</div>
 			</div>
