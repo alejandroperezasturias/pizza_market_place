@@ -202,12 +202,12 @@ export const quoteAnimationParent = {
 export const quoteAnimationSibling = {
 	close: {
 		opacity: '0',
-		x: '-300%',
+		x: '+300%',
 		skew: '70deg',
 	},
 	open: {
 		opacity: '1',
-		x: '800%',
+		x: '-800%',
 		skew: '0deg',
 
 		transition: {
@@ -219,10 +219,10 @@ export const quoteAnimationSibling = {
 
 export const aboutAnimationSibling = {
 	close: {
-		x: '-200%',
+		x: '+200%',
 	},
 	open: {
-		x: '700%',
+		x: '-700%',
 
 		transition: {
 			duration: 1,
