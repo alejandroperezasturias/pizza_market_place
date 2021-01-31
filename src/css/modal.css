@@ -27,12 +27,16 @@
 }
 
 .modal-image {
-	height: 25%;
+	height: 80%;
 	background: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
+}
+
+.modal-image img {
+	transform: scale(1);
 }
 
 .modal {
@@ -67,7 +71,7 @@
 
 .modal-ingredients > p:not(:last-child)::after {
 	content: '|';
-	padding: 0px 10px;
+	padding: 0px 2px;
 	color: var(--clr-neutral-100);
 	font-weight: var(--fw-400);
 }
@@ -96,8 +100,8 @@
 /* Switch */
 
 .switch {
-	width: 30px;
-	height: 7px;
+	width: 35px;
+	height: 18px;
 	background-color: rgba(255, 255, 255, 0.742);
 	display: flex;
 	justify-content: flex-start;
@@ -113,8 +117,8 @@
 }
 
 .handle {
-	width: 10px;
-	height: 10px;
+	width: 15px;
+	height: 15px;
 	background-color: white;
 	border-radius: 40px;
 }
@@ -137,6 +141,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding-bottom: 2rem;
+}
+
+.modal-bottomBack-wrapper {
+	padding-top: 2rem;
 }
 
 .plus_modal {
@@ -146,6 +155,7 @@
 .minus_modal {
 	font-size: 1.5em;
 }
+
 .modal-Extra-Ingredients {
 	--flow-spacer: 1.2em;
 }
@@ -154,7 +164,7 @@
 	--flow-spacer: 1.2em;
 }
 
-@media (min-width: 58em) {
+@media (min-width: 54em) {
 	.modal-backdrop {
 		flex-direction: row;
 	}
@@ -166,6 +176,10 @@
 
 	.modal-wrapper {
 		--flow-spacer: 3.9em;
+	}
+
+	.modal-image img {
+		transform: scale(2);
 	}
 
 	.modal,
@@ -189,10 +203,6 @@
 
 	.modal-ingredients > p:not(:last-child)::after {
 		padding: 25.6px;
-	}
-
-	.modal-Extra-Ingredients {
-		--flow-spacer: 1.2em;
 	}
 
 	.modal-quantity {

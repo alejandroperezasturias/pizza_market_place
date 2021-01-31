@@ -43,13 +43,17 @@
 
 @import 'nav.css';
 @import 'pizzas_classics.css';
-@import 'pizzas_veggie.css';
+@import 'pizzas_second_section.css';
 @import 'trolly.css';
 @import 'modal.css';
+@import 'about.css';
+@import 'footer.css';
+@import 'contact.css';
 
 /* ///////////////
   Reset
   ////////////// */
+
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
@@ -70,7 +74,7 @@ body {
 	line-height: 1.3;
 	font-family: var(--ff-sans);
 	font-size: var(--fs-300);
-	padding: 1rem;
+	/* padding: 1rem; */
 }
 
 *,
@@ -181,7 +185,6 @@ h2 {
 
 .text-200 {
 	font-size: var(--fs-200);
-	color: var(--clr-accent-400);
 }
 
 .text-center {
@@ -239,20 +242,15 @@ h2 {
 .icon {
 	cursor: pointer;
 }
-/* .btn::after {
-	content: '\203A';
-	margin-left: 1em;
-	font-weight: var(--fw-300);
-} */
 
 /* ///////////////
 General Layout
   ////////////// */
 
-.container {
+/* .container {
 	width: 90%;
 	margin: auto;
-}
+} */
 
 .flow-content > * + * {
 	margin-top: var(--flow-spacer, 2em);
@@ -270,10 +268,11 @@ footer {
 .split {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .split > * + * {
-	margin: 1rem 0 0 0;
+	margin: var(--split-spacer, 1rem) 0 0 0;
 }
 
 .center-center {
@@ -285,13 +284,13 @@ footer {
 	margin: 0rem 0rem 0rem var(--spacer-horizontal, 1rem);
 }
 
-@media (min-width: 40em) {
+@media (min-width: 54em) {
 	.split {
 		flex-direction: row;
 	}
 
 	.split > * + * {
-		margin: 0 0 0 1.6rem;
+		margin: 0 0 0 var(--split-spacer, 1.6rem);
 	}
 	.container {
 		width: 84%;
@@ -311,7 +310,7 @@ footer {
 
 .bg-primary-300 {
 	background-color: var(--clr-accent-300);
-	color: var(--clr-neutral-100);
+	color: var(--clr-neutral-300);
 }
 .bg-primary-400 {
 	background-color: var(--clr-accent-400);

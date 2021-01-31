@@ -1,0 +1,30 @@
+.pizza-second-section {
+	border-top: 1px solid var(--clr-accent-400);
+	content-visibility: auto;
+	contain-intrinsic-size: 1000px;
+}
+
+.title-second-section {
+	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (min-width: 54em) {
+	.pizza-second-section {
+		border-top: none;
+		--xl-space: 5rem;
+	}
+
+	.pizza-second-section .info {
+		background-color: var(--clr-accent-400);
+		border-radius: 1rem;
+		padding-bottom: initial;
+		--xl-space: 0rem;
+	}
+
+	.pizza-second-section .title {
+		color: var(--clr-neutral-100);
+	}
+}

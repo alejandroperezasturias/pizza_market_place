@@ -1,10 +1,10 @@
 import React from 'react'
-import DrinksNonAlcoholic from '../Components/DrinksNonAlcoholic'
+import DrinksMix from '../Components/DrinksMix'
 
 export default function Drinks() {
     return (
         <div>
-            <DrinksNonAlcoholic />
+            <DrinksMix />
         </div>
     )
 }

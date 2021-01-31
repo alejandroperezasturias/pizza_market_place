@@ -3,6 +3,7 @@ export const burgerAnimation = {
 		opacity: 0,
 		x: '-100%',
 		transition: {
+			delay: 0.05,
 			duration: 0.2,
 			when: 'afterChildren',
 			staggerChildren: 0.09,
@@ -13,7 +14,7 @@ export const burgerAnimation = {
 		opacity: 1,
 		x: '0%',
 		transition: {
-			delay: 0.1,
+			delay: 0.05,
 			duration: 0.1,
 			ease: 'easeOut',
 			when: 'beforeChildren',
@@ -42,15 +43,17 @@ export const trollyItemAnim = {
 		scale: 1,
 		opacity: 1,
 		transition: {
+			delay: 0.3,
 			stiffness: 1000,
 			velocity: -100,
 		},
 	},
 	close: {
-		scale: 0.8,
-		opacity: 0.8,
+		scale: 0.7,
+		opacity: 0.7,
 		transition: {
-			y: { duration: 0.005 },
+			stiffness: 1000,
+			velocity: -100,
 		},
 	},
 };
@@ -90,7 +93,7 @@ export const lineThreeBurger = {
 // Nav Spn Quantity
 
 export const spanQuantityAnimation = {
-	open: { scale: [1, 1.3, 1], transition: { duration: 0.2 } },
+	open: { scale: [1, 1.4, 1], transition: { duration: 0.2 } },
 	close: {
 		scale: 1,
 	},
@@ -150,6 +153,7 @@ export const trollyItem = {
 	close: {
 		opacity: 0,
 		x: '-300%',
+		transition: { ease: 'easeIn', duration: 0.2},
 	},
 };
 
@@ -180,6 +184,48 @@ export const letter = {
 			ease: 'easeOut',
 			yoyo: Infinity,
 			repeatDelay: 1,
+		},
+	},
+};
+export const quoteAnimationParent = {
+	close: {
+	},
+	open: {
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
+
+
+export const quoteAnimationSibling = {
+	close: {
+		opacity: '0',
+		x: '-300%',
+		skew: '70deg',
+	},
+	open: {
+		opacity: '1',
+		x: '800%',
+		skew: '0deg',
+
+		transition: {
+			// ease: 'easeOut',
+			duration: 0.7,
+		},
+	},
+};
+
+export const aboutAnimationSibling = {
+	close: {
+		x: '-200%',
+	},
+	open: {
+		x: '700%',
+
+		transition: {
+			duration: 1,
 		},
 	},
 };
