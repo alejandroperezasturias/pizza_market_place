@@ -1,15 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faArrowAltCircleLeft,
-	faTrash,
-} from '@fortawesome/free-solid-svg-icons';
+import IconButton from '@material-ui/core/IconButton';
+import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
+import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
 import { PizzaContext } from '../App.js';
 import TrollyItem from './TrollyItem';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { burgerAnimation, holdUp, letter } from '../animations/Animations';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
+import OrderNow from '../styles-material/bottomOrder';
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -41,7 +40,7 @@ export default function Trolly() {
 	//
 
 	useEffect(() => {
-		let order_item = trollyItems.map((item) => {
+		let order_items = trollyItems.map((item) => {
 			return {
 				id: item.name,
 				amount: item.price * 100,
@@ -51,7 +50,7 @@ export default function Trolly() {
 				extra_cost: item.extra_cost,
 			};
 		});
-		setOrder(order_item);
+		setOrder(order_items);
 
 		// Fancy fancy
 		return () => {
@@ -64,10 +63,7 @@ export default function Trolly() {
 		setLoadingCheckout(true);
 		const stripe = await stripePromise;
 		let id;
-		// Call your backend to create the Checkout Session
-		// const response = await fetch('/create-checkout-session', {
-		// 	method: 'POST',
-		// });
+		// Call  backend to create the Checkout Session
 		try {
 			await axios({
 				method: 'POST',
@@ -88,6 +84,7 @@ export default function Trolly() {
 		const result = await stripe.redirectToCheckout({
 			sessionId: id,
 		});
+
 		setLoadingCheckout(false);
 
 		if (result.error) {
@@ -101,42 +98,52 @@ export default function Trolly() {
 	return (
 		<>
 			<motion.div
+				variants={burgerAnimation}
 				initial="close"
 				animate={toogleSideBar ? 'open' : 'close'}
-				variants={burgerAnimation}
 				className="trolly-side-bar flow-content"
 			>
 				<div className={'trolly-header'}>
-					<FontAwesomeIcon
-						size={'2x'}
-						icon={faArrowAltCircleLeft}
-						className={'icon'}
+					<IconButton
+						color="primary"
+						style={{ color: '#242222' }}
+						aria-label="Close Trolly"
+						component="span"
+						size="medium"
 						onClick={() => setToogleSideBar(!toogleSideBar)}
-					/>
-					<div className="trolly-main-buttom-wrapper">
-						<button
-							role="link"
+					>
+						<ArrowBackIosRoundedIcon fontSize="large" />
+					</IconButton>
+					{itemsInTheTrolly && (
+						<div
+							className="trolly-main-buttom-wrapper"
 							onClick={() => {
 								setToogleSideBar(!toogleSideBar);
 								handleClick();
 							}}
-							className="btn btn-red text-400"
 						>
-							ORDER NOW
-						</button>
-					</div>
-					<FontAwesomeIcon
-						size={'2x'}
-						icon={faTrash}
-						className={'icon bin'}
+							<OrderNow />
+						</div>
+					)}
+					<IconButton
+						color="primary"
+						style={{ color: '#242222' }}
+						aria-label="Empty Trolly"
+						component="span"
+						size="medium"
 						onClick={handleEmptyTrolly}
-					/>
+					>
+						<DeleteRoundedIcon fontSize="large" />
+					</IconButton>
 				</div>
 				<div className="trolly-list">
-					{itemsInTheTrolly &&
-						trollyItems.map((item) => {
-							return <TrollyItem key={item.id} item={item} />;
-						})}
+					<AnimatePresence>
+						{itemsInTheTrolly &&
+							trollyItems.map((item) => {
+								console.log(item.id);
+								return <TrollyItem key={item.id} item={item} />;
+							})}
+					</AnimatePresence>
 				</div>
 				<div
 					className={
