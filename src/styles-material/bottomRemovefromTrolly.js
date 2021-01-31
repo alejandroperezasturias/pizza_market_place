@@ -10,14 +10,14 @@ export default function BottomTrollyItem({Message, callBack, item, color}) {
         button: {
             backgroundColor: color,
             borderRadius: '100vw',
-            padding: '0.1em 0.1em',
-            fontSize: '0.17rem',
+            padding: '0.4em 0.9em',
+            fontSize: '0.8rem',
             color: 'white',
             '&:hover': {
                 backgroundColor: color
             },
             [theme.breakpoints.down('sm')]: {
-                fontSize: '0.1.7rem',
+                fontSize: '.7rem',
                 padding: '0.4em 0.7em',
             },
         },
