@@ -43,11 +43,12 @@
 
 @import 'nav.css';
 @import 'pizzas_classics.css';
-@import 'pizzas_veggie.css';
+@import 'pizzas_second_section.css';
 @import 'trolly.css';
 @import 'modal.css';
 @import 'about.css';
 @import 'footer.css';
+@import 'contact.css';
 
 /* ///////////////
   Reset
@@ -73,7 +74,7 @@ body {
 	line-height: 1.3;
 	font-family: var(--ff-sans);
 	font-size: var(--fs-300);
-	padding: 1rem;
+	/* padding: 1rem; */
 }
 
 *,
@@ -184,7 +185,6 @@ h2 {
 
 .text-200 {
 	font-size: var(--fs-200);
-	color: var(--clr-accent-400);
 }
 
 .text-center {
@@ -242,20 +242,15 @@ h2 {
 .icon {
 	cursor: pointer;
 }
-/* .btn::after {
-	content: '\203A';
-	margin-left: 1em;
-	font-weight: var(--fw-300);
-} */
 
 /* ///////////////
 General Layout
   ////////////// */
 
-.container {
+/* .container {
 	width: 90%;
 	margin: auto;
-}
+} */
 
 .flow-content > * + * {
 	margin-top: var(--flow-spacer, 2em);
@@ -315,7 +310,7 @@ footer {
 
 .bg-primary-300 {
 	background-color: var(--clr-accent-300);
-	color: var(--clr-neutral-100);
+	color: var(--clr-neutral-300);
 }
 .bg-primary-400 {
 	background-color: var(--clr-accent-400);

@@ -3,6 +3,7 @@ export const burgerAnimation = {
 		opacity: 0,
 		x: '-100%',
 		transition: {
+			delay: 0.05,
 			duration: 0.2,
 			when: 'afterChildren',
 			staggerChildren: 0.09,
@@ -42,15 +43,17 @@ export const trollyItemAnim = {
 		scale: 1,
 		opacity: 1,
 		transition: {
+			delay: 0.3,
 			stiffness: 1000,
 			velocity: -100,
 		},
 	},
 	close: {
-		scale: 0.8,
-		opacity: 0.8,
+		scale: 0.7,
+		opacity: 0.7,
 		transition: {
-			y: { duration: 0.005 },
+			stiffness: 1000,
+			velocity: -100,
 		},
 	},
 };
@@ -150,6 +153,7 @@ export const trollyItem = {
 	close: {
 		opacity: 0,
 		x: '-300%',
+		transition: { ease: 'easeIn', duration: 0.2},
 	},
 };
 
@@ -192,23 +196,6 @@ export const quoteAnimationParent = {
 		},
 	},
 };
-
-export const aboutCardAnimation = {
-	close: {
-		opacity: 0,
-		x: '-100%'
-	},
-	open: {
-		opacity: 1,
-		x: '0%',
-		transition: {
-			ease: 'easeOut',
-			duration: 0.6,
-			delay:0.5
-		},
-	},
-};
-
 
 
 

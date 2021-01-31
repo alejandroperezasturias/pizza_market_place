@@ -3,10 +3,17 @@
 	display: flex;
 	flex-direction: column;
 	text-transform: uppercase;
+	padding: 1rem 1rem 0 1;
 }
-
+.name {
+	color: var(--clr-neutral-300);
+}
 .name h1 {
 	font-size: 3rem;
+}
+
+.logo-image-wrapper {
+	min-height: 8.5rem;
 }
 
 .logo {
@@ -14,6 +21,7 @@
 	width: 100%;
 	cursor: pointer;
 	outline: none;
+	--flow-spacer: calc(var(--br) / 2);
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -137,7 +145,7 @@
 .burger {
 	position: relative;
 	z-index: 3;
-	padding: 0.5rem 0rem;
+	padding: 0.8rem 0.5rem 0.5rem 0;
 	align-self: flex-end;
 }
 /* Styling the burger menu lines */
@@ -194,7 +202,7 @@
 		grid-template-columns: minmax(300px, 28.3%) 1fr 0.05fr;
 		grid-auto-rows: 1fr;
 		text-align: left;
-		place-items: start center;
+		/* place-items: start center; */
 	}
 
 	.burger {
@@ -307,5 +315,10 @@
 
 	.about-contact-wrapper-visible > * + * {
 		margin: 0 0 0 var(--br);
+	}
+
+	.name {
+		text-align: center;
+		opacity: 1;
 	}
 }

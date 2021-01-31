@@ -1,15 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-
-
+import SendRoundedIcon from '@material-ui/icons/SendRounded';
 
 const useStyles = makeStyles((theme) => ({
 	button: {
 		backgroundColor: '#fc6640',
 		borderRadius: '100vw',
-		padding: '0.4em 1.3em',
+		padding: '0.4em 4em',
+		marginLeft: '0.5rem',
 		color: 'white',
+		marginTop: '1rem',
 		// boxShadow:
 		// 	'0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)',
 		'&:hover': {
@@ -18,23 +18,22 @@ const useStyles = makeStyles((theme) => ({
 			// 	'0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);',
 		},
 		[theme.breakpoints.down('sm')]: {
-			padding: '0.3em 1em',
+			padding: '0.4em 4em',
 		},
 	},
 }));
 
-export default function BottomRed({drinkInTheTrolly}) {
+export default function SendMessage() {
 	const classes = useStyles();
-
 	return (
 		<Button
+			type="submit"
 			color={'primary'}
 			className={classes.button}
 			variant="contained"
-			endIcon={<FavoriteIcon />}
+			endIcon={<SendRoundedIcon />}
 		>
-			{drinkInTheTrolly ? 'Already In the Trolly' : 'Add To Basket'}
+			Send
 		</Button>
 	);
 }
-

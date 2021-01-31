@@ -1,0 +1,40 @@
+.contact-setion {
+	overflow: hidden;
+	--xl-space: 5rem;
+	color: var(--clr-neutral-300);
+}
+
+.map-marker-img {
+	padding: initial;
+	transform: scale(0.225);
+}
+
+.map > div {
+	width: 100% !important;
+	margin: auto;
+	z-index: 0 !important;
+}
+
+.form-section {
+	--split-spacer: 2rem;
+}
+
+.form-title {
+	flex-basis: 70%;
+}
+
+.form-wrapper {
+	width: 90% !important;
+	margin: auto !important;
+}
+
+.form-title > h2 {
+	font-family: var(--ff-accent);
+	color: var(--clr-neutral-300);
+}
+
+@media (min-width: 80em) {
+	.contact-section {
+		--xl-space: 5rem;
+	}
+}

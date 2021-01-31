@@ -173,6 +173,7 @@ export default function PizzaDetail() {
 										style={{ color: 'white' }}
 										aria-label="Add one pizza"
 										component="span"
+										// "default","inherit","large","small"
 									>
 										<AddCircleRoundedIcon fontSize="large" />
 									</IconButton>
@@ -191,7 +192,7 @@ export default function PizzaDetail() {
 										aria-label="Remove one  pizza"
 										component="span"
 									>
-										<RemoveCircleRoundedIcon fontSize="medium" />
+										<RemoveCircleRoundedIcon fontSize="default" />
 									</IconButton>
 								</div>
 							</div>

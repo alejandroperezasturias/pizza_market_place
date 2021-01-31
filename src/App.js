@@ -23,14 +23,13 @@ function App() {
 	const [totalOrderSize, setTotalOrderSize] = useState(0);
 	const [toogleSideBar, setToogleSideBar] = useState(false);
 	const [togglePizzaModifier, seTogglePizzaModifier] = useState(false);
-	// const [pizzaBuilderOn, setPizzaBuilderOn] = useState();
 	const [itemModifier, setItemModifer] = useState();
 	const [alreadyInTrolly, setAlreadyInTrolly] = useState(false);
 
 	// Handle openning and clossing the modal. As soon as we have the right id in the path, we instantiate the item modifier with the item.
 	// Check Pizzas.js to see the conditional that prevents the app from crassing with the annoying undefiened error.
 	const { pathname } = useLocation();
-	const location = useLocation();
+
 
 	useEffect(() => {
 		if (pathname.split('/')[2]) {
@@ -82,7 +81,6 @@ function App() {
 	}, [itemModifier]);
 
 	function handleAddToTrolly(item) {
-		// const itemSelected = { ...itemModifier };
 		// Check if the recipe is already added
 		let itemSelected = '';
 		if (item) {
@@ -108,7 +106,8 @@ function App() {
 			return;
 		}
 
-		// If it is not added to trolly
+		// If it is not added to trolly. We generate a new ID as we can the same items
+		// with different ingredients in the trolly
 		itemSelected.id = uid(5);
 
 		let extra_cost = 0;
@@ -129,13 +128,13 @@ function App() {
 	};
 
 	const handleDeleteTrollyItem = (item) => {
-		const newPizzas = [...trollyItems];
+		let newPizzas = [...trollyItems];
 
 		const indexToSplice = newPizzas.findIndex(
 			(pizza) => JSON.stringify(pizza) === JSON.stringify(item)
 		);
-
 		newPizzas.splice(indexToSplice, 1);
+
 		setTrollyItems(newPizzas);
 	};
 

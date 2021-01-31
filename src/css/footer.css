@@ -1,9 +1,8 @@
 .primary-footer-wrapper {
-	--border: 2px solid var(--clr-neutral-200);
-	border-top: var(--border);
-	border-bottom: var(--border);
-	padding: 3em 0 5em 0;
-	margin: 2em 0;
+	border-top: 2px solid var(--clr-neutral-200);
+	border-bottom: 2px solid var(--clr-neutral-200);
+	padding-top: 5rem;
+	padding-bottom: 5rem;
 }
 
 footer {
@@ -32,7 +31,7 @@ footer {
 }
 
 .copywrite-social-wrapper {
-	padding: 2em 0 10em 0;
+	padding: 5rem 0 9rem 0;
 }
 
 .footer-social a {
@@ -45,6 +44,6 @@ footer {
 		text-align: left;
 	}
 	.copywrite-social-wrapper {
-		padding: 2em 0 4em 0;
+		padding: 5rem 0 5rem 0;
 	}
 }

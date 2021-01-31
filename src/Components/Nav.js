@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../Images/logox2.svg';
-import '../css/nav.css';
 import { PizzaContext } from '../App.js';
 import { motion } from 'framer-motion';
 import {
@@ -69,7 +68,7 @@ export default function Nav() {
 				<a
 					href="http://localhost:3000/"
 					aria-label="acme home page"
-					className="logo no-select"
+					className="logo no-select flow-content"
 					style={
 						pathname === '/about' || pathname === '/contact'
 							? { borderRadius: '1rem', paddingBottom: '2rem' }

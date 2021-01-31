@@ -1,27 +1,29 @@
 /* Info */
 .pizza-section {
-	margin-top: var(--br);
+	margin-top: 3rem;
 }
+
 .info > * + * {
-	margin-top: var(--br);
+	margin-top: 3rem;
 }
 
 .quote,
-.title,
-.name {
+.title {
 	width: 100%;
-	padding: 1.5rem 3rem;
+	padding: 0rem 3rem;
 	text-align: center;
 	color: var(--clr-neutral-300);
-}
-
-.title {
-	--flow-spacer: 0.04em;
 }
 
 .quote {
 	border-radius: 1rem;
 	background-color: var(--clr-accent-300);
+	padding: 2rem;
+	border: 1px solid white;
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
 }
 
 .arrow-wrapper {
@@ -39,6 +41,7 @@
 	flex-direction: column;
 	align-items: center;
 	z-index: 0;
+	margin-top: var(--br);
 }
 
 .pizzas > * + * {
@@ -142,14 +145,6 @@
 	align-self: center;
 }
 
-.quote {
-	border: 1px solid white;
-	padding: 1rem 1.3rem;
-	width: 80%;
-	margin: 0 auto;
-	position: relative;
-	overflow: hidden;
-}
 .colors-quote-wrapper {
 	position: absolute;
 	left: 0;
@@ -194,17 +189,16 @@
 	background-color: #829ff5;
 }
 
-.title {
-	--xl-space: 2rem;
-}
-
 .drink {
 	text-align: center;
 }
 
+.image-text-decoration {
+	display: none;
+}
+
 @media (min-width: 54em) {
 	.pizza-section {
-		--flow-spacer: 4rem;
 		display: grid;
 		grid-template-columns: minmax(300px, 28.3%) 1fr 0.05fr;
 		grid-auto-rows: 1fr;
@@ -212,25 +206,42 @@
 		margin-top: initial;
 	}
 
+	.quote,
+	.title,
+	.name {
+		width: 100%;
+		padding: initial;
+		text-align: center;
+	}
+
 	.info {
 		background: var(--clr-accent-300);
 		border-radius: 0 0 1rem 1rem;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
+		justify-content: center;
+		padding-bottom: 7rem;
 	}
 
 	.info > * + * {
 		margin-top: 0rem;
+		padding-top: calc(var(--br) * 2);
 	}
 
-	.quote,
-	.title,
-	.name {
-		width: 80%;
-		margin: auto;
-		padding: 0rem 2rem;
-		text-align: left;
+	.title {
+		padding: auto 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.quote {
+		background-color: transparent;
+		position: relative;
+		width: 90%;
+	}
+
+	.quote-text {
+		padding: 1.8rem 1.2rem;
 	}
 
 	.pizzas {
@@ -253,28 +264,8 @@
 		text-align: left;
 	}
 
-	.title {
-		--xl-space: 8rem;
-		margin-top: -4rem;
-		text-align: left;
-	}
-
-	.arrow {
-		display: block;
-	}
-
-	.quote {
-		margin-top: 5rem;
-		background-color: transparent;
-		border: 1px solid white;
-		padding: 1rem 1.3rem;
-		width: 80%;
-		position: relative;
-	}
-
-	.name {
-		text-align: center;
-		opacity: 1;
-		min-height: 2rem;
+	.image-text-decoration {
+		display: flex;
+		opacity: 0.6;
 	}
 }

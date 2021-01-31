@@ -70,19 +70,26 @@
 .delete-item-pop-up {
 	position: absolute;
 	background-color: var(--clr-accent-300);
-	align-items: center;
-	justify-content: space-between;
-	left: -5%;
+	left: 0;
+	right: 0;
 	top: 0;
 	bottom: 0;
 	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	padding: var(--br) var(--br);
 	border-radius: 2rem;
 	z-index: 2;
+	margin: 0 !important;
 }
 
 .delete-item-pop-up > h3 {
 	text-transform: initial;
+	flex-basis: 50%;
+}
+
+.delete-item-pop-up > * + * {
+	margin: 0 0 0.1rem 0;
 }
 
 .delete-item-pop-up button {

@@ -60,10 +60,9 @@ export default function PizzasFavourites() {
 					</motion.div>
 				</div>
 
-				<div className="title flow-content">
-					<p className={'text-900'}>All Time</p>
-					<p className={'text-900'}>Favourites</p>
-					<img src={deco} alt={'decoration item'} />
+				<div className="title">
+					<p className={'text-900'}>All Time Favourites</p>
+					<img className="deco" className="image-text-decoration " src={deco} alt={'decoration item'} />
 				
 				</div>
 			</div>

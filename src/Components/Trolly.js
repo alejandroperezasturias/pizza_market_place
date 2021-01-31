@@ -4,7 +4,7 @@ import ArrowBackIosRoundedIcon from '@material-ui/icons/ArrowBackIosRounded';
 import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
 import { PizzaContext } from '../App.js';
 import TrollyItem from './TrollyItem';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { burgerAnimation, holdUp, letter } from '../animations/Animations';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
@@ -101,9 +101,9 @@ export default function Trolly() {
 	return (
 		<>
 			<motion.div
+				variants={burgerAnimation}
 				initial="close"
 				animate={toogleSideBar ? 'open' : 'close'}
-				variants={burgerAnimation}
 				className="trolly-side-bar flow-content"
 			>
 				<div className={'trolly-header'}>
@@ -112,7 +112,7 @@ export default function Trolly() {
 						style={{ color: '#242222' }}
 						aria-label="Close Trolly"
 						component="span"
-						size="large"
+						size="medium"
 						onClick={() => setToogleSideBar(!toogleSideBar)}
 					>
 						<ArrowBackIosRoundedIcon fontSize="large" />
@@ -133,17 +133,20 @@ export default function Trolly() {
 						style={{ color: '#242222' }}
 						aria-label="Empty Trolly"
 						component="span"
-						size="large"
+						size="medium"
 						onClick={handleEmptyTrolly}
 					>
 						<DeleteRoundedIcon fontSize="large" />
 					</IconButton>
 				</div>
 				<div className="trolly-list">
-					{itemsInTheTrolly &&
-						trollyItems.map((item) => {
-							return <TrollyItem key={item.id} item={item} />;
-						})}
+					<AnimatePresence>
+						{itemsInTheTrolly &&
+							trollyItems.map((item) => {
+								console.log(item.id);
+								return <TrollyItem key={item.id} item={item} />;
+							})}
+					</AnimatePresence>
 				</div>
 				<div
 					className={
