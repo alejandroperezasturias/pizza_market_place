@@ -78,7 +78,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: var(--br) var(--br);
+	padding: var(--br) 1rem;
 	border-radius: 2rem;
 	z-index: 2;
 	margin: 0 !important;
@@ -90,11 +90,7 @@
 }
 
 .delete-item-pop-up > * + * {
-	margin: 0 0 0.1rem 0;
-}
-
-.delete-item-pop-up button {
-	padding: 0.6rem calc(var(--br) / 1.7);
+	margin: 0 0rem 0.5rem 0;
 }
 
 .trolly-item > img {

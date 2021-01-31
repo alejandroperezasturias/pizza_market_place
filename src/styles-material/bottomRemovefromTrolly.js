@@ -17,7 +17,8 @@ export default function BottomTrollyItem({Message, callBack, item, color}) {
                 backgroundColor: color
             },
             [theme.breakpoints.down('sm')]: {
-                padding: '0.1em 0.5em',
+                fontSize: '0.1.7rem',
+                padding: '0.4em 0.7em',
             },
         },
     }));
