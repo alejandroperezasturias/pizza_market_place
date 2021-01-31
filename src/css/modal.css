@@ -5,11 +5,12 @@
 	right: 0;
 	bottom: 0;
 	background: white;
-	z-index: 2;
+	z-index: 9;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .modal-wrapper {
@@ -27,12 +28,11 @@
 }
 
 .modal-image {
-	height: 100%;
 	background: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
+	/* flex-basis: 80%; */
 }
 
 .modal-image img {
@@ -40,11 +40,11 @@
 }
 
 .modal {
-	height: 81%;
+	flex: 8;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 1rem 2rem;
+	padding: 0rem 2rem;
 }
 
 .btn.modal-button-back {
