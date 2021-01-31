@@ -13,7 +13,7 @@
 }
 
 .modal-wrapper {
-	--flow-spacer: 2rem;
+	--flow-spacer: 1rem;
 	width: 100%;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .modal-image {
-	height: 80%;
+	height: 100%;
 	background: white;
 	display: flex;
 	justify-content: center;
@@ -36,11 +36,11 @@
 }
 
 .modal-image img {
-	transform: scale(1);
+	transform: scale(0.7);
 }
 
 .modal {
-	height: 75%;
+	height: 81%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -126,7 +126,7 @@
 /* //////// */
 
 .modal-quantity {
-	--xl-space: 2.2rem;
+	--xl-space: 0.4rem;
 	--spacer-horizontal: 1rem;
 	display: flex;
 	align-items: center;
@@ -137,15 +137,15 @@
 }
 
 .modal-buttom-price-wrapper {
-	--xl-space: 1.3rem;
+	--xl-space: 0.2rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-bottom: 2rem;
+	padding-bottom: 5rem;
 }
 
 .modal-bottomBack-wrapper {
-	padding-top: 2rem;
+	padding-top: 3rem;
 }
 
 .plus_modal {
@@ -206,7 +206,7 @@
 	}
 
 	.modal-quantity {
-		--xl-space: 3.5rem;
+		--xl-space: 2rem;
 		--spacer-horizontal: 1.5rem;
 	}
 
@@ -216,5 +216,6 @@
 
 	.modal-buttom-price-wrapper {
 		--xl-space: 2em;
+		padding-bottom: initial;
 	}
 }

@@ -265,7 +265,7 @@
 	}
 
 	.image-text-decoration {
-		display: flex;
+		display: none;
 		opacity: 0.6;
 	}
 }

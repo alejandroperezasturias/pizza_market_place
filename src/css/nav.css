@@ -145,7 +145,7 @@
 .burger {
 	position: relative;
 	z-index: 3;
-	padding: 0.8rem 0.5rem 0.5rem 0;
+	padding: 1.5rem 1.5rem 0rem 0;
 	align-self: flex-end;
 }
 /* Styling the burger menu lines */
