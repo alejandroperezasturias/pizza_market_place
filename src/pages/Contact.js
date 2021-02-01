@@ -25,7 +25,7 @@ export default function Contact() {
 		<div className={'contact-section xl-space'}>
 			<div className="map">
 				<ReactMapGL
-					mapboxApiAccessToken={process.env.REACT_APP_TOKEN_MAP}
+					mapboxApiAccessToken={"pk.eyJ1IjoiYWxleGNhYmFuYXF1aW50YSIsImEiOiJja2E1YWMwYjQxMjNvM2hwbnY2N2tnNW93In0.ewo_YDu86yWLu-uSu9tp-Q"}
 					mapStyle="mapbox://styles/alexcabanaquinta/ckkjma0gt1z5517nsq3i8t8sp"
 					{...viewport}
 					onViewportChange={(nextViewport) => setViewport(nextViewport)}
