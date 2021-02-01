@@ -3,8 +3,8 @@ import ReactMapGL, { Marker, NavigationControl } from 'react-map-gl';
 import logo from '../Images/logox2.svg';
 import Form from '../styles-material/form';
 
-const TOKEN = process.env.REACT_APP_TOKEN_MAP
-console.log(TOKEN)
+
+
 export default function Contact() {
 	const [viewport, setViewport] = useState({
 		width: '90vw',
@@ -25,7 +25,7 @@ export default function Contact() {
 		<div className={'contact-section xl-space'}>
 			<div className="map">
 				<ReactMapGL
-					mapboxApiAccessToken={TOKEN}
+					mapboxApiAccessToken={process.env.REACT_APP_TOKEN_MAP}
 					mapStyle="mapbox://styles/alexcabanaquinta/ckkjma0gt1z5517nsq3i8t8sp"
 					{...viewport}
 					onViewportChange={(nextViewport) => setViewport(nextViewport)}
