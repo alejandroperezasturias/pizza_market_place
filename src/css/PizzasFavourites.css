@@ -147,7 +147,7 @@
 
 .colors-quote-wrapper {
 	position: absolute;
-	overflow-x: hidden;
+	overflow: hidden;
 	left: 0;
 	right: 0;
 	bottom: 0;

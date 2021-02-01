@@ -14,22 +14,22 @@ export default function About() {
 	return (
 		<div className="about-section xl-space">
 			{/* <ScrollComponent> */}
-				<AboutCard
-					image={alejandroPicture}
-					name={'Alejandro Perez'}
-					description={
-						'lorem onsectetur adipisicing el uptatum beatae porro sint praesentium iust onsectetur adipisicing el uptatum beatae porro sint praese '
-					}
-				/>
+			<AboutCard
+				image={alejandroPicture}
+				name={'Alejandro Perez'}
+				description={
+					'lorem onsectetur adipisicing el uptatum beatae porro sint praesentium iust onsectetur adipisicing el uptatum beatae porro sint praese '
+				}
+			/>
 			{/* </ScrollComponent> */}
 			{/* <ScrollComponent> */}
-				<AboutCard
-					image={matijaSetina}
-					name={'Matija Šetina'}
-					description={
-						'lorem onsectetur adipisicing el uptatum beatae porro sint praesentium iust onsectetur adipisicing el uptatum beatae porro sint praese '
-					}
-				/>
+			<AboutCard
+				image={matijaSetina}
+				name={'Matija Šetina'}
+				description={
+					'lorem onsectetur adipisicing el uptatum beatae porro sint praesentium iust onsectetur adipisicing el uptatum beatae porro sint praese '
+				}
+			/>
 			{/* </ScrollComponent> */}
 
 			<motion.div

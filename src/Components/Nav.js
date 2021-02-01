@@ -204,7 +204,11 @@ export default function Nav() {
 							<Link to={'/about'}>
 								<motion.li variants={titleAnim}>
 									<p
-										className="burger-menu-links overflow-hidden"
+										className={
+											pathname === '/about'
+												? 'burger-menu-links overflow-hidden text-600'
+												: 'burger-menu-links overflow-hidden'
+										}
 										onClick={() => {
 											setIsOpen(!isOpen);
 										}}
@@ -216,7 +220,11 @@ export default function Nav() {
 							<Link to={'/contact'}>
 								<motion.li variants={titleAnim}>
 									<p
-										className="burger-menu-links overflow-hidden"
+										className={
+											pathname === '/contact'
+												? 'burger-menu-links overflow-hidden text-600'
+												: 'burger-menu-links overflow-hidden'
+										}
 										onClick={() => {
 											setIsOpen(!isOpen);
 										}}

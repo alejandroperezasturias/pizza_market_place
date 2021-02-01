@@ -153,7 +153,7 @@ export const trollyItem = {
 	close: {
 		opacity: 0,
 		x: '-300%',
-		transition: { ease: 'easeIn', duration: 0.2},
+		transition: { ease: 'easeIn', duration: 0.2 },
 	},
 };
 
@@ -188,16 +188,13 @@ export const letter = {
 	},
 };
 export const quoteAnimationParent = {
-	close: {
-	},
+	close: {},
 	open: {
 		transition: {
 			duration: 1,
 		},
 	},
 };
-
-
 
 export const quoteAnimationSibling = {
 	close: {
@@ -230,14 +227,13 @@ export const aboutAnimationSibling = {
 	},
 };
 
-
 export const cardAnimation = {
 	open: {
 		opacity: 1,
 		transition: {
-			duration: 0.5,
+			duration: 0.7,
 			ease: 'easeOut',
-			delay: 0.5
+			delay: 0.7,
 		},
 	},
 	close: {

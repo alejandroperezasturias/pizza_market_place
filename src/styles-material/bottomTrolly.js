@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 		color: '#242222',
 		fontSize: '1.7rem',
 		borderRadius: '100vw',
-		[theme.breakpoints.down('sm')]: {
+		[theme.breakpoints.down('xs')]: {
 			fontSize: '1.4rem',
 			color: 'white',
 		},

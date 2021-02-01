@@ -64,7 +64,7 @@ export default function TrollyItem({ item }) {
 			exit={{
 				opacity: 0,
 				x: '-300%',
-				transition: { ease: 'easeIn', duration: 0.5 },
+				transition: { ease: 'easeIn', duration: 0.2}
 			}}
 			className={'trolly-item flex-gap-horizontal'}
 		>

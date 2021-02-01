@@ -6,7 +6,7 @@ export default function AboutCard({ name, description, image }) {
 		<motion.div
 			variants={cardAnimation}
 			initial="close"
-			animate={'open'}
+			animate='open'
 			className={
 				name === 'Matija Šetina'
 					? ' bg-primary-400 about-card'
