@@ -8,12 +8,12 @@ import {
 import alejandroPicture from '../Images/Alejandro_Perez.svg';
 import matijaSetina from '../Images/Matja_Setina.svg';
 import AboutCard from '../Components/AboutCard';
-import ScrollComponent from '../animations/ScrollComponent';
+// import ScrollComponent from '../animations/ScrollComponent';
 
 export default function About() {
 	return (
 		<div className="about-section xl-space">
-			<ScrollComponent>
+			{/* <ScrollComponent> */}
 				<AboutCard
 					image={alejandroPicture}
 					name={'Alejandro Perez'}
@@ -21,8 +21,8 @@ export default function About() {
 						'lorem onsectetur adipisicing el uptatum beatae porro sint praesentium iust onsectetur adipisicing el uptatum beatae porro sint praese '
 					}
 				/>
-			</ScrollComponent>
-			<ScrollComponent>
+			{/* </ScrollComponent> */}
+			{/* <ScrollComponent> */}
 				<AboutCard
 					image={matijaSetina}
 					name={'Matija Šetina'}
@@ -30,7 +30,7 @@ export default function About() {
 						'lorem onsectetur adipisicing el uptatum beatae porro sint praesentium iust onsectetur adipisicing el uptatum beatae porro sint praese '
 					}
 				/>
-			</ScrollComponent>
+			{/* </ScrollComponent> */}
 
 			<motion.div
 				variants={quoteAnimationParent}
