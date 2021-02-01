@@ -8,7 +8,6 @@ import Trolly from './Components/Trolly';
 import Drinks from './pages/Drinks';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Checkout from './pages/Checkout';
 import { uid } from 'uid';
 import Footer from './Components/footer';
 
@@ -183,7 +182,6 @@ function App() {
 						<Route path="/drinks" strict component={Drinks} />
 						<Route path="/about" strict component={About} />
 						<Route path="/contact" strict component={Contact} />
-						<Route path="/checkout" strict component={Checkout} />
 					</Switch>
 
 					<Footer />
