@@ -6,7 +6,7 @@ import {
 	quoteAnimationParent,
 	quoteAnimationSibling,
 } from '../animations/Animations';
-import deco from '../Images/deco_underline.svg';
+
 
 export default function PizzasFavourites() {
 	const { pizzas } = useContext(PizzaContext);
@@ -62,7 +62,7 @@ export default function PizzasFavourites() {
 
 				<div className="title">
 					<p className={'text-900'}>All Time Favourites</p>
-					<img className="deco" className="image-text-decoration " src={deco} alt={'decoration item'} />
+
 				
 				</div>
 			</div>

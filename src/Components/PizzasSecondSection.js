@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Pizza from './Pizza.js';
 import { PizzaContext } from '../App.js';
-import deco from '../Images/deco_underline_blue.svg';
+
 
 export default function PizzasSecondSection() {
 	const { pizzas } = useContext(PizzaContext);
@@ -11,7 +11,7 @@ export default function PizzasSecondSection() {
 				<div className="info xl-space">
 					<div className="title">
 						<p className={'text-900'}>Classics</p>
-						<img className="text-decoration" className="image-text-decoration" src={deco} alt={"decoration item"}/>
+		
 					</div>
 				</div>
 				<div className="pizzas flow-content">
