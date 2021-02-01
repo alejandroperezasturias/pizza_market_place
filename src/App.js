@@ -173,7 +173,7 @@ function App() {
 	};
 
 	return (
-		<>
+		<div className="app-wrapper" style={{overflowX:'hidden'}}>
 			<PizzaContext.Provider value={pizzaContextValue}>
 				<div className="App">
 					{pathname === '/checkout' ? '' : <Nav />}
@@ -191,7 +191,7 @@ function App() {
 					<Trolly />
 				</div>
 			</PizzaContext.Provider>
-		</>
+		</div>
 	);
 }
 

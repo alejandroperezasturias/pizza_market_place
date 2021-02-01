@@ -34,10 +34,15 @@ export default function PizzaDetail() {
 
 	// Prevent Scrolling
 	let targetElement = document.querySelector('html');
+	let targetElement2 = document.querySelector('.app-wrapper');
 	useEffect(() => {
-		togglePizzaModifier
-			? targetElement.classList.add('no-scroll')
-			: targetElement.classList.remove('no-scroll');
+		if (togglePizzaModifier) {
+			targetElement.classList.add('no-scroll');
+			targetElement2.classList.add('no-scroll');
+		} else {
+			targetElement.classList.remove('no-scroll');
+			targetElement2.classList.remove('no-scroll');
+		}
 	});
 	//
 
