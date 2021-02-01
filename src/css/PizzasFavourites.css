@@ -147,6 +147,7 @@
 
 .colors-quote-wrapper {
 	position: absolute;
+	overflow-x: hidden;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -155,7 +156,6 @@
 	border-radius: 1rem;
 	display: flex;
 	justify-content: center;
-	overflow: hidden;
 }
 
 .red-bar {
@@ -238,6 +238,7 @@
 	.quote {
 		background-color: transparent;
 		position: relative;
+		overflow-x: hidden;
 		width: 90%;
 	}
 

@@ -43,7 +43,7 @@
 
 @import 'nav.css';
 @import 'PizzasFavourites.css';
-@import 'pizzas_second_section.css';
+@import 'pizzasSecondSection.css';
 @import 'trolly.css';
 @import 'modal.css';
 @import 'about.css';
@@ -57,10 +57,12 @@
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+	position: relative;
 }
 
 body {
 	overflow-x: hidden;
+	position: relative;
 }
 
 .App {
