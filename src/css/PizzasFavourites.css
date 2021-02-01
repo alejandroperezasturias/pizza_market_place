@@ -26,125 +26,6 @@
 	overflow: hidden;
 }
 
-.arrow-wrapper {
-	min-height: 16px;
-}
-
-.arrow {
-	display: none;
-}
-
-/* Pizzas */
-
-.pizzas {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	z-index: 0;
-	margin-top: var(--br);
-}
-
-.pizzas > * + * {
-	margin: 4rem 0 0 0;
-}
-
-.pizza {
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	z-index: 0;
-}
-
-.pizza-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	color: var(--clr-neutral-300);
-}
-
-.pizza-info-name {
-	opacity: 1 !important;
-}
-
-.pizza-image-wrapper {
-	min-height: 9.3rem;
-}
-
-.pizza-buttons-container > .btn {
-	font-size: var(--fs-300);
-	align-self: center;
-}
-
-.characteristic {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.characteristic > * + * {
-	margin: 0 0 0 0.4em;
-}
-
-.pizzas {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	--flow-spacer: 4rem;
-}
-
-.pizza-ingredients-wrapper {
-	display: flex;
-}
-
-.pizza-ingredients-wrapper > * + * {
-	margin: 0 0 0 calc(var(--br) / 6);
-}
-
-.pizza-ingredients-wrapper > p:not(:last-child)::after {
-	content: '|';
-	padding-left: calc(var(--br) / 6);
-	color: var(--clr-neutral-300);
-	font-weight: var(--fw-400);
-}
-
-.image > * + * {
-	margin: 0.5rem 0 0 0;
-}
-
-.pizza-info {
-	display: flex;
-	flex-direction: column;
-}
-
-.pizza-info > * + * {
-	margin: calc(var(--br) / 1.5) 0 0 0;
-}
-
-.pizza-characteristics-wrapper {
-	min-height: 18px;
-}
-
-.characteristic {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.characteristic > * + * {
-	margin: 0 0 0 0.4em;
-}
-
-.image > img {
-	object-fit: cover;
-	height: auto;
-	width: 9rem;
-}
-
-.pizza-buttons-container > .btn {
-	font-size: var(--fs-300);
-	align-self: center;
-}
-
 .colors-quote-wrapper {
 	position: absolute;
 	overflow: hidden;
@@ -238,32 +119,11 @@
 	.quote {
 		background-color: transparent;
 		position: relative;
-		overflow-x: hidden;
 		width: 90%;
 	}
 
 	.quote-text {
 		padding: 1.8rem 1.2rem;
-	}
-
-	.pizzas {
-		--flow-spacer: 3rem;
-		display: grid;
-		place-items: flex-start;
-		margin: auto;
-	}
-
-	.drink {
-		text-align: left;
-		min-width: 3rem;
-		margin: auto;
-	}
-
-	.pizza {
-		margin-left: 4rem;
-		min-width: 28rem;
-		justify-content: flex-start;
-		text-align: left;
 	}
 
 	.image-text-decoration {

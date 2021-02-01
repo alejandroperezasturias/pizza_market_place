@@ -63,10 +63,6 @@ export default function Trolly() {
 		setLoadingCheckout(true);
 		const stripe = await stripePromise;
 		let id;
-		// Call  backend to create the Checkout Session
-		// const response = await fetch('/create-checkout-session', {
-		// 	method: 'POST',
-		// });
 		try {
 			await axios({
 				method: 'POST',

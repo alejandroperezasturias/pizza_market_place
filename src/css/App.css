@@ -42,8 +42,9 @@
   ////////////// */
 
 @import 'nav.css';
-@import 'PizzasFavourites.css';
+@import 'pizzasFavourites.css';
 @import 'pizzasSecondSection.css';
+@import 'pizza.css';
 @import 'trolly.css';
 @import 'modal.css';
 @import 'about.css';

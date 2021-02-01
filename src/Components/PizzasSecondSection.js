@@ -1,4 +1,4 @@
-import {  useContext } from 'react';
+import { useContext } from 'react';
 import Pizza from './Pizza.js';
 import { PizzaContext } from '../App.js';
 import deco from '../Images/deco_underline_blue.svg';
