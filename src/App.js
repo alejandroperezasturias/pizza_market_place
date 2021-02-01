@@ -10,9 +10,11 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import { uid } from 'uid';
 import Footer from './Components/footer';
+import ScrollToTop from './animations/ScrollToTop'
 
 export const PizzaContext = React.createContext({});
 const LOCAL_STORAGE_KEY = 'the_5ht_hut_trolly';
+
 
 function App() {
 	const [pizzas] = useState(PizzasData);
@@ -176,7 +178,7 @@ function App() {
 			<PizzaContext.Provider value={pizzaContextValue}>
 				<div className="App">
 					{pathname === '/checkout' ? '' : <Nav />}
-
+					<ScrollToTop/>
 					<Switch>
 						<Route path={['/pizza/:id', '/']} exact component={Pizzas} />
 						<Route path="/drinks" strict component={Drinks} />

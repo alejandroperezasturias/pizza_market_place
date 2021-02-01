@@ -1,35 +1,36 @@
 import logo from '../Images/logox2.svg';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
 	return (
 		<>
 			<div className="primary-footer xl-space">
 				<div className="primary-footer-wrapper split">
-					<a href="http://localhost:3000/" aria-label="acme home page">
+					<a
+						href="https://tender-poincare-d7323f.netlify.app/contact"
+						aria-label="acme home page"
+					>
 						<img src={logo} alt="logo" className="logo-footer"></img>
 					</a>
 
 					<div className="footer-nav split">
 						<dl className="flow-content text-300">
-							<dt>Map</dt>
+							<dt>US</dt>
 							<dd>
-								<a href="#">Contact</a>
+								<Link to="/contact">CONTACT</Link>
 							</dd>
 							<dd>
-								<a href="#">Privacy</a>
+								<Link to="/about">ABOUT</Link>
 							</dd>
 						</dl>
 
 						<dl className="flow-content text-300 ">
-							<dt>Resources</dt>
+							<dt>HUNGRY?</dt>
 							<dd>
-								<a href="#">Courses</a>
+								<Link to="/">PIZZAS</Link>
 							</dd>
 							<dd>
-								<a href="#">Hacks</a>
-							</dd>
-							<dd>
-								<a href="#">Free stuff</a>
+								<Link to="/drinks">DRINKS</Link>
 							</dd>
 						</dl>
 					</div>

@@ -66,7 +66,7 @@ export default function Nav() {
 					></motion.div>
 				</div>
 				<a
-					href="http://localhost:3000/"
+					href="https://tender-poincare-d7323f.netlify.app/contact"
 					aria-label="acme home page"
 					className="logo no-select flow-content"
 					style={
@@ -108,7 +108,7 @@ export default function Nav() {
 										pathname === '/' ? 'navigation-link-underline-active' : ''
 									}
 								>
-									Pizza
+									Pizzas
 								</li>
 							</Link>
 							<Link
