@@ -171,8 +171,12 @@
 	.modal-image {
 		flex: 0.4;
 	}
+
+	.modal-image img {
+		transform: scale(1);
+	}
 	.modal-wrapper {
-		--flow-spacer: 2rem;
+		--flow-spacer: 2.5rem;
 	}
 
 	.modal-buttom-price-wrapper {
