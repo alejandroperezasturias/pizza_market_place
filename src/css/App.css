@@ -140,12 +140,6 @@ img {
 /* ///////////////
   Typography
   ////////////// */
-h1 {
-	font-family: var(--ff-accent);
-	font-weight: var(--fw-700);
-	font-size: var(--fs-900);
-	text-decoration: none;
-}
 
 h2 {
 	font-size: var(--fs-500);

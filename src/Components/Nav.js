@@ -79,7 +79,15 @@ export default function Nav() {
 						<img src={logo} className={'no-select'} alt="img/logo.svg" />
 					</div>
 					<div className="name">
-						<h1>The 5th Hut</h1>
+						<h1
+							style={{
+								fontFamily: 'var(--ff-accent)',
+								fontWeight: 'var(--fw-700)',
+								fontSize: 'var(--fs-900)',
+							}}
+						>
+							The 5th Hut
+						</h1>
 						<h2>Slow Pizza</h2>
 					</div>
 				</a>
