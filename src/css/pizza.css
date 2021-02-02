@@ -91,6 +91,7 @@
 	.pizzas {
 		--flow-spacer: 2.4rem;
 		justify-content: center;
+		margin-top: 0;
 	}
 
 	.drink {
