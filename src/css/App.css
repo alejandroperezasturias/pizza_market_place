@@ -80,6 +80,12 @@ body {
 	/* padding: 1rem; */
 }
 
+h1 {
+	font-family: var(--ff-accent);
+	font-weight: var(--fw-700);
+	font-size: var(--fs-900);
+}
+
 *,
 *::before,
 *::after {
@@ -146,11 +152,6 @@ h2 {
 	font-family: var(--ff-sans);
 	font-weight: var(--fw-700);
 	text-decoration: none;
-}
-
-.section-title {
-	font-size: var(--fs-600);
-	color: var(--clr-neutral-400);
 }
 
 .text-500 {

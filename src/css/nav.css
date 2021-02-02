@@ -8,9 +8,6 @@
 .name {
 	color: var(--clr-neutral-300);
 }
-.name h1 {
-	font-size: 3rem;
-}
 
 .logo-image-wrapper {
 	min-height: 8.5rem;

@@ -16,8 +16,8 @@
 }
 
 .pizza-image-wrapper {
-	min-height: 9.5rem;
-	min-width: 9.5rem;
+	height: 9.5rem;
+	width: 9.5rem;
 }
 
 .image > * + * {
@@ -51,6 +51,10 @@
 
 .characteristic > * + * {
 	margin: 0 0 0 0.4em;
+}
+
+.characteristic img {
+	width: 12px;
 }
 
 .pizza-ingredients-wrapper {
