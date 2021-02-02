@@ -5,8 +5,8 @@ import {
 	quoteAnimationParent,
 	aboutAnimationSibling,
 } from '../animations/Animations';
-import alejandroPicture from '../Images/Alejandro_Perez.svg';
-import matijaSetina from '../Images/Matja_Setina.svg';
+import alejandroPicture from '../Images/Alejandro_Perez.avif';
+import matijaSetina from '../Images/Matja_Setina.avif';
 import AboutCard from '../Components/AboutCard';
 // import ScrollComponent from '../animations/ScrollComponent';
 
