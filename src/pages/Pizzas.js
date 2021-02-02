@@ -6,11 +6,6 @@ import PizzasSecondSection from '../Components/PizzasSecondSection';
 import { PizzaContext } from '../App.js';
 const PizzaDetail = React.lazy(() => import('../Components/PizzaDetail'));
 
-// {toogleSideBar && (
-// 	<Suspense fallback={<div>Loading Sidebar...</div>}>
-// 		<Trolly />
-// 	</Suspense>
-// )}
 export default function Pizza() {
 	const { itemModifier } = useContext(PizzaContext);
 
@@ -18,7 +13,7 @@ export default function Pizza() {
 		<div>
 			<AnimatePresence>
 				{itemModifier && (
-					<Suspense fallback={<div>Loading Modifier...</div>}>
+					<Suspense fallback={<div></div>}>
 						<PizzaDetail />
 					</Suspense>
 				)}
