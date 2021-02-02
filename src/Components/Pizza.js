@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import chili from '../Images/chili_svg.svg';
 import leaf from '../Images/vegetarian.svg';
 import { motion } from 'framer-motion';
@@ -11,7 +11,7 @@ export default function Pizza({ pizza }) {
 		<div className={'flow-content split pizza'}>
 			<div className="image">
 				<div className="pizza-image-wrapper">
-					<img src={image} alt="pizza-image"></img>
+					<img src={image} alt="pizza"></img>
 				</div>
 				<div className={'split center-center pizza-characteristics-wrapper'}>
 					{vegetarian && (
