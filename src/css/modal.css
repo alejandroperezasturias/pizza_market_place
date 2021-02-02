@@ -32,11 +32,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* flex-basis: 80%; */
 }
 
 .modal-image img {
 	transform: scale(0.7);
+	min-height: 100%;
 }
 
 .modal {
@@ -166,10 +166,10 @@
 
 @media (min-width: 390px) {
 	.modal {
-		flex: 1;
+		flex-basis: 75%;
 	}
 	.modal-image {
-		flex: 0.4;
+		flex-basis: 25%;
 	}
 
 	.modal-image img {
@@ -192,6 +192,10 @@
 	.modal {
 		flex-direction: column;
 		padding: var(--br) 11rem;
+	}
+
+	.modal-image {
+		flex: initial;
 	}
 
 	.modal-wrapper {
