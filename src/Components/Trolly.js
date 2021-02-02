@@ -178,13 +178,41 @@ export default function Trolly() {
 						animate="open"
 						style={{ overflow: 'hidden', display: 'flex' }}
 					>
-						<motion.h1 variants={letter}>L</motion.h1>
-						<motion.h1 variants={letter}>o</motion.h1>
-						<motion.h1 variants={letter}>a</motion.h1>
-						<motion.h1 variants={letter}>d</motion.h1>
-						<motion.h1 variants={letter}>i</motion.h1>
-						<motion.h1 variants={letter}>n</motion.h1>
-						<motion.h1 variants={letter}>g</motion.h1>
+						<motion.h1 style={{
+								fontFamily: 'var(--ff-accent)',
+								fontWeight: 'var(--fw-700)',
+								fontSize: 'var(--fs-900)',
+							}} variants={letter}>L</motion.h1>
+						<motion.h1 style={{
+								fontFamily: 'var(--ff-accent)',
+								fontWeight: 'var(--fw-700)',
+								fontSize: 'var(--fs-900)',
+							}} variants={letter}>o</motion.h1>
+						<motion.h1 style={{
+								fontFamily: 'var(--ff-accent)',
+								fontWeight: 'var(--fw-700)',
+								fontSize: 'var(--fs-900)',
+							}} variants={letter}>a</motion.h1>
+						<motion.h1 style={{
+								fontFamily: 'var(--ff-accent)',
+								fontWeight: 'var(--fw-700)',
+								fontSize: 'var(--fs-900)',
+							}} variants={letter}>d</motion.h1>
+						<motion.h1 style={{
+								fontFamily: 'var(--ff-accent)',
+								fontWeight: 'var(--fw-700)',
+								fontSize: 'var(--fs-900)',
+							}} variants={letter}>i</motion.h1>
+						<motion.h1 style={{
+								fontFamily: 'var(--ff-accent)',
+								fontWeight: 'var(--fw-700)',
+								fontSize: 'var(--fs-900)',
+							}} variants={letter}>n</motion.h1>
+						<motion.h1 style={{
+								fontFamily: 'var(--ff-accent)',
+								fontWeight: 'var(--fw-700)',
+								fontSize: 'var(--fs-900)',
+							}} variants={letter}>g</motion.h1>
 					</motion.div>
 				</div>
 			)}

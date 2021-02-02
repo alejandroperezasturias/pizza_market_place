@@ -186,9 +186,11 @@ function App() {
 					</Switch>
 
 					<Footer />
-					<Suspense fallback={<div>Loading Sidebar...</div>}>
-						<Trolly />
-					</Suspense>
+					{toogleSideBar && (
+						<Suspense fallback={<div>Loading Sidebar...</div>}>
+							<Trolly />
+						</Suspense>
+					)}
 				</div>
 			</PizzaContext.Provider>
 		</div>
