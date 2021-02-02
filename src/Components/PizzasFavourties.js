@@ -19,7 +19,7 @@ export default function PizzasFavourites() {
 		<div className={'pizza-section'}>
 			<div className={'info'}>
 				<div className={'quote'}>
-					<p className="text-500 quote-text">
+					<p className="text-500">
 						Pizza as it should be. Slow and mouth-watering. Only sourdough.
 					</p>
 

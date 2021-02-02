@@ -15,7 +15,7 @@ export default function Footer() {
 
 					<div className="footer-nav split">
 						<dl className="flow-content text-300">
-							<dt>US</dt>
+							<dt className="text-400">US</dt>
 							<dd>
 								<Link to="/contact">CONTACT</Link>
 							</dd>
@@ -25,7 +25,7 @@ export default function Footer() {
 						</dl>
 
 						<dl className="flow-content text-300 ">
-							<dt>HUNGRY?</dt>
+							<dt className="text-400">HUNGRY?</dt>
 							<dd>
 								<Link to="/">PIZZAS</Link>
 							</dd>

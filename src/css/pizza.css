@@ -5,25 +5,14 @@
 	flex-direction: column;
 	align-items: center;
 	z-index: 0;
-	margin-top: var(--br);
 	--flow-spacer: 5rem;
+	margin-top: 3rem;
 }
 
 .pizza {
 	align-items: flex-start;
 	z-index: 0;
 	text-align: center;
-}
-
-.pizza-info {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	color: var(--clr-neutral-300);
-}
-
-.pizza-info-name {
-	opacity: 1 !important;
 }
 
 .pizza-image-wrapper {
@@ -38,12 +27,20 @@
 .image > img {
 	object-fit: cover;
 	height: auto;
-	/* width: 9rem; */
 }
 
 .pizza-buttons-container > .btn {
 	font-size: var(--fs-300);
 	align-self: center;
+}
+
+.pizza-characteristics-wrapper {
+	min-height: 18px;
+}
+
+.pizza-characteristics-wrapper > img {
+	width: 100%;
+	height: 100%;
 }
 
 .characteristic {
@@ -54,13 +51,6 @@
 
 .characteristic > * + * {
 	margin: 0 0 0 0.4em;
-}
-
-.pizzas {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	--flow-spacer: 4rem;
 }
 
 .pizza-ingredients-wrapper {
@@ -81,35 +71,21 @@
 .pizza-info {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	color: var(--clr-neutral-300);
+}
+
+.pizza-info-name {
+	opacity: 1 !important;
 }
 
 .pizza-info > * + * {
 	margin: calc(var(--br) / 1.5) 0 0 0;
 }
 
-.pizza-characteristics-wrapper {
-	min-height: 18px;
-}
-
-.characteristic {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.characteristic > * + * {
-	margin: 0 0 0 0.4em;
-}
-
-.pizza-buttons-container > .btn {
-	font-size: var(--fs-300);
-	align-self: center;
-}
-
 @media (min-width: 54em) {
 	.pizzas {
-		--flow-spacer: 2.2rem;
-		display: grid;
+		--flow-spacer: 2.4rem;
 		place-items: flex-start;
 		margin: auto;
 	}

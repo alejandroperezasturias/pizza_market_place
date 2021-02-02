@@ -42,8 +42,6 @@
 .red-bar {
 	flex: 0 1 100%;
 	background-color: var(--clr-accent-400);
-	/* border-radius: 1rem 0 0 1rem; */
-	/* mix-blend-mode: screen; */
 }
 
 .green-bar {
@@ -91,9 +89,7 @@
 	.quote,
 	.title,
 	.name {
-		width: 100%;
 		padding: initial;
-		text-align: center;
 	}
 
 	.info {
@@ -110,20 +106,11 @@
 		padding-top: calc(var(--br) * 2);
 	}
 
-	.title {
-		padding: auto 0;
-		display: flex;
-		flex-direction: column;
-	}
-
 	.quote {
 		background-color: transparent;
 		position: relative;
 		width: 90%;
-	}
-
-	.quote-text {
-		padding: 1.8rem 1.2rem;
+		padding: 1rem 3rem;
 	}
 
 	.image-text-decoration {
