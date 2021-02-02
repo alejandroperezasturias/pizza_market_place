@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import './css/App.css';
 import Nav from './Components/Nav';
 import Pizzas from './pages/Pizzas';
 import { PizzasData } from './Components/PizzasData';
-import Trolly from './Components/Trolly';
+// import Trolly from './Components/Trolly';
 import Drinks from './pages/Drinks';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import { uid } from 'uid';
 import Footer from './Components/footer';
-import ScrollToTop from './animations/ScrollToTop'
+import ScrollToTop from './animations/ScrollToTop';
+const Trolly = React.lazy(() => import('./Components/Trolly'));
 
 export const PizzaContext = React.createContext({});
 const LOCAL_STORAGE_KEY = 'the_5ht_hut_trolly';
-
 
 function App() {
 	const [pizzas] = useState(PizzasData);
@@ -30,7 +30,6 @@ function App() {
 	// Handle openning and clossing the modal. As soon as we have the right id in the path, we instantiate the item modifier with the item.
 	// Check Pizzas.js to see the conditional that prevents the app from crassing with the annoying undefiened error.
 	const { pathname } = useLocation();
-
 
 	useEffect(() => {
 		if (pathname.split('/')[2]) {
@@ -174,11 +173,11 @@ function App() {
 	};
 
 	return (
-		<div className="app-wrapper" style={{overflowX:'hidden'}}>
+		<div className="app-wrapper" style={{ overflowX: 'hidden' }}>
 			<PizzaContext.Provider value={pizzaContextValue}>
 				<div className="App">
 					{pathname === '/checkout' ? '' : <Nav />}
-					<ScrollToTop/>
+					<ScrollToTop />
 					<Switch>
 						<Route path={['/pizza/:id', '/']} exact component={Pizzas} />
 						<Route path="/drinks" strict component={Drinks} />
@@ -187,8 +186,9 @@ function App() {
 					</Switch>
 
 					<Footer />
-
-					<Trolly />
+					<Suspense fallback={<div>Loading Sidebar...</div>}>
+						<Trolly />
+					</Suspense>
 				</div>
 			</PizzaContext.Provider>
 		</div>
