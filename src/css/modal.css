@@ -164,6 +164,22 @@
 	--flow-spacer: 1.2em;
 }
 
+@media (min-width: 390px) {
+	.modal {
+		flex: 1;
+	}
+	.modal-image {
+		flex: 0.4;
+	}
+	.modal-wrapper {
+		--flow-spacer: 2rem;
+	}
+
+	.modal-buttom-price-wrapper {
+		--xl-space: 1rem;
+	}
+}
+
 @media (min-width: 54em) {
 	.modal-backdrop {
 		flex-direction: row;
