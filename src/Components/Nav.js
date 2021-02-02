@@ -71,7 +71,7 @@ export default function Nav() {
 					className="logo no-select flow-content"
 					style={
 						pathname === '/about' || pathname === '/contact'
-							? { borderRadius: '1rem', paddingBottom: '2rem' }
+							? { borderRadius: '1rem' }
 							: {}
 					}
 				>

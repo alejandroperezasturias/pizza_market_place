@@ -35,7 +35,7 @@
 }
 
 .pizza-characteristics-wrapper {
-	min-height: 18px;
+	height: 18px;
 }
 
 .pizza-characteristics-wrapper > img {
@@ -86,8 +86,7 @@
 @media (min-width: 54em) {
 	.pizzas {
 		--flow-spacer: 2.4rem;
-		place-items: flex-start;
-		margin: auto;
+		justify-content: center;
 	}
 
 	.drink {
