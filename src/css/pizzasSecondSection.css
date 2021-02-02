@@ -1,7 +1,5 @@
 .pizza-second-section {
 	border-top: 1px solid var(--clr-accent-400);
-	content-visibility: auto;
-	contain-intrinsic-size: 1000px;
 }
 
 @media (min-width: 54em) {
@@ -13,7 +11,7 @@
 	.pizza-second-section .info {
 		background-color: var(--clr-accent-400);
 		border-radius: 1rem;
-		padding-bottom: initial;
+		padding-bottom: 0;
 		--xl-space: 0rem;
 	}
 

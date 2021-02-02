@@ -7,7 +7,7 @@ export default function Footer() {
 			<div className="primary-footer xl-space">
 				<div className="primary-footer-wrapper split">
 					<a
-						href="https://tender-poincare-d7323f.netlify.app/contact"
+						href="https://tender-poincare-d7323f.netlify.app"
 						aria-label="acme home page"
 					>
 						<img src={logo} alt="logo" className="logo-footer"></img>

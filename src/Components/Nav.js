@@ -66,7 +66,7 @@ export default function Nav() {
 					></motion.div>
 				</div>
 				<a
-					href="https://tender-poincare-d7323f.netlify.app/contact"
+					href="https://tender-poincare-d7323f.netlify.app/"
 					aria-label="acme home page"
 					className="logo no-select flow-content"
 					style={
