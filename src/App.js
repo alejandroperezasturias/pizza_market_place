@@ -176,7 +176,7 @@ function App() {
 		<div className="app-wrapper" style={{ overflowX: 'hidden' }}>
 			<PizzaContext.Provider value={pizzaContextValue}>
 				<div className="App">
-					{pathname === '/checkout' ? '' : <Nav />}
+					<Nav />
 					<ScrollToTop />
 					<Switch>
 						<Route path={['/pizza/:id', '/']} exact component={Pizzas} />
